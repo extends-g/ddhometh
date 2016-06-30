@@ -1,0 +1,25 @@
+Dhome\Bundle\AdminBundle\Entity\Vision:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '100'
+        subTitle:
+            type: string
+            length: 255
+        content:
+            type: text
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+        deletedAt:
+            type: datetime
+    lifecycleCallbacks: {  }

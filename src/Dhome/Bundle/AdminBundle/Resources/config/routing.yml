@@ -1,0 +1,3 @@
+dhome_admin:
+    path:     /admin/
+    defaults: { _controller: DhomeAdminBundle:Default:index }

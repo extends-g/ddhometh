@@ -1,0 +1,8 @@
+services:
+    ui.twig.extension.general:
+        class: Dhome\Bundle\WebBundle\Twig\Extension\General
+        calls:
+            - [setHttpKernelExtension, [@twig.extension.httpkernel]]
+            - [setContainer, [@service_container]]
+        tags:
+            - {name: twig.extension}

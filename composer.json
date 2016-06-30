@@ -1,0 +1,110 @@
+{
+    "name": "extensionglobal/ddhometh",
+    "license": "extension-global",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": "src/",
+            "SymfonyStandard\\": "app/SymfonyStandard/"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/AppCache.php"
+        ]
+    },
+    "require": {
+        "php": ">=5.3.9",
+        "doctrine/collections": "~1.2",
+        "doctrine/common": "~2.5",
+        "doctrine/doctrine-bundle": "~1.3",
+        "doctrine/doctrine-cache-bundle": "~1.0",
+        "doctrine/doctrine-fixtures-bundle": "~2.2",
+        "doctrine/doctrine-migrations-bundle": "~1.0",
+        "doctrine/orm": "^2.4.8,<2.5",
+        "doctrine/phpcr-odm": "^1.3",
+        "symfony/symfony": "2.8.*",
+        "symfony/assetic-bundle": "~2.3",
+        "symfony/swiftmailer-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.4",
+        "sensio/distribution-bundle": "~4.0",
+        "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "stof/doctrine-extensions-bundle": "~1.1",
+        "friendsofsymfony/oauth-server-bundle": "~1.4",
+        "friendsofsymfony/rest-bundle": "~1.5",
+        "hwi/oauth-bundle": "~0.3",
+        "knplabs/gaufrette": "0.2.*",
+        "knplabs/knp-gaufrette-bundle": "0.2.*@dev",
+        "liip/imagine-bundle": "~1.0",
+        "liip/monitor-bundle": "2.0.*@dev",
+        "winzou/state-machine-bundle": "~0.2",
+        "knplabs/knp-markdown-bundle": "~1.3",
+        "willdurand/js-translation-bundle": "~2.2",
+        "knplabs/knp-snappy-bundle": "dev-master",
+        "helios-ag/fm-elfinder-bundle": "~5",
+        "beberlei/DoctrineExtensions": "~1.0",
+        "smart-core/accelerator-cache-bundle": "~1.0",
+        "raven/raven": "0.12.*",
+        "guzzlehttp/guzzle": "~6.0",
+        "nelmio/cors-bundle": "~1.4",
+        "flowjs/flow-php-server": "~1.0",
+        "yzalis/supervisor-bundle": "1.0.*@dev",
+        "gordalina/cachetool-bundle": "~1.0",
+        "bcc/cron-manager-bundle": "~2.6",
+        "suncat/mobile-detect-bundle": "0.10.*",
+        "richsage/rms-push-notifications-bundle": "dev-master",
+        "sylius/content-bundle": "0.18.0",
+        "sylius/resource": "0.18.0",
+        "sylius/resource-bundle": "0.18.0",
+        "sylius/registry": "0.18.0",
+        "sylius/settings-bundle": "0.18.0",
+        "sylius/rbac": "0.18.0",
+        "sylius/rbac-bundle": "0.18.0",
+        "sylius/user": "0.18.0",
+        "sylius/user-bundle": "0.18.0"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "~2.3",
+        "liil/kint": "v1.0",
+        "phpspec/phpspec": "~2.1",
+        "fzaninotto/faker": "~1.2",
+        "hautelook/alice-bundle": "0.2.x",
+        "elao/web-profiler-extra-bundle": "~2.3@dev",
+        "escapestudios/symfony2-coding-standard": "~2.0",
+        "squizlabs/php_codesniffer": "2.*",
+        "phpunit/phpunit": "4.7.*"
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "SymfonyStandard\\Composer::hookRootPackageInstall"
+        ],
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin",
+        "component-dir": "web/assets"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        }
+    }
+}
