@@ -2,8 +2,28 @@
 
 namespace Dhome\Bundle\AdminBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Sylius\Bundle\ResourceBundle\AbstractResourceBundle;
+use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 
-class DhomeAdminBundle extends Bundle
+class DhomeAdminBundle extends AbstractResourceBundle
 {
+    protected $mappingFormat = self::MAPPING_YAML;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSupportedDrivers()
+    {
+        return [
+            SyliusResourceBundle::DRIVER_DOCTRINE_ORM,
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getModelNamespace()
+    {
+        return 'Dhome\Bundle\AdminBundle\Model';
+    }
 }
