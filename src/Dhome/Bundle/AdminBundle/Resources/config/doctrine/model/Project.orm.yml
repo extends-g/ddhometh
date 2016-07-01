@@ -1,0 +1,54 @@
+Dhome\Bundle\AdminBundle\Model\Project:
+    type: entity
+    table: dhome_project
+
+    gedmo:
+        loggable: true
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            length: 255
+
+        shortDescription:
+            type: string
+            length: 255
+            column: short_description
+            nullable: true
+
+        content:
+            type: text
+
+        createdAt:
+            type: datetime
+            column: created_at
+            gedmo:
+                timestampable:
+                    on: create
+
+        updatedAt:
+            type: datetime
+            column: updated_at
+            gedmo:
+                timestampable:
+                    on: update
+
+#    manyToOne:
+#        category:
+#            targetEntity: Dhome\Bundle\AdminBundle\Model\ProjectCategoryInterface
+#            inversedBy: projects
+#            joinColumn:
+#                nullable: false
+#                onDelete: "CASCADE"
+#                category_id:
+
+#                    referencedColumnName: id
+
+    lifecycleCallbacks: {  }
