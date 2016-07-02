@@ -1,6 +1,6 @@
-Dhome\Bundle\AdminBundle\Model\Project:
+Dhome\Bundle\AdminBundle\Model\ProductCollection:
     type: entity
-    table: dhome_project
+    table: dhome_collection
 
     gedmo:
         loggable: true
@@ -42,8 +42,8 @@ Dhome\Bundle\AdminBundle\Model\Project:
 
     manyToOne:
         category:
-            targetEntity: Dhome\Bundle\AdminBundle\Model\ProjectCategory
-            inversedBy: projects
+            targetEntity: Dhome\Bundle\AdminBundle\Model\ProductCollectionCategory
+            inversedBy: productCollections
             joinColumn:
                 nullable: false
                 onDelete: "CASCADE"

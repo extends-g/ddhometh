@@ -3,9 +3,15 @@
 namespace Dhome\Bundle\AdminBundle\DependencyInjection;
 
 use Dhome\Bundle\AdminBundle\Controller\VisionController;
+use Dhome\Bundle\AdminBundle\Form\Type\ProductCollectionCategoryType;
+use Dhome\Bundle\AdminBundle\Form\Type\ProductCollectionType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProjectCategoryType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProjectType;
 use Dhome\Bundle\AdminBundle\Form\Type\VisionType;
+use Dhome\Bundle\AdminBundle\Model\ProductCollection;
+use Dhome\Bundle\AdminBundle\Model\ProductCollectionCategory;
+use Dhome\Bundle\AdminBundle\Model\ProductCollectionCategoryInterface;
+use Dhome\Bundle\AdminBundle\Model\ProductCollectionInterface;
 use Dhome\Bundle\AdminBundle\Model\Project;
 use Dhome\Bundle\AdminBundle\Model\ProjectCategory;
 use Dhome\Bundle\AdminBundle\Model\ProjectCategoryInterface;
@@ -133,6 +139,70 @@ class Configuration implements ConfigurationInterface
                                             ->addDefaultsIfNotSet()
                                             ->children()
                                                 ->scalarNode('default')->defaultValue(ProjectCategoryType::class)->cannotBeEmpty()->end()
+                                                ->scalarNode('choice')->defaultValue(ResourceChoiceType::class)->cannotBeEmpty()->end()
+                                            ->end()
+                                        ->end()
+                                    ->end()
+                                ->end()
+                                ->arrayNode('validation_groups')
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->arrayNode('default')
+                                            ->prototype('scalar')->end()
+                                            ->defaultValue(['dhome'])
+                                        ->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode('collection')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode('options')->end()
+                                ->arrayNode('classes')
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode('model')->defaultValue(ProductCollection::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('interface')->defaultValue(ProductCollectionInterface::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->cannotBeEmpty()->end()
+                                        ->scalarNode('factory')->defaultValue(Factory::class)->end()
+                                        ->arrayNode('form')
+                                            ->addDefaultsIfNotSet()
+                                            ->children()
+                                                ->scalarNode('default')->defaultValue(ProductCollectionType::class)->cannotBeEmpty()->end()
+                                                ->scalarNode('choice')->defaultValue(ResourceChoiceType::class)->cannotBeEmpty()->end()
+                                            ->end()
+                                        ->end()
+                                    ->end()
+                                ->end()
+                                ->arrayNode('validation_groups')
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->arrayNode('default')
+                                            ->prototype('scalar')->end()
+                                            ->defaultValue(['dhome'])
+                                        ->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode('collection_category')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode('options')->end()
+                                ->arrayNode('classes')
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode('model')->defaultValue(ProductCollectionCategory::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('interface')->defaultValue(ProductCollectionCategoryInterface::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->cannotBeEmpty()->end()
+                                        ->scalarNode('factory')->defaultValue(Factory::class)->end()
+                                        ->arrayNode('form')
+                                            ->addDefaultsIfNotSet()
+                                            ->children()
+                                                ->scalarNode('default')->defaultValue(ProductCollectionCategoryType::class)->cannotBeEmpty()->end()
                                                 ->scalarNode('choice')->defaultValue(ResourceChoiceType::class)->cannotBeEmpty()->end()
                                             ->end()
                                         ->end()
