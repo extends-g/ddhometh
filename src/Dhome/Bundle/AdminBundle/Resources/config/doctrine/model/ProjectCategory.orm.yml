@@ -24,7 +24,7 @@ Dhome\Bundle\AdminBundle\Model\ProjectCategory:
 
     oneToMany:
         projects:
-            targetEntity: Dhome\Bundle\AdminBundle\Model\ProjectInterface
+            targetEntity: Dhome\Bundle\AdminBundle\Model\Project
             mappedBy: category
             cascade: [all]
             orphanRemoval: true

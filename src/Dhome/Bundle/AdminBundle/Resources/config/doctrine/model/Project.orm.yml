@@ -40,15 +40,14 @@ Dhome\Bundle\AdminBundle\Model\Project:
                 timestampable:
                     on: update
 
-#    manyToOne:
-#        category:
-#            targetEntity: Dhome\Bundle\AdminBundle\Model\ProjectCategoryInterface
-#            inversedBy: projects
-#            joinColumn:
-#                nullable: false
-#                onDelete: "CASCADE"
-#                category_id:
-
-#                    referencedColumnName: id
+    manyToOne:
+        category:
+            targetEntity: Dhome\Bundle\AdminBundle\Model\ProjectCategory
+            inversedBy: projects
+            joinColumn:
+                nullable: false
+                onDelete: "CASCADE"
+                category_id:
+                    referencedColumnName: id
 
     lifecycleCallbacks: {  }
