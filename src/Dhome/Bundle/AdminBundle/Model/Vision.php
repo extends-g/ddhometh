@@ -4,6 +4,7 @@ namespace Dhome\Bundle\AdminBundle\Model;
 
 // todo: implement softdelete
 use Sylius\Component\Resource\Model\TimestampableTrait;
+use Sylius\Component\User\Model\UserInterface;
 
 class Vision implements VisionInterface
 {
@@ -30,19 +31,9 @@ class Vision implements VisionInterface
     protected $content;
 
     /**
-     * @var \DateTime
+     * @var UserInterface
      */
-    protected $createdAt;
-
-    /**
-     * @var \DateTime
-     */
-    protected $updatedAt;
-
-    /**
-     * @var \DateTime
-     */
-    protected $deletedAt;
+    protected $user;
 
     /**
      * {@inheritdoc}
@@ -103,32 +94,16 @@ class Vision implements VisionInterface
     /**
      * {@inheritdoc}
      */
-    public function setCreatedAt(\DateTime $createdAt)
+    public function getUser()
     {
-        $this->createdAt = $createdAt;
+        return $this->user;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getCreatedAt()
+    public function setUser(UserInterface $user = null)
     {
-        return $this->createdAt;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setUpdatedAt(\DateTime $updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
+        $this->user = $user;
     }
 }

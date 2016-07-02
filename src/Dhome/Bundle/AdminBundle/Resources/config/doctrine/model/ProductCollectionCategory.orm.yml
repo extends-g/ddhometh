@@ -28,5 +28,3 @@ Dhome\Bundle\AdminBundle\Model\ProductCollectionCategory:
             mappedBy: category
             cascade: [all]
             orphanRemoval: true
-
-    lifecycleCallbacks: {  }

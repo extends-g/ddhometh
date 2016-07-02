@@ -3,6 +3,7 @@
 namespace Dhome\Bundle\AdminBundle\Model;
 
 use Sylius\Component\Resource\Model\TimestampableTrait;
+use Sylius\Component\User\Model\UserInterface;
 
 class ProductCollection implements ProductCollectionInterface
 {
@@ -32,6 +33,11 @@ class ProductCollection implements ProductCollectionInterface
      * @var ProductCollectionCategoryInterface
      */
     protected $category;
+
+    /**
+     * @var UserInterface
+     */
+    protected $user;
 
     /**
      * {@inheritdoc}
@@ -103,5 +109,21 @@ class ProductCollection implements ProductCollectionInterface
     public function setCategory(ProductCollectionCategoryInterface $category)
     {
         $this->category = $category;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * [@inheritdoc}
+     */
+    public function setUser(UserInterface $user = null)
+    {
+        $this->user = $user;
     }
 }

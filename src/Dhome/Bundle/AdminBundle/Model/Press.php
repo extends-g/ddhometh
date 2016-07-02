@@ -3,6 +3,7 @@
 namespace Dhome\Bundle\AdminBundle\Model;
 
 use Sylius\Component\Resource\Model\TimestampableTrait;
+use Sylius\Component\User\Model\UserInterface;
 
 class Press implements PressInterface
 {
@@ -32,6 +33,11 @@ class Press implements PressInterface
      * @var PressCategoryInterface
      */
     protected $category;
+
+    /**
+     * @var UserInterface
+     */
+    protected $user;
 
     /**
      * {@inheritdoc}
@@ -103,5 +109,21 @@ class Press implements PressInterface
     public function setCategory(PressCategoryInterface $category)
     {
         $this->category = $category;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setUser(UserInterface $user = null)
+    {
+        $this->user = $user;
     }
 }
