@@ -3,11 +3,17 @@
 namespace Dhome\Bundle\AdminBundle\DependencyInjection;
 
 use Dhome\Bundle\AdminBundle\Controller\VisionController;
+use Dhome\Bundle\AdminBundle\Form\Type\PressCategoryType;
+use Dhome\Bundle\AdminBundle\Form\Type\PressType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProductCollectionCategoryType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProductCollectionType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProjectCategoryType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProjectType;
 use Dhome\Bundle\AdminBundle\Form\Type\VisionType;
+use Dhome\Bundle\AdminBundle\Model\Press;
+use Dhome\Bundle\AdminBundle\Model\PressCategory;
+use Dhome\Bundle\AdminBundle\Model\PressCategoryInterface;
+use Dhome\Bundle\AdminBundle\Model\PressInterface;
 use Dhome\Bundle\AdminBundle\Model\ProductCollection;
 use Dhome\Bundle\AdminBundle\Model\ProductCollectionCategory;
 use Dhome\Bundle\AdminBundle\Model\ProductCollectionCategoryInterface;
@@ -203,6 +209,70 @@ class Configuration implements ConfigurationInterface
                                             ->addDefaultsIfNotSet()
                                             ->children()
                                                 ->scalarNode('default')->defaultValue(ProductCollectionCategoryType::class)->cannotBeEmpty()->end()
+                                                ->scalarNode('choice')->defaultValue(ResourceChoiceType::class)->cannotBeEmpty()->end()
+                                            ->end()
+                                        ->end()
+                                    ->end()
+                                ->end()
+                                ->arrayNode('validation_groups')
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->arrayNode('default')
+                                            ->prototype('scalar')->end()
+                                            ->defaultValue(['dhome'])
+                                        ->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode('press')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode('options')->end()
+                                ->arrayNode('classes')
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode('model')->defaultValue(Press::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('interface')->defaultValue(PressInterface::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->cannotBeEmpty()->end()
+                                        ->scalarNode('factory')->defaultValue(Factory::class)->end()
+                                        ->arrayNode('form')
+                                            ->addDefaultsIfNotSet()
+                                            ->children()
+                                                ->scalarNode('default')->defaultValue(PressType::class)->cannotBeEmpty()->end()
+                                                ->scalarNode('choice')->defaultValue(ResourceChoiceType::class)->cannotBeEmpty()->end()
+                                            ->end()
+                                        ->end()
+                                    ->end()
+                                ->end()
+                                ->arrayNode('validation_groups')
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->arrayNode('default')
+                                            ->prototype('scalar')->end()
+                                            ->defaultValue(['dhome'])
+                                        ->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode('press_category')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode('options')->end()
+                                ->arrayNode('classes')
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode('model')->defaultValue(PressCategory::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('interface')->defaultValue(PressCategoryInterface::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->cannotBeEmpty()->end()
+                                        ->scalarNode('factory')->defaultValue(Factory::class)->end()
+                                        ->arrayNode('form')
+                                            ->addDefaultsIfNotSet()
+                                            ->children()
+                                                ->scalarNode('default')->defaultValue(PressCategoryType::class)->cannotBeEmpty()->end()
                                                 ->scalarNode('choice')->defaultValue(ResourceChoiceType::class)->cannotBeEmpty()->end()
                                             ->end()
                                         ->end()
