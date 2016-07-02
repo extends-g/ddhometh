@@ -30,6 +30,11 @@ class Press implements PressInterface
     protected $content;
 
     /**
+     * @var string
+     */
+    protected $videoLink;
+
+    /**
      * @var PressCategoryInterface
      */
     protected $category;
@@ -125,5 +130,21 @@ class Press implements PressInterface
     public function setUser(UserInterface $user = null)
     {
         $this->user = $user;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getVideoLink()
+    {
+        return $this->videoLink;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setVideoLink($videoLink)
+    {
+        $this->videoLink = $videoLink;
     }
 }

@@ -26,6 +26,11 @@ Dhome\Bundle\AdminBundle\Model\Vision:
         content:
             type: text
 
+        videoLink:
+            type: string
+            column: video_link
+            nullable: true
+
         createdAt:
             type: datetime
             column: created_at

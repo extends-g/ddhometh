@@ -37,4 +37,14 @@ interface VisionInterface extends ResourceInterface, TimestampableInterface, Use
      * @return string
      */
     public function getContent();
+
+    /**
+     * @return string
+     */
+    public function getVideoLink();
+
+    /**
+     * @param string $videoLink
+     */
+    public function setVideoLink($videoLink);
 }

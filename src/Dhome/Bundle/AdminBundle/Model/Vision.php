@@ -2,7 +2,6 @@
 
 namespace Dhome\Bundle\AdminBundle\Model;
 
-// todo: implement softdelete
 use Sylius\Component\Resource\Model\TimestampableTrait;
 use Sylius\Component\User\Model\UserInterface;
 
@@ -29,6 +28,11 @@ class Vision implements VisionInterface
      * @var string
      */
     protected $content;
+
+    /**
+     * @var string
+     */
+    protected $videoLink;
 
     /**
      * @var UserInterface
@@ -105,5 +109,21 @@ class Vision implements VisionInterface
     public function setUser(UserInterface $user = null)
     {
         $this->user = $user;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getVideoLink()
+    {
+        return $this->videoLink;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setVideoLink($videoLink)
+    {
+        $this->videoLink = $videoLink;
     }
 }

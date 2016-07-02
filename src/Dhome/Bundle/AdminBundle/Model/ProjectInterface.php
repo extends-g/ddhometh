@@ -47,4 +47,14 @@ interface ProjectInterface extends TimestampableInterface, ResourceInterface, Us
      * @param ProjectCategoryInterface $category
      */
     public function setCategory(ProjectCategoryInterface $category);
+
+    /**
+     * @return string
+     */
+    public function getVideoLink();
+
+    /**
+     * @param string $videoLink
+     */
+    public function setVideoLink($videoLink);
 }

@@ -47,4 +47,14 @@ interface ProductCollectionInterface extends TimestampableInterface, ResourceInt
      * @param ProductCollectionCategoryInterface $category
      */
     public function setCategory(ProductCollectionCategoryInterface $category);
+
+    /**
+     * @return string
+     */
+    public function getVideoLink();
+
+    /**
+     * @param string $videoLink
+     */
+    public function setVideoLink($videoLink);
 }

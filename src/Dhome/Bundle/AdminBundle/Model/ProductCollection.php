@@ -30,6 +30,11 @@ class ProductCollection implements ProductCollectionInterface
     protected $content;
 
     /**
+     * @var string
+     */
+    protected $videoLink;
+
+    /**
      * @var ProductCollectionCategoryInterface
      */
     protected $category;
@@ -125,5 +130,21 @@ class ProductCollection implements ProductCollectionInterface
     public function setUser(UserInterface $user = null)
     {
         $this->user = $user;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getVideoLink()
+    {
+        return $this->videoLink;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setVideoLink($videoLink)
+    {
+        $this->videoLink = $videoLink;
     }
 }

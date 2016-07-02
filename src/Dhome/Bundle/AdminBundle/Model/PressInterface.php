@@ -47,4 +47,14 @@ interface PressInterface extends TimestampableInterface, ResourceInterface, User
      * @param PressCategoryInterface $category
      */
     public function setCategory(PressCategoryInterface $category);
+
+    /**
+     * @return string
+     */
+    public function getVideoLink();
+
+    /**
+     * @param string $videoLink
+     */
+    public function setVideoLink($videoLink);
 }
