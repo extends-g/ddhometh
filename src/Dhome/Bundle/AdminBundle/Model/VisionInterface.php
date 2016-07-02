@@ -4,8 +4,9 @@ namespace Dhome\Bundle\AdminBundle\Model;
 
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
+use Sylius\Component\User\Model\UserAwareInterface;
 
-interface VisionInterface extends ResourceInterface, TimestampableInterface
+interface VisionInterface extends ResourceInterface, TimestampableInterface, UserAwareInterface
 {
     /**
      * @param string $title

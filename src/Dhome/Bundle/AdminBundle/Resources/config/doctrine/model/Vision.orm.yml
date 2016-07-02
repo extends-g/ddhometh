@@ -40,4 +40,7 @@ Dhome\Bundle\AdminBundle\Model\Vision:
                 timestampable:
                     on: update
 
-    lifecycleCallbacks: {  }
+    manyToOne:
+        user:
+            targetEntity: Sylius\Component\User\Model\User
+            nullable: false

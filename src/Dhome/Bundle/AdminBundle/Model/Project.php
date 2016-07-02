@@ -3,6 +3,7 @@
 namespace Dhome\Bundle\AdminBundle\Model;
 
 use Sylius\Component\Resource\Model\TimestampableTrait;
+use Sylius\Component\User\Model\UserInterface;
 
 class Project implements ProjectInterface
 {
@@ -32,6 +33,11 @@ class Project implements ProjectInterface
      * @var ProjectCategoryInterface
      */
     protected $category;
+
+    /**
+     * @var UserInterface
+     */
+    protected $user;
 
     /**
      * {@inheritdoc}
@@ -103,5 +109,21 @@ class Project implements ProjectInterface
     public function setCategory(ProjectCategoryInterface $category)
     {
         $this->category = $category;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * [@inheritdoc}
+     */
+    public function setUser(UserInterface $user = null)
+    {
+        $this->user = $user;
     }
 }

@@ -50,4 +50,6 @@ Dhome\Bundle\AdminBundle\Model\Press:
                 category_id:
                     referencedColumnName: id
 
-    lifecycleCallbacks: {  }
+        user:
+            targetEntity: Sylius\Component\User\Model\User
+            nullable: false

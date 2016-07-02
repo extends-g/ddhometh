@@ -11,9 +11,21 @@ use Dhome\Bundle\AdminBundle\Model\ProjectInterface;
 use Dhome\Bundle\AdminBundle\Model\VisionInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Dhome\Bundle\FixturesBundle\DataFixtures\DataFixture;
+use Sylius\Component\User\Model\UserInterface;
 
 class AdminBundle extends DataFixture
 {
+    /**
+     * @return null|UserInterface
+     */
+    public function getDemoUser()
+    {
+        return $this->container
+            ->get('sylius.repository.user')
+            ->findOneBy(['username' => 'admin'])
+            ;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -66,6 +78,8 @@ class AdminBundle extends DataFixture
         // todo faker html content
         $vision->setContent($this->faker->text(200));
 
+        $vision->setUser($this->getDemoUser());
+
         $this->setReference('vision' . $i, $vision);
 
         return $vision;
@@ -110,6 +124,7 @@ class AdminBundle extends DataFixture
         /** @var ProjectCategoryInterface $category */
         $category = $this->getReference('project_category' . rand(1, 4));
         $project->setCategory($category);
+        $project->setUser($this->getDemoUser());
 
         $this->setReference('project' . $i, $project);
 
@@ -154,6 +169,7 @@ class AdminBundle extends DataFixture
         /** @var ProductCollectionCategoryInterface $category */
         $category = $this->getReference('collection_category' . rand(1, 4));
         $collection->setCategory($category);
+        $collection->setUser($this->getDemoUser());
 
         $this->setReference('collection' . $i, $collection);
 
@@ -193,6 +209,7 @@ class AdminBundle extends DataFixture
         /** @var PressCategoryInterface $category */
         $category = $this->getReference('press_category' . rand(1, 4));
         $press->setCategory($category);
+        $press->setUser($this->getDemoUser());
 
         $this->setReference('press' . $i, $press);
 
