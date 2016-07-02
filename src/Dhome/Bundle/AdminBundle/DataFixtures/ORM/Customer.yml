@@ -1,0 +1,12 @@
+Sylius\Component\User\Model\Customer:
+    customer{super, admin, staff, user}:
+        firstName: <firstName()>
+        lastName: <lastName()>
+        email: <current()>@ddhometh.com
+
+    customer{1..10}:
+        firstName: <firstName()>
+        lastName: <lastName()>
+        email: <email()>
+        addGroup: [@group1]
+        gender: <randomElement(['u', 'm', 'f'])>

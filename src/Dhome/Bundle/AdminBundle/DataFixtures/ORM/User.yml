@@ -1,0 +1,35 @@
+Sylius\Component\User\Model\User:
+    user{super}:
+        username: <current()>
+        enabled: true
+        customer: @customer<current()>
+        setPlainPassword: [<current()>8jt]
+        addRole: [ROLE_SUPER]
+
+    user{admin}:
+        username: <current()>
+        enabled: true
+        customer: @customer<current()>
+        setPlainPassword: [<current()>8jt]
+        addRole: [ROLE_ADMIN]
+
+    user{staff}:
+        username: <current()>
+        enabled: true
+        customer: @customer<current()>
+        setPlainPassword: [<current()>8jt]
+        addRole: [ROLE_STAFF]
+
+    user{user}:
+        username: <current()>
+        enabled: true
+        customer: @customer<current()>
+        setPlainPassword: [<current()>8jt]
+        addRole: [ROLE_USER]
+
+    user{1..10}:
+        username: <username()>
+        enabled: true
+        customer: @customer<current()>
+        setPlainPassword: [<current()>8jt]
+        addRole: [ROLE_USER]

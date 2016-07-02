@@ -27,6 +27,9 @@ class AppKernel extends Kernel
             new \JMS\SerializerBundle\JMSSerializerBundle(),
 
             new \Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
+            new \Sylius\Bundle\UserBundle\SyliusUserBundle(),
+            new \Sylius\Bundle\MailerBundle\SyliusMailerBundle(),
+
             new \Dhome\Bundle\AdminBundle\DhomeAdminBundle(),
             new \Dhome\Bundle\WebBundle\DhomeWebBundle(),
             new \Dhome\Bundle\FixturesBundle\DhomeFixturesBundle(),
@@ -38,6 +41,7 @@ class AppKernel extends Kernel
             $bundles[] = new \Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new \Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+            $bundles[] = new \Hautelook\AliceBundle\HautelookAliceBundle();
         }
 
         return $bundles;
