@@ -1,7 +1,8 @@
-dhome_homepage:
-    path: /
-    defaults: { _controller: DhomeWebBundle:Frontend:index }
-
 dhome_admin:
     resource: "@DhomeAdminBundle/Resources/config/routing.yml"
     prefix:   /
+
+dhome_web:
+    resource: "@DhomeWebBundle/Resources/config/routing.yml"
+    prefix:   /
+    
