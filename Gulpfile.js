@@ -35,7 +35,6 @@ var paths = {
         fonts: [
         ],
         copy: [
-            'node_modules/tinymce/**'
         ]
     },
     web: {
@@ -57,7 +56,8 @@ var paths = {
             'web/ui/web/img/**'
         ],
         fonts: [
-            'node_modules/font-awesome/fonts/**'
+            'node_modules/font-awesome/fonts/**',
+            'web/ui/web/fonts/**'
         ]
     }
 };

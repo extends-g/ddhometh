@@ -1,1 +1,37 @@
 $ddh-base-body: #656565;
+$ddh-base-text: #fff;
+
+@font-face {
+    font-family: NeueHansKendrick;
+    src: url('../fonts/neuehanskendrick-bold.woff') format('woff');
+    src: url('../fonts/neuehanskendrick-bold.woff2') format('woff2');
+    src: url('../fonts/NeueHansKendrick-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: NeueHansKendrick_bold;
+    src: url('../fonts/neuehanskendrick-bold.woff') format('woff');
+    src: url('../fonts/neuehanskendrick-bold.woff2') format('woff2');
+    src: url('../fonts/NeueHansKendrick-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: NeueHansKendrick_light;
+    src: url('../fonts/neuehanskendrick-light.woff') format('woff');
+    src: url('../fonts/neuehanskendrick-light.woff2') format('woff2');
+    src: url('../fonts/NeueHansKendrick-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: NeueHansKendrick_thin;
+    src: url('../fonts/neuehanskendrick-thin.woff') format('woff');
+    src: url('../fonts/neuehanskendrick-light.woff2') format('woff2');
+    src: url('../fonts/NeueHansKendrick-Light.ttf') format('truetype');
+}
+
+body {
+    background: transparent;
+    font-family: 'NeueHansKendrick', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.3rem;
+}

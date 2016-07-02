@@ -5,7 +5,7 @@
     "main": "index.js",
     "dependencies": {
         "jquery": "^2.2.0",
-        "bootstrap": "^3.3.6",
+        "bootstrap": "4.0.0-alpha.2",
         "font-awesome": "^4.6.3",
         "gulp": "^3.9.1",
         "gulp-concat": "^2.6.0",
