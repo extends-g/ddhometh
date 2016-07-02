@@ -8,6 +8,6 @@ class FrontendController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('DhomeWebBundle::index.html.twig');
+        return $this->render('DhomeWebBundle::web/index.html.twig');
     }
 }
