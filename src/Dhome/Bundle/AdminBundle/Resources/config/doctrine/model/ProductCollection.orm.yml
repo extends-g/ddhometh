@@ -1,0 +1,53 @@
+Dhome\Bundle\AdminBundle\Model\ProductCollection:
+    type: entity
+    table: dhome_collection
+
+    gedmo:
+        loggable: true
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            length: 100
+
+        shortDescription:
+            type: string
+            length: 255
+            column: short_description
+            nullable: true
+
+        content:
+            type: text
+
+        createdAt:
+            type: datetime
+            column: created_at
+            gedmo:
+                timestampable:
+                    on: create
+
+        updatedAt:
+            type: datetime
+            column: updated_at
+            gedmo:
+                timestampable:
+                    on: update
+
+    manyToOne:
+        category:
+            targetEntity: Dhome\Bundle\AdminBundle\Model\ProductCollectionCategory
+            inversedBy: productCollections
+            joinColumn:
+                nullable: false
+                onDelete: "CASCADE"
+                category_id:
+                    referencedColumnName: id
+
+    lifecycleCallbacks: {  }

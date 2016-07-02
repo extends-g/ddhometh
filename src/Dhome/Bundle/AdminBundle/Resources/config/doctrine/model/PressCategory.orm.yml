@@ -1,0 +1,32 @@
+Dhome\Bundle\AdminBundle\Model\PressCategory:
+    type: entity
+    table: dhome_press_category
+
+    gedmo:
+        loggable: true
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            length: 50
+
+        icon:
+            type: string
+            length: 20
+            nullable: true
+
+    oneToMany:
+        presses:
+            targetEntity: Dhome\Bundle\AdminBundle\Model\Press
+            mappedBy: category
+            cascade: [all]
+            orphanRemoval: true
+
+    lifecycleCallbacks: {  }
