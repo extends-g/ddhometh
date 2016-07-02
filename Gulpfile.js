@@ -19,26 +19,13 @@ var paths = {
     admin: {
         js: [
             'node_modules/jquery/dist/jquery.min.js',
-            'web/ui/admin/admin-semantic-ui/css/ui/semantic.min.js',
-            'node_modules/select2/dist/js/select2.full.min.js',
-            'node_modules/simplemde/dist/simplemde.min.js',
-            'vendor/sylius/ui-bundle/Resources/private/js/**',
             'web/ui/admin/js/**',
             'web/ui/admin/app.js'
         ],
         sass: [
-            'vendor/sylius/ui-bundle/Resources/private/sass/**',
             'web/ui/admin/sass/**'
         ],
         css: [
-            'web/ui/admin/admin-semantic-ui/css/ui/components/image.min.css',
-            'web/ui/admin/admin-semantic-ui/css/ui/components/transition.min.css',
-            'web/ui/admin/admin-semantic-ui/css/ui/components/default/checkbox.min.css',
-            'web/ui/admin/admin-semantic-ui/css/ui/components/github/*.css',
-            // orderride icon with default
-            'web/ui/admin/admin-semantic-ui/css/ui/components/icon.min.css',
-            'node_modules/simplemde/dist/simplemde.min.css',
-            'node_modules/select2/dist/css/select2.min.css',
             'web/ui/admin/css/**'
         ],
         img: [
@@ -53,16 +40,8 @@ var paths = {
     },
     web: {
         js: [
-            'node_modules/modernizr/dist/jquery.min.js',
             'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/flickity/dist/flickity.pkgd.min.js',
-            //'node_modules/jquery-mobile/dist/jquery.mobile.min.js',
-            'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
-            'node_modules/bootstrap-notify/bootstrap-notify.min.js',
-            'node_modules/fastclick/lib/fastclick.js',
-            'node_modules/prefixfree/prefixfree.min.js',
-            'node_modules/magnify/dist/js/jquery.magnify.js',
             'web/ui/web/js/**',
             'web/ui/web/app.js'
         ],
@@ -70,11 +49,7 @@ var paths = {
             'web/ui/web/sass/**'
         ],
         css: [
-            'node_modules/flickity/dist/flickity.min.css',
-            //'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
-            'node_modules/animate.css/animate.min.css',
-            'node_modules/magnify/dist/css/magnify.css',
             'web/ui/web/css/**'
         ],
         img: [
@@ -96,7 +71,6 @@ gulp.task('admin-js', function() {
 });
 
 gulp.task('admin-css', function() {
-    gulp.src(['web/ui/admin/admin-semantic-ui/css/ui/themes/**/*']).pipe(gulp.dest(adminRootPath + 'themes/'));
 
     var cssStream = gulp.src(paths.admin.css)
         .pipe(concat('css-files.css'));
