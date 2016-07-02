@@ -1,3 +1,8 @@
 imports:
     - { resource: doctrine.yml }
     - { resource: stof_doctrine_extensions.yml }
+
+doctrine:
+    orm:
+        resolve_target_entities:
+            Sylius\Component\User\Model\UserInterface: Sylius\Component\User\Model\User

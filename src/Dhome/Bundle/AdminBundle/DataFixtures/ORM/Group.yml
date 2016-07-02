@@ -1,0 +1,3 @@
+Sylius\Component\User\Model\Group:
+    group1:
+        name: General
