@@ -1,0 +1,5 @@
+#cmf_media:
+#    persistence:
+#        phpcr:
+#            media_basepath: /cms/medias
+#            enabled: true

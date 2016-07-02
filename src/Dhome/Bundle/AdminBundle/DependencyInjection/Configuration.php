@@ -41,7 +41,7 @@ class Configuration implements ConfigurationInterface
     {
 
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('dhome');
+        $rootNode = $treeBuilder->root('dhome_admin');
 
         $rootNode
             ->children()

@@ -1,6 +1,7 @@
 imports:
     - { resource: doctrine.yml }
     - { resource: stof_doctrine_extensions.yml }
+    - { resource: cmf.yml }
 
 doctrine:
     orm:

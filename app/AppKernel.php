@@ -15,6 +15,7 @@ class AppKernel extends Kernel
             new \Symfony\Bundle\MonologBundle\MonologBundle(),
             new \Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new \Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+            new \Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
 
             new \Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
@@ -32,6 +33,7 @@ class AppKernel extends Kernel
             new \Sylius\Bundle\SettingsBundle\SyliusSettingsBundle(),
 
             new \Dhome\Bundle\AdminBundle\DhomeAdminBundle(),
+            new \Dhome\Bundle\MediaBundle\DhomeMediaBundle(),
             new \Dhome\Bundle\WebBundle\DhomeWebBundle(),
             new \Dhome\Bundle\FixturesBundle\DhomeFixturesBundle(),
         );
