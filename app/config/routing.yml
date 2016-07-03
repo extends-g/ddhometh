@@ -5,4 +5,15 @@ dhome_admin:
 dhome_web:
     resource: "@DhomeWebBundle/Resources/config/routing.yml"
     prefix:   /
-    
+
+cmf_media_file:
+    resource: "@CmfMediaBundle/Resources/config/routing/file.xml"
+
+cmf_media_image:
+    resource: "@CmfMediaBundle/Resources/config/routing/image.xml"
+
+cmf_create:
+    resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"
+
+cmf_create_image:
+    resource: "@CmfCreateBundle/Resources/config/routing/image.xml"

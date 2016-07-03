@@ -15,12 +15,14 @@ class AppKernel extends Kernel
             new \Symfony\Bundle\MonologBundle\MonologBundle(),
             new \Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new \Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+            new \Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new \Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
 
             new \Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new \Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
             new \Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new \Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
 
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 

@@ -1,5 +1,12 @@
-#cmf_media:
-#    persistence:
-#        phpcr:
-#            media_basepath: /cms/medias
-#            enabled: true
+cmf_create:
+    security:
+      role: ROLE_ADMIN
+    persistence:
+        phpcr:
+            image: false
+
+cmf_media:
+    persistence:
+        phpcr:
+            media_basepath: /cms/medias
+            enabled: true

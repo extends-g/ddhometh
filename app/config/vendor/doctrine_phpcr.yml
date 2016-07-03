@@ -1,0 +1,14 @@
+doctrine_phpcr:
+    session:
+        username: %phpcr_user%
+        password: %phpcr_password%
+        workspace: default
+        backend:
+            type: doctrinedbal
+            connection: default
+            caches:
+                meta: doctrine_cache.providers.phpcr_meta
+                nodes: doctrine_cache.providers.phpcr_nodes
+    odm:
+        auto_mapping: true
+        auto_generate_proxy_classes: %kernel.debug%
