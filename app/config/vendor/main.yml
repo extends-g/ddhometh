@@ -1,6 +1,9 @@
 imports:
     - { resource: doctrine.yml }
     - { resource: stof_doctrine_extensions.yml }
+    - { resource: cmf.yml }
+    - { resource: doctrine_phpcr.yml }
+    - { resource: doctrine_cache.yml }
 
 doctrine:
     orm:

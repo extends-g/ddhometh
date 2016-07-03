@@ -1,6 +1,6 @@
-Dhome\Bundle\AdminBundle\Model\Vision:
+Dhome\Bundle\MediaBundle\Model\ProjectImage:
     type: entity
-    table: dhome_vision
+    table: dhome_project_image
 
     gedmo:
         loggable: true
@@ -17,19 +17,8 @@ Dhome\Bundle\AdminBundle\Model\Vision:
             type: string
             length: 100
 
-        subTitle:
-            type: string
-            length: 255
-            column: sub_title
-            nullable: true
-
-        content:
-            type: text
-
-        videoLink:
-            type: string
-            column: video_link
-            nullable: true
+        position:
+            type: integer
 
         createdAt:
             type: datetime
@@ -45,18 +34,16 @@ Dhome\Bundle\AdminBundle\Model\Vision:
                 timestampable:
                     on: update
 
-    oneToMany:
-        images:
-            targetEntity: Dhome\Bundle\MediaBundle\Model\VisionImage
+    manyToOne:
+        image:
+            targetEntity: Dhome\Bundle\MediaBundle\Model\Image
             cascade: [all]
-            mappedBy: vision
             joinColumn:
                 nullable: true
                 onDelete: "CASCADE"
                 image_id:
                     referencedColumnName: id
 
-    manyToOne:
-        user:
-            targetEntity: Sylius\Component\User\Model\User
-            nullable: false
+        project:
+            targetEntity: Dhome\Bundle\AdminBundle\Model\Project
+            inversedBy: images

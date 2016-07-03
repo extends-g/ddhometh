@@ -26,6 +26,11 @@ Dhome\Bundle\AdminBundle\Model\Press:
         content:
             type: text
 
+        videoLink:
+            type: string
+            column: video_link
+            nullable: true
+
         createdAt:
             type: datetime
             column: created_at
@@ -39,6 +44,17 @@ Dhome\Bundle\AdminBundle\Model\Press:
             gedmo:
                 timestampable:
                     on: update
+
+    oneToMany:
+        images:
+            targetEntity: Dhome\Bundle\MediaBundle\Model\PressImage
+            cascade: [all]
+            mappedBy: press
+            joinColumn:
+                nullable: true
+                onDelete: "CASCADE"
+                image_id:
+                    referencedColumnName: id
 
     manyToOne:
         category:

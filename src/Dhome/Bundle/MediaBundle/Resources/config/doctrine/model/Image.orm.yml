@@ -1,0 +1,32 @@
+Dhome\Bundle\MediaBundle\Model\Image:
+    type: entity
+    table: dhome_image
+
+    gedmo:
+        loggable: true
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        mediaId:
+            type: string
+            column: media_id
+
+        createdAt:
+            type: datetime
+            column: created_at
+            gedmo:
+                timestampable:
+                    on: create
+
+        updatedAt:
+            type: datetime
+            column: updated_at
+            gedmo:
+                timestampable:
+                    on: update
