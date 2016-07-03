@@ -3,6 +3,7 @@
     margin-bottom: 0;
     text-align: center;
     color: $ddh-base-text;
+    padding: .5rem 1rem 0 .5rem;
 
     &__comp {
         &--logo {
@@ -20,29 +21,40 @@
 
     &__menu {
         padding-left: 0;
-        margin: 1rem 0;
+        margin: 1rem 0 0;
         list-style: none;
         display: block;
 
         li {
             display: inline-block;
-            padding: 1rem .5rem 0 .5rem;
-
-            &:after {
-                content: '|';
-                padding-left: 1rem;
-            }
-
-            &:last-child {
-                &:after {
-                    content: '';
-                }
-            }
 
             a {
                 font-family: 'NeueHansKendrick_thin';
                 color: $ddh-base-text;
                 font-size: 0.8rem;
+                margin: 1rem .5rem;
+                display: block;
+            }
+        }
+
+        &--toggle {
+            margin-left: 0;
+            max-height: 2rem;
+
+            ul {
+                left: auto;
+                background: $ddh-base-body;
+                border-radius: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            li {
+                display: block;
+            }
+
+            &:hover > ul.dropdown-menu {
+                display: block;
             }
         }
     }

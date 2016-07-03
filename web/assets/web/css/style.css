@@ -37,13 +37,18 @@
 body {
   background: transparent;
   font-family: 'NeueHansKendrick', Helvetica, Arial, sans-serif;
-  letter-spacing: 0.3rem; }
+  letter-spacing: 0.2rem; }
+
+a:hover {
+  opacity: .8;
+  text-decoration: none; }
 
 .navbar {
   background: #656565;
   margin-bottom: 0;
   text-align: center;
-  color: #fff; }
+  color: #fff;
+  padding: .5rem 1rem 0 .5rem; }
   .navbar__comp--logo {
     font-size: 1.2rem; }
   .navbar__comp--name {
@@ -54,18 +59,33 @@ body {
     font-size: 0.6rem; }
   .navbar__menu {
     padding-left: 0;
-    margin: 1rem 0;
+    margin: 1rem 0 0;
     list-style: none;
     display: block; }
     .navbar__menu li {
-      display: inline-block;
-      padding: 1rem .5rem 0 .5rem; }
-      .navbar__menu li:after {
-        content: '|';
-        padding-left: 1rem; }
-      .navbar__menu li:last-child:after {
-        content: ''; }
+      display: inline-block; }
       .navbar__menu li a {
         font-family: 'NeueHansKendrick_thin';
         color: #fff;
-        font-size: 0.8rem; }
+        font-size: 0.8rem;
+        margin: 1rem .5rem;
+        display: block; }
+    .navbar__menu--toggle {
+      margin-left: 0;
+      max-height: 2rem; }
+      .navbar__menu--toggle ul {
+        left: auto;
+        background: #656565;
+        border-radius: 0;
+        margin: 0;
+        list-style: none; }
+      .navbar__menu--toggle li {
+        display: block; }
+      .navbar__menu--toggle:hover > ul.dropdown-menu {
+        display: block; }
+
+footer {
+  background: #656565;
+  padding: 1rem;
+  margin: 0 auto;
+  text-align: center; }
