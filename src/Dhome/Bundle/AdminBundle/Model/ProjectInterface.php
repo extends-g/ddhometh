@@ -2,6 +2,8 @@
 
 namespace Dhome\Bundle\AdminBundle\Model;
 
+use Dhome\Bundle\MediaBundle\Model\ProjectImageInterface;
+use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
 use Sylius\Component\User\Model\UserAwareInterface;
@@ -57,4 +59,31 @@ interface ProjectInterface extends TimestampableInterface, ResourceInterface, Us
      * @param string $videoLink
      */
     public function setVideoLink($videoLink);
+
+    /**
+     * @return Collection|ProjectImageInterface[]
+     */
+    public function getImages();
+
+    /**
+     * @param Collection|ProjectImageInterface[] $images
+     */
+    public function setImages(Collection $images);
+
+    /**
+     * @param ProjectImageInterface $image
+     *
+     * @return boolean
+     */
+    public function hasImage(ProjectImageInterface $image);
+
+    /**
+     * @param ProjectImageInterface $image
+     */
+    public function addImage(ProjectImageInterface $image);
+
+    /**
+     * @param ProjectImageInterface $image
+     */
+    public function removeImage(ProjectImageInterface $image);
 }

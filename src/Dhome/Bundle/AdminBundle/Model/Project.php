@@ -2,6 +2,9 @@
 
 namespace Dhome\Bundle\AdminBundle\Model;
 
+use Dhome\Bundle\MediaBundle\Model\ProjectImageInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 use Sylius\Component\User\Model\UserInterface;
 
@@ -43,6 +46,16 @@ class Project implements ProjectInterface
      * @var UserInterface
      */
     protected $user;
+
+    /**
+     * @var Collection|ProjectImageInterface[]
+     */
+    protected $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     /**
      * {@inheritdoc}
@@ -146,5 +159,60 @@ class Project implements ProjectInterface
     public function setVideoLink($videoLink)
     {
         $this->videoLink = $videoLink;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setImages(Collection $images)
+    {
+        if (!$images instanceof Collection) {
+            $images = new ArrayCollection($images);
+        }
+
+        /** @var ProjectImageInterface $image */
+        foreach($images as $image) {
+            $image->setProject($this);
+        }
+
+        $this->images = $images;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasImage(ProjectImageInterface $image)
+    {
+        return $this->images->contains($image);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addImage(ProjectImageInterface $image)
+    {
+        if (!$this->hasImage($image)) {
+            $image->setProject($this);
+            $this->images->add($image);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeImage(ProjectImageInterface $image)
+    {
+        if ($this->hasImage($image)) {
+            $image->setImage(null);
+            $this->images->removeElement($image);
+        }
     }
 }

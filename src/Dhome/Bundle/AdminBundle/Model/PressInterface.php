@@ -2,6 +2,8 @@
 
 namespace Dhome\Bundle\AdminBundle\Model;
 
+use Dhome\Bundle\MediaBundle\Model\PressImageInterface;
+use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
 use Sylius\Component\User\Model\UserAwareInterface;
@@ -57,4 +59,31 @@ interface PressInterface extends TimestampableInterface, ResourceInterface, User
      * @param string $videoLink
      */
     public function setVideoLink($videoLink);
+
+    /**
+     * @return Collection|PressImageInterface[]
+     */
+    public function getImages();
+
+    /**
+     * @param Collection|PressImageInterface[] $images
+     */
+    public function setImages(Collection $images);
+
+    /**
+     * @param PressImageInterface $image
+     *
+     * @return boolean
+     */
+    public function hasImage(PressImageInterface $image);
+
+    /**
+     * @param PressImageInterface $image
+     */
+    public function addImage(PressImageInterface $image);
+
+    /**
+     * @param PressImageInterface $image
+     */
+    public function removeImage(PressImageInterface $image);
 }

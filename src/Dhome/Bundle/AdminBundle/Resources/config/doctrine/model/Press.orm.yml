@@ -45,6 +45,17 @@ Dhome\Bundle\AdminBundle\Model\Press:
                 timestampable:
                     on: update
 
+    oneToMany:
+        images:
+            targetEntity: Dhome\Bundle\MediaBundle\Model\PressImage
+            cascade: [all]
+            mappedBy: press
+            joinColumn:
+                nullable: true
+                onDelete: "CASCADE"
+                image_id:
+                    referencedColumnName: id
+
     manyToOne:
         category:
             targetEntity: Dhome\Bundle\AdminBundle\Model\PressCategory

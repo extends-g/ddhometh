@@ -44,6 +44,16 @@ Dhome\Bundle\AdminBundle\Model\Project:
             gedmo:
                 timestampable:
                     on: update
+    oneToMany:
+        images:
+            targetEntity: Dhome\Bundle\MediaBundle\Model\ProjectImage
+            cascade: [all]
+            mappedBy: project
+            joinColumn:
+                nullable: true
+                onDelete: "CASCADE"
+                image_id:
+                    referencedColumnName: id
 
     manyToOne:
         category:

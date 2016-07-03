@@ -44,6 +44,16 @@ Dhome\Bundle\AdminBundle\Model\ProductCollection:
             gedmo:
                 timestampable:
                     on: update
+    oneToMany:
+        images:
+            targetEntity: Dhome\Bundle\MediaBundle\Model\CollectionImage
+            cascade: [all]
+            mappedBy: collection
+            joinColumn:
+                nullable: true
+                onDelete: "CASCADE"
+                image_id:
+                    referencedColumnName: id
 
     manyToOne:
         category:
