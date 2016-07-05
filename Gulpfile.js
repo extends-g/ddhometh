@@ -19,6 +19,7 @@ var paths = {
     admin: {
         js: [
             'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'web/ui/admin/js/**',
             'web/ui/admin/app.js'
         ],
@@ -26,6 +27,8 @@ var paths = {
             'web/ui/admin/sass/**'
         ],
         css: [
+            'node_modules/font-awesome/css/font-awesome.min.css',
+            'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'web/ui/admin/css/**'
         ],
         img: [
@@ -33,6 +36,7 @@ var paths = {
             'web/ui/admin/img/**'
         ],
         fonts: [
+            'node_modules/font-awesome/fonts/**'
         ],
         copy: [
         ]

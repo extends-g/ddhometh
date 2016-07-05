@@ -1,6 +1,6 @@
 {
     "name": "extensionglobal/ddhometh",
-    "license": "extension-global",
+    "license": "wannaporn",
     "type": "project",
     "autoload": {
         "psr-4": {
