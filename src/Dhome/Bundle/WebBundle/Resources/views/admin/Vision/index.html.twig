@@ -1,1 +1,48 @@
-Admin index!.
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>{{ 'Vision Manage'|trans }}</h2>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn btn-secondary" href="#" role="button"><i class="fa fa-plus">  Create new</i></a>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ 'No.'|trans }}</th>
+                <th>{{ 'Title'|trans }}</th>
+                <th>{{ 'Content'|trans }}</th>
+                <th>{{ 'Created at'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for vision in visions %}
+            <tr>
+                <td>{{ vision.id }}</td>
+                <td>{{ vision.title }}</td>
+                <td>{{ vision.content }}</td>
+                <td>{{ vision.createdAt|date }}</td>
+            </tr>
+            {% else %}
+                No data.
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if visions %}
+        <div class="paginator-bottom">
+            <nav>
+                {{ pagerfanta(visions, 'twitter_bootstrap3_translated', {
+                    css_container_class: 'pagination',
+                    prev_message: '&larr;',
+                    next_message: '&rarr;'
+                }|merge(options|default({}))) }}
+            </nav>
+        </div>
+    {% endif %}
+{% endblock %}

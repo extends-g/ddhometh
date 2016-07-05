@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new \Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
 
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new \WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
             new \FOS\RestBundle\FOSRestBundle(),
             new \JMS\SerializerBundle\JMSSerializerBundle(),

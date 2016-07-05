@@ -61,7 +61,8 @@
         "sylius/rbac": "0.18.0",
         "sylius/rbac-bundle": "0.18.0",
         "sylius/user": "0.18.0",
-        "sylius/user-bundle": "0.18.0"
+        "sylius/user-bundle": "0.18.0",
+        "sylius/ui-bundle": "0.18.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

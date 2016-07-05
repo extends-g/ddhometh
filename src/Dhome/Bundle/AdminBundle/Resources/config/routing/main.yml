@@ -1,0 +1,2 @@
+dhome_admin_vision:
+    resource: "@DhomeAdminBundle/Resources/config/routing/vision.yml"
