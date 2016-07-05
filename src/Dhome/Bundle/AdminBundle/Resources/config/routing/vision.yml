@@ -16,3 +16,12 @@ dhome_admin_visions_create:
         _sylius:
             template: DhomeWebBundle::admin/Vision/create.html.twig
             redirect: dhome_admin_visions_index
+
+dhome_admin_visions_update:
+    path: /{id}/update
+    methods: [GET, PUT, PATCH, POST]
+    defaults:
+        _controller: dhome.controller.vision:updateAction
+        _sylius:
+            template: DhomeWebBundle::admin/Vision/update.html.twig
+            redirect: dhome_admin_visions_index

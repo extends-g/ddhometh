@@ -3,12 +3,12 @@
 {% block content %}
     <div class="row">
         <div class="col-lg-12">
-            <h2><i class="fa fa-plus">{{ 'Add new vision'|trans }}</i></h2>
+            <h2><i class="fa fa-plus">{{ 'Edit vision'|trans }}</i></h2>
         </div>
     </div>
 
     {{ form_start(form, {
-        'action': path('dhome_admin_visions_create'),
+        'action': path('dhome_admin_visions_update', {id: vision.id}),
         'attr': {'class': 'ui form', 'novalidate': 'novalidate'}
     }) }}
 
