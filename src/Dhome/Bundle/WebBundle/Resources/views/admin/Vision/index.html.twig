@@ -1,12 +1,13 @@
 {% extends 'DhomeWebBundle:admin:layout.html.twig' %}
 
 {% block content %}
+
     <div class="row">
         <div class="col-lg-8">
             <h2>{{ 'Vision Manage'|trans }}</h2>
         </div>
         <div class="col-lg-4">
-            <a class="btn btn-secondary" href="#" role="button"><i class="fa fa-plus">  Create new</i></a>
+            <a class="btn btn-secondary" href="{{ path('dhome_admin_visions_create') }}" role="button"><i class="fa fa-plus">  Create new</i></a>
         </div>
     </div>
     <div class="table-responsive">

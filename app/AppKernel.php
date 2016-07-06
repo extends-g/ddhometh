@@ -29,6 +29,7 @@ class AppKernel extends Kernel
 
             new \FOS\RestBundle\FOSRestBundle(),
             new \JMS\SerializerBundle\JMSSerializerBundle(),
+            new \Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
 
             new \Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
             new \Sylius\Bundle\UserBundle\SyliusUserBundle(),

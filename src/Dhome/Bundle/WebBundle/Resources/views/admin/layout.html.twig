@@ -33,6 +33,7 @@
         </div>
 
         {% block javascripts %}
+            {{ tinymce_init() }}
             <script src="{{ asset('assets/admin/js/app.js') }}"></script>
         {% endblock javascripts %}
     </body>

@@ -6,6 +6,8 @@ dhome_admin_visions_index:
         _sylius:
             template: DhomeWebBundle::admin/Vision/index.html.twig
             sortable: true
+            sorting:
+                id: ASC
             filterable: true
 
 dhome_admin_visions_create:

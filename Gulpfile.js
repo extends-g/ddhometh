@@ -39,6 +39,7 @@ var paths = {
             'node_modules/font-awesome/fonts/**'
         ],
         copy: [
+            ['tinymce', 'node_modules/tinymce/**']
         ]
     },
     web: {
@@ -106,8 +107,22 @@ gulp.task('admin-fonts', function() {
 });
 
 gulp.task('admin-copy', function() {
-    return gulp.src(paths.admin.copy)
-        .pipe(gulp.dest(adminRootPath));
+    gulp.src(paths.admin.fonts)
+        .pipe(gulp.dest(adminRootPath + 'fonts/'))
+    ;
+
+    gulp.src(paths.admin.img)
+        .pipe(gulp.dest(adminRootPath + 'img/'))
+    ;
+
+    for (var i = 0; i < paths.admin.copy.length; i++) {
+        var copy = paths.admin.copy[i];
+        if (typeof copy === "object") {
+            gulp.src(copy[1]).pipe(gulp.dest(adminRootPath + '/' + copy[0]));
+        } else {
+            gulp.src(copy).pipe(gulp.dest(adminRootPath))
+        }
+    }
 });
 
 gulp.task('admin-watch', function() {

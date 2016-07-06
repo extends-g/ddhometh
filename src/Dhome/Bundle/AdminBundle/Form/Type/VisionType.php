@@ -19,8 +19,11 @@ class VisionType extends AbstractResourceType
             ->add('subTitle', 'text', [
                 'label' => 'Sub Title',
             ])
-            ->add('content', 'text', [
+            ->add('content', 'textarea', [
                 'label' => 'content',
+                'attr' => array(
+                    'class' => 'tinymce',
+                )
             ])
         ;
     }
