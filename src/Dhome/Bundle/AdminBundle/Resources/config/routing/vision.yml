@@ -1,0 +1,29 @@
+dhome_admin_visions_index:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.vision:indexAction
+        _sylius:
+            template: DhomeWebBundle::admin/Vision/index.html.twig
+            sortable: true
+            sorting:
+                id: ASC
+            filterable: true
+
+dhome_admin_visions_create:
+    path: /create
+    methods: [GET, POST]
+    defaults:
+        _controller: dhome.controller.vision:createAction
+        _sylius:
+            template: DhomeWebBundle::admin/Vision/create.html.twig
+            redirect: dhome_admin_visions_index
+
+dhome_admin_visions_update:
+    path: /{id}/update
+    methods: [GET, PUT, PATCH, POST]
+    defaults:
+        _controller: dhome.controller.vision:updateAction
+        _sylius:
+            template: DhomeWebBundle::admin/Vision/update.html.twig
+            redirect: dhome_admin_visions_index

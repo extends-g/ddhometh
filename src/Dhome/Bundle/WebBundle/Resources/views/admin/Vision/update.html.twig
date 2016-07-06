@@ -1,0 +1,21 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h2><i class="fa fa-plus">{{ 'Edit vision'|trans }}</i></h2>
+        </div>
+    </div>
+
+    {{ form_start(form, {
+        'action': path('dhome_admin_visions_update', {id: vision.id}),
+        'attr': {'class': 'ui form', 'novalidate': 'novalidate'}
+    }) }}
+
+    {% include 'DhomeWebBundle:admin/Vision:_form.html.twig' %}
+
+    {{ form_row(form._token) }}
+
+        <button type="submit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-ok"></i> {{ 'sylius.ui.create'|trans }}</button>
+    {{ form_end(form, {'render_rest': false}) }}
+{% endblock %}
