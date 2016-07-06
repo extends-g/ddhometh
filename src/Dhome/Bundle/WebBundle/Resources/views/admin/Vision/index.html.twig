@@ -25,7 +25,7 @@
             <tr>
                 <td>{{ vision.id }}</td>
                 <td>{{ vision.title }}</td>
-                <td>{{ vision.content }}</td>
+                <td>{{ vision.content|raw }}</td>
                 <td>{{ vision.createdAt|date }}</td>
             </tr>
             {% else %}
