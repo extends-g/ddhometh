@@ -1,49 +1,26 @@
 {% extends 'DhomeWebBundle:admin:layout.html.twig' %}
 
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+{% from 'DhomeWebBundle:admin/Macros:misc.html.twig' import pagination %}
+{% from 'DhomeWebBundle:admin/Vision:macros.html.twig' import list %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'Backend'|trans }}</li>
+        <li>{{ 'Visions'|trans }}</a></li>
+    </ol>
+{% endblock %}
+
 {% block content %}
 
-    <div class="row">
-        <div class="col-lg-8">
-            <h2>{{ 'Vision Manage'|trans }}</h2>
+    <div class="page-header">
+        <div class="actions-menu">
+            {{ buttons.create(path('dhome_admin_visions_create'), 'Create vision'|trans) }}
         </div>
-        <div class="col-lg-4">
-            <a class="btn btn-secondary" href="{{ path('dhome_admin_visions_create') }}" role="button"><i class="fa fa-plus">  Create new</i></a>
-        </div>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>{{ 'No.'|trans }}</th>
-                <th>{{ 'Title'|trans }}</th>
-                <th>{{ 'Content'|trans }}</th>
-                <th>{{ 'Created at'|trans }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for vision in visions %}
-            <tr>
-                <td>{{ vision.id }}</td>
-                <td>{{ vision.title }}</td>
-                <td>{{ vision.content|raw }}</td>
-                <td>{{ vision.createdAt|date }}</td>
-            </tr>
-            {% else %}
-                No data.
-            {% endfor %}
-            </tbody>
-        </table>
+        <h1><i class="fa fa-flag"></i> {{ 'Visions'|trans }}</h1>
     </div>
 
-    {% if visions %}
-        <div class="paginator-bottom">
-            <nav>
-                {{ pagerfanta(visions, 'twitter_bootstrap3_translated', {
-                    css_container_class: 'pagination',
-                    prev_message: '&larr;',
-                    next_message: '&rarr;'
-                }|merge(options|default({}))) }}
-            </nav>
-        </div>
-    {% endif %}
+    {{ pagination(visions) }}
+    {{ list(visions) }}
+    {{ pagination(visions) }}
 {% endblock %}

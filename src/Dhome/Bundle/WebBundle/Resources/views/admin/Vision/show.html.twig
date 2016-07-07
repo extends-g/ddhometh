@@ -1,0 +1,30 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'Backend'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
+        <li>{{ vision.title }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="actions-menu">
+            {{ buttons.manage(path('dhome_admin_visions_index'), 'Visions'|trans) }}
+            {{ buttons.edit(path('dhome_admin_visions_update', {'id': vision.id})) }}
+            {{ buttons.delete(path('dhome_admin_visions_delete', {'id': vision.id}), null, false, true) }}
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-6">
+            xxxxx
+    </div>
+    <div class="col-md-6">
+            111
+    </div>
+    </div>
+{% endblock %}

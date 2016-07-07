@@ -1,21 +1,31 @@
 {% extends 'DhomeWebBundle:admin:layout.html.twig' %}
 
+{% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import create %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'Backend'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
+        <li>{{ 'New'|trans }}</li>
+    </ol>
+{% endblock %}
+
 {% block content %}
-    <div class="row">
-        <div class="col-lg-12">
-            <h2><i class="fa fa-plus">{{ 'Add new vision'|trans }}</i></h2>
-        </div>
+    <div class="page-header">
+    <h1><i class="fa fa-plus"></i> {{ 'Add vision'|trans }}</h1>
     </div>
+
+    {{ form_errors(form) }}
 
     {{ form_start(form, {
         'action': path('dhome_admin_visions_create'),
-        'attr': {'class': 'ui form', 'novalidate': 'novalidate'}
+        'method': 'post',
+        'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}
     }) }}
 
     {% include 'DhomeWebBundle:admin/Vision:_form.html.twig' %}
-
     {{ form_row(form._token) }}
+    {{ create() }}
 
-        <button type="submit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-ok"></i> {{ 'sylius.ui.create'|trans }}</button>
     {{ form_end(form, {'render_rest': false}) }}
 {% endblock %}

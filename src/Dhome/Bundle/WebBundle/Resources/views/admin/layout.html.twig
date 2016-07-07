@@ -25,11 +25,39 @@
 
     <body>
         {% block navbar %}
-            {% include 'DhomeWebBundle:admin:navbar.html.twig' %}
+            {#{% include 'DhomeWebBundle:admin:navbar.html.twig' %}#}
         {% endblock %}
 
-        <div class="container admin-layout">
-            {% block content %}{% endblock %}
+        <div class="row main-container">
+            <div class="col-md-1 col-lg-2 hidden-sm hidden-xs">
+                {% block sidebar %}
+                    <div id="sidebar">
+                        <div class="sidebar-nav">
+                            {#{{ knp_menu_render('sylius.backend.sidebar', {'template': 'DhomeWebBundle::admin:menu.html.twig', 'currentClass': 'active'}) }}#}
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
+
+            <div class="col-md-11 col-lg-10">
+                <div id="topbar">
+                    {% block topbar %}
+                        {% include 'DhomeWebBundle:admin:_breadcrumb.html.twig' %}
+                    {% endblock %}
+                </div>
+
+                <div id="content">
+                    {% include 'DhomeWebBundle:admin:_flashes.html.twig' %}
+
+                    {% block content %}
+                    {% endblock %}
+
+                    <hr>
+
+                     {#Confirmation modal#}
+                    {% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}
+                </div>
+            </div>
         </div>
 
         {% block javascripts %}
