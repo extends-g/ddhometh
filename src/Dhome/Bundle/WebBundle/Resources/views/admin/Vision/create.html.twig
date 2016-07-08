@@ -4,24 +4,24 @@
 
 {% block topbar %}
     <ol class="breadcrumb">
-        <li>{{ 'Backend'|trans }}</li>
-        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
-        <li>{{ 'New'|trans }}</li>
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'trans.admin.vision.title'|trans }}</a></li>
+        <li>{{ 'trans.admin.new'|trans }}</li>
     </ol>
 {% endblock %}
 
 {% block content %}
     <div class="page-header">
-    <h1><i class="fa fa-plus"></i> {{ 'Add vision'|trans }}</h1>
+    <h1><i class="fa fa-plus"></i> {{ 'trans.admin.vision.title'|trans }}</h1>
     </div>
-
-    {{ form_errors(form) }}
 
     {{ form_start(form, {
         'action': path('dhome_admin_visions_create'),
         'method': 'post',
         'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}
     }) }}
+
+    {{ form_errors(form) }}
 
     {% include 'DhomeWebBundle:admin/Vision:_form.html.twig' %}
     {{ form_row(form._token) }}

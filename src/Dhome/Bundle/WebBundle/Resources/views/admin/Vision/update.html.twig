@@ -4,16 +4,16 @@
 
 {% block topbar %}
     <ol class="breadcrumb">
-        <li>{{ 'Backend'|trans }}</li>
-        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
-        <li>{{ vision.title }}</li>
-        <li>{{ 'Edit'|trans }}</li>
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'trans.admin.vision.title'|trans }}</a></li>
+        <li>{{ vision.title[:20] ~ '...' }}</li>
+        <li>{{ 'trans.admin.edit'|trans }}</li>
     </ol>
 {% endblock %}
 
 {% block content %}
     <div class="page-header">
-        <h1><i class="fa fa-pencil"></i> {{ 'Edit Vision'|trans }}</h1>
+        <h1><i class="fa fa-pencil"></i> {{ 'trans.admin.vision.edit'|trans }}</h1>
     </div>
 
     {{ form_errors(form) }}

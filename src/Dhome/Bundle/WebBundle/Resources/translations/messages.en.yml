@@ -1,0 +1,37 @@
+trans:
+    admin:
+        breadcrumb:
+            dashboard: Dashboard
+
+        confirmation:
+            title: Confirm
+            message: Are you sure?
+
+        create: Create
+        update: Update
+        save_change: Save change
+        new: New
+        edit: Edit
+        delete: Delete
+        cancel: Cancel
+        enable: Enable
+        disable: Disable
+
+        detail: Detail
+        manage: Manage
+        success: Success
+        information: Information
+        error: Error
+        warning: Warning
+
+        no: No
+        title: Title
+        created_at: Created at
+        updated_at: Updated at
+        deleted_at: Deleted at
+
+        vision:
+            title: Visions
+            create: Create Vision
+            edit: Edit Vision
+            no_data: No vision result.
