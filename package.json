@@ -18,7 +18,8 @@
         "gulp-uglify": "^1.5.4",
         "gulp-uglifycss": "^1.0.6",
         "gulp-util": "^3.0.7",
-        "tinymce": "^4.3.12"
+        "tinymce": "^4.3.12",
+        "tether": "^1.2.0"
     },
     "devDependencies": {},
     "scripts": {

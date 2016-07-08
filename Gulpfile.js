@@ -18,6 +18,7 @@ var webRootPath = rootPath + 'web/';
 var paths = {
     admin: {
         js: [
+            'node_modules/tether/dist/js/tether.min.js',
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'web/ui/admin/js/**',
@@ -29,6 +30,7 @@ var paths = {
         css: [
             'node_modules/font-awesome/css/font-awesome.min.css',
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
+            'node_modules/tether/dist/css/tether.min.css',
             'web/ui/admin/css/**'
         ],
         img: [

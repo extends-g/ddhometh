@@ -1,24 +1,8 @@
-ui:
-    trans:
-
-        profile:
-            mobile_registered: หมายเลขโทรศัพท์นี้ถูกใช้ลงทะเบียนแล้ว
-            email_registered: อีเมลนี้ถูกใช้ลงทะเบียนแล้ว
-
-sylius:
-
-    user:
-        email:
-            invalid: อีเมลไม่ถูกต้อง
-        mobile:
-            invalid: หมายเลขโทรศัพท์ไม่ถูกต้อง
-        password:
-            min: รหัสผ่านต้องยาว {{ limit }} ตัวอักษรขึ้นไป
-            max: รหัสผ่านต้องไม่เกิน {{ limit }} ตัวอักษร
-
-        plainPassword:
-            mismatch: รหัสผ่านไม่ตรงกัน
-
-    customer:
-        email:
-           unique: มีการลงทะเบียนด้วยอีเมล์นี้แล้ว
+trans:
+    admin:
+        vision:
+            validation:
+                title:
+                    not_blank: Title must not blank.
+                content:
+                    not_blank: Content must not blank.

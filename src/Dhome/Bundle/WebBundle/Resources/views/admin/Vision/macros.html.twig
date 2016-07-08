@@ -8,9 +8,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th>{{ 'No.'|trans }}</th>
-                <th>{{ sylius_resource_sort('title', 'Title'|trans) }}</th>
-                <th>{{ 'Created at'|trans }}</th>
+                <th>{{ 'trans.admin.no'|trans }}</th>
+                <th>{{ sylius_resource_sort('title', 'trans.admin.title'|trans) }}</th>
+                <th>{{ 'trans.admin.created_at'|trans }}</th>
                 <th></th>
             </tr>
         </thead>
@@ -31,7 +31,7 @@
         </tbody>
     </table>
 {% else %}
-    {{ alerts.info('No vision'|trans) }}
+    {{ alerts.info('trans.admin.vision.no_data'|trans) }}
 {% endif %}
 
 {% endmacro %}
