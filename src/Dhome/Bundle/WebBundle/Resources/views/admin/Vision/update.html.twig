@@ -1,0 +1,32 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import update %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'Backend'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
+        <li>{{ vision.title }}</li>
+        <li>{{ 'Edit'|trans }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1><i class="fa fa-pencil"></i> {{ 'Edit Vision'|trans }}</h1>
+    </div>
+
+    {{ form_errors(form) }}
+
+    {{ form_start(form, {
+        'action': path('dhome_admin_visions_update', {id: vision.id}),
+        'method': 'post',
+        'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}
+    }) }}
+
+    {% include 'DhomeWebBundle:admin/Vision:_form.html.twig' %}
+
+    {{ form_row(form._token) }}
+    {{ update() }}
+    {{ form_end(form, {'render_rest': false}) }}
+{% endblock %}

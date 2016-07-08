@@ -1,0 +1,3 @@
+dhome_admin_vision:
+    prefix: /visions
+    resource: "@DhomeAdminBundle/Resources/config/routing/vision.yml"

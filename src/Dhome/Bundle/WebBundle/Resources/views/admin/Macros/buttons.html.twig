@@ -1,0 +1,81 @@
+{% macro show(url, message) %}
+<a href="{{ url }}" class="btn btn-default">
+   <i class="fa fa-book"></i><span>{{ message is empty ? 'Detail'|trans : message }}</span>
+</a>
+{% endmacro %}
+
+{% macro generic(url, message, icon) %}
+<a href="{{ url }}" class="btn btn-default">
+    {% if icon is not empty %}<i class="fa fa-{{ icon }}"></i>{% endif %}<span>{{ message }}</span>
+</a>
+{% endmacro %}
+
+{% macro create(url, message) %}
+    <a href="{{ url }}" class="btn btn-primary">
+        <i class="fa fa-plus"></i><span>{{ message is empty ? 'Edit'|trans : message }}</span>
+    </a>
+    {#<button type="button" class="btn btn-primary"><i class="fa fa-plus">  {{ 'Create new'|trans }}</i></button>#}
+{% endmacro %}
+
+{% macro edit(url, message) %}
+<a href="{{ url }}" class="btn btn-primary">
+    <i class="fa fa-pencil"></i><span>{{ message is empty ? 'Edit'|trans : message }}</span>
+</a>
+{% endmacro %}
+
+{% macro delete(url, message, disabled=false, modal=true) %}
+{% if disabled %}
+<span class="btn btn-danger disabled">
+    <i class="fa fa-trash"></i><span>{{ message is empty ? 'Delete'|trans : message }}</span>
+</span>
+{% else %}
+<form action="{{ url }}" method="post" class="delete-action-form" novalidate>
+    <input type="hidden" name="_method" value="DELETE">
+    <button class="btn btn-danger{% if modal %} btn-confirm{% endif %}" type="submit">
+        <i class="fa fa-trash"></i> <span>{{ message is empty ? 'sylius.ui.delete'|trans : message }}</span>
+    </button>
+</form>
+{% endif %}
+{% endmacro %}
+
+{% macro manage(url, message) %}
+<a href="{{ url }}" class="btn btn-success">
+    <i class="fa fa-folder-open"></i><span>{{ message is empty ? 'Manage'|trans : message }}</span>
+</a>
+{% endmacro %}
+
+{% macro move(url, direction, first=false, last=false, message='') %}
+<form action="{{ url }}" method="post" class="delete-action-form" novalidate>
+    <input type="hidden" name="_method" value="PUT">
+    <button title="{{ message is empty ? ('sylius.ui.move_'~direction)|trans : message }}" class="btn btn-default {% if ('up' == direction and first) or ('down' == direction and last) %}disabled{% endif %}" type="submit">
+        <i class="fa fa-arrow-{{ direction }}"></i>
+    </button>
+</form>
+{% endmacro %}
+
+{% macro patch(url, message, icon, button) %}
+<form action="{{ url }}" method="post" class="delete-action-form" novalidate>
+    <input type="hidden" name="_method" value="PATCH">
+    <button class="btn btn-{{ button|default('success') }}" type="submit">
+        <i class="fa fa-{{ icon|default('transfer') }}"></i> <span>{{ message }}</span>
+    </button>
+</form>
+{% endmacro %}
+
+{% macro enable(url, message, icon, button) %}
+<form action="{{ url }}" method="post" class="delete-action-form" novalidate>
+    <input type="hidden" name="_method" value="PATCH">
+    <button class="btn btn-{{ button|default('success') }}" type="submit">
+        <i class="fa fa-{{ icon|default('ok') }}"></i> <span>{{ message is empty ? 'sylius.ui.enable'|trans : message }}</span>
+    </button>
+</form>
+{% endmacro %}
+
+{% macro disable(url, message, icon, button) %}
+<form action="{{ url }}" method="post" class="delete-action-form" novalidate>
+    <input type="hidden" name="_method" value="PATCH">
+    <button class="btn btn-{{ button|default('danger') }}" type="submit">
+        <i class="fa fa-{{ icon|default('remove') }}"></i> <span>{{ message is empty ? 'sylius.ui.disable'|trans : message }}</span>
+    </button>
+</form>
+{% endmacro %}
