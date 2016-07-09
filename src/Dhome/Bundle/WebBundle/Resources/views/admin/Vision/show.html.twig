@@ -5,7 +5,7 @@
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
-        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'trans.admin.vision.title'|trans }}</a></li>
+        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
         <li>{{ vision.title[:20] ~ '...' }}</li>
     </ol>
 {% endblock %}
@@ -13,7 +13,7 @@
 {% block content %}
     <div class="page-header">
         <div class="actions-menu">
-            {{ buttons.manage(path('dhome_admin_visions_index'), 'trans.admin.vision.title'|trans) }}
+            {{ buttons.manage(path('dhome_admin_visions_index'), 'Visions'|trans) }}
             {{ buttons.edit(path('dhome_admin_visions_update', {'id': vision.id})) }}
             {{ buttons.delete(path('dhome_admin_visions_delete', {'id': vision.id}), null, false, true) }}
         </div>

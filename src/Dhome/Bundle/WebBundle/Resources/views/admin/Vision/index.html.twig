@@ -7,7 +7,7 @@
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
-        <li>{{ 'trans.admin.vision.title'|trans }}</a></li>
+        <li>{{ 'Visions'|trans }}</a></li>
     </ol>
 {% endblock %}
 
@@ -15,9 +15,9 @@
 
     <div class="page-header">
         <div class="actions-menu">
-            {{ buttons.create(path('dhome_admin_visions_create'), 'trans.admin.vision.create'|trans) }}
+            {{ buttons.create(path('dhome_admin_visions_create'), 'trans.admin.create'|trans) }}
         </div>
-        <h1><i class="fa fa-flag"></i> {{ 'trans.admin.vision.title'|trans }}</h1>
+        <h1><i class="fa fa-flag"></i> {{ 'Visions'|trans }}</h1>
     </div>
 
     {{ pagination(visions) }}

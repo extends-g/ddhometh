@@ -29,3 +29,4 @@ trans:
         created_at: Created at
         updated_at: Updated at
         deleted_at: Deleted at
+        no_data: No data.
