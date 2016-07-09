@@ -490,84 +490,6 @@ form.form-signin .btn-success:hover {
     }
 }
 
-/** Dashboard */
-.col-md-6 #users .btn span {
-    display: none;
-}
-
-/** Products. **/
-.sylius-products-table td {
-    vertical-align: middle;
-}
-.sylius-products-table .name {
-    font-size: 16px;
-    text-decoration: none;
-}
-.sylius-products-table .sku {
-    background: #FCFCFC;
-    color: #666;
-}
-.sylius-products-table .id,
-.sylius-products-table .stock,
-.sylius-products-table .retail-price,
-.sylius-products-table .original-price,
-.sylius-products-table .updated-at {
-    text-align: center;
-}
-.sylius-products-table .stock,
-.sylius-products-table .retail-price,
-.sylius-products-table .original-price,
-.sylius-products-table .updated-at {
-    width: 150px;
-}
-.sylius-products-table .actions {
-    width: 170px;
-    text-align: center;
-}
-
-/** Order. **/
-.sylius-order-content-table .picture,
-.sylius-order-content-table .quantity,
-.sylius-order-content-table .unit-price,
-.sylius-order-content-table .total {
-    width: 110px;
-    vertical-align: middle;
-}
-.sylius-order-content-table .info .name {
-    font-size: 16px;
-    text-decoration: none;
-    margin: 0 0 5px 0;
-}
-.sylius-order-content-table .info ul {
-    margin-bottom: 0;
-}
-.sylius-order-content-table .info .sku code {
-    background: #FCFCFC;
-    color: #666;
-}
-.sylius-order-content-table tr.taxes td,
-.sylius-order-content-table tr.shipping-charges td,
-.sylius-order-content-table tr.promotion-discount td {
-    vertical-align: middle;
-}
-.sylius-order-content-table tr.taxes td h5,
-.sylius-order-content-table tr.shipping-charges td h5,
-.sylius-order-content-table tr.promotion-discount td h5 {
-    margin-top: 0;
-}
-.sylius-order-content-table tr.taxes td p,
-.sylius-order-content-table tr.taxes td ul,
-.sylius-order-content-table tr.shipping-charges td p,
-.sylius-order-content-table tr.shipping-charges td ul,
-.sylius-order-content-table tr.promotion-discount td p,
-.sylius-order-content-table tr.promotion-discount td ul {
-    margin-bottom: 0;
-}
-.sylius-order-content-table span.amount {
-    min-width: 65px;
-    display: inline-block;
-}
-
 .datepicker.dropdown-menu {
   background-color: #333;
   border: 0;
@@ -637,7 +559,7 @@ form.form-signin .btn-success:hover {
 
 /** Content. **/
 .content-block-overview {
-	
+
 }
 
 .content-block-overview i {

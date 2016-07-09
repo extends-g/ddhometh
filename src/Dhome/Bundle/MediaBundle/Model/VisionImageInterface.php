@@ -34,5 +34,5 @@ interface VisionImageInterface extends ImageInterface
     /**
      * @param VisionInterface $vision
      */
-    public function setVision(VisionInterface $vision);
+    public function setVision(VisionInterface $vision = null);
 }

@@ -9,9 +9,11 @@ Dhome\Bundle\MediaBundle\Model\VisionImage:
         title:
             type: string
             length: 100
+            nullable: true
 
         position:
             type: integer
+            nullable: true
 
     manyToOne:
         vision:

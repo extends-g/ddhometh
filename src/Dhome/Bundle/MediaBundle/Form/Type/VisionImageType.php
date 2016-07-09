@@ -17,13 +17,13 @@ class VisionImageType extends AbstractResourceType
                 'label' => 'Image',
             ])
 
-            ->add('position', 'integer', [
+            /*->add('position', 'integer', [
                 'required' => false,
             ])
 
             ->add('title', 'text', [
-                'required' => true,
-            ])
+                'required' => false,
+            ])*/
         ;
     }
 

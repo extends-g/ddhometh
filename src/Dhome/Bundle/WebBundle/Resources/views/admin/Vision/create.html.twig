@@ -21,8 +21,6 @@
         'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}
     }) }}
 
-    {{ form_errors(form) }}
-
     {% include 'DhomeWebBundle:admin/Vision:_form.html.twig' %}
     {{ form_row(form._token) }}
     {{ create() }}

@@ -48,7 +48,7 @@ class VisionImage extends Image implements VisionImageInterface
     /**
      * {@inheritdoc}
      */
-    public function setPosition($position)
+    public function setPosition($position = 1)
     {
         $this->position = $position;
     }
@@ -64,7 +64,7 @@ class VisionImage extends Image implements VisionImageInterface
     /**
      * {@inheritdoc}
      */
-    public function setVision(VisionInterface $vision)
+    public function setVision(VisionInterface $vision = null)
     {
         $this->vision = $vision;
     }

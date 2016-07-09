@@ -43,9 +43,10 @@
         {% set type = type|default('text') %}
 
         {% if 'file' == type %}
-            {% set attr = attr|merge({'class': attr.class|default('') ~ ' hidden'}) %}
-            <label for="{{ id }}" class="btn-primary btn-lg file-overlay"><i class="glyphicon glyphicon-folder-open"></i>&nbsp; {{ 'sylius.ui.choose_file'|trans }}</label>
-            &nbsp;
+
+            {#{% set attr = attr|merge({'class': attr.class|default('') ~ ' hidden'}) %}#}
+            {#<label for="{{ id }}" class="btn-primary btn-lg file-overlay"><i class="glyphicon glyphicon-folder-open"></i>&nbsp; {{ 'sylius.ui.choose_file'|trans }}</label>#}
+            {#&nbsp;#}
         {% endif %}
         {{ parent() }}
     {% endspaceless %}
@@ -187,6 +188,13 @@
              data-form-collection-index="{{ index }}"
              class="collection-item">
             <div class="collection-box{% if form|length == 1 %} unique-field{% endif %}">
+
+                {% if form.vars.value %}
+                    {% if form.vars.value.path is defined %}
+                        <img src="{{ form.vars.value.path|imagine_filter('dhome_small') }}">
+                    {% endif %}
+                {% endif %}
+
                 {% if allow_delete %}
                     <p class="text-right">
                         <a href="#" data-form-collection="delete" class="btn btn-danger">

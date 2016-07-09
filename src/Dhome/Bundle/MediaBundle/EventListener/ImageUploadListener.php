@@ -27,10 +27,7 @@ class ImageUploadListener
      */
     public function uploadVisionImage(GenericEvent $event)
     {
-
-        dump($event);
         $subject = $event->getSubject();
-        dump($subject);
         Assert::isInstanceOf($subject, VisionInterface::class);
 
         $this->uploadVisionImages($subject);

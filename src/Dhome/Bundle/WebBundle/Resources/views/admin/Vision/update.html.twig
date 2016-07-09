@@ -16,8 +16,6 @@
         <h1><i class="fa fa-pencil"></i> {{ 'trans.admin.vision.edit'|trans }}</h1>
     </div>
 
-    {{ form_errors(form) }}
-
     {{ form_start(form, {
         'action': path('dhome_admin_visions_update', {id: vision.id}),
         'method': 'post',

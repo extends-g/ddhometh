@@ -50,11 +50,7 @@ Dhome\Bundle\AdminBundle\Model\Vision:
             targetEntity: Dhome\Bundle\MediaBundle\Model\VisionImage
             cascade: [all]
             mappedBy: vision
-            joinColumn:
-                nullable: true
-                onDelete: "CASCADE"
-                image_id:
-                    referencedColumnName: id
+            orphanRemoval: true
 
     manyToOne:
         user:
