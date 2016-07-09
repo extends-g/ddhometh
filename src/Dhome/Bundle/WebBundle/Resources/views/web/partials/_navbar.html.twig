@@ -1,12 +1,11 @@
-<nav class="navbar navbar-fixed-top bg-faded">
+<nav class="navbar navbar-dt navbar-fixed-top bg-faded">
     <div class="container">
-        <div class="navbar__comp">
-            <div class="navbar__comp--logo"><i class="fa fa-home"></i></div>
-            <div class="navbar__comp--name">DDHOME</div>
-            <div class="navbar__comp--desc">LIVING | DECOR</div>
+        <div class="navbar-brand navbar-dt__comp">
+            <div class="navbar-dt__comp--name">DDHOME</div>
+            <div class="navbar-dt__comp--desc">LIVING | DECOR</div>
         </div>
-        <ul class="navbar__menu">
-            <li class="navbar__menu--toggle">
+        <ul class="navbar-dt__menu">
+            <li class="navbar-dt__menu--toggle">
                 <a href="#" data-toggle="dropdown">PROJECTS</a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Action</a></li>
@@ -16,7 +15,7 @@
                     <li><a href="#">Separated link</a></li>
                 </ul>
             </li>
-            <li class="navbar__menu--toggle">
+            <li class="navbar-dt__menu--toggle">
                 <a href="#" data-toggle="dropdown">COLLECTION</a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Action</a></li>
@@ -26,7 +25,7 @@
                     <li><a href="#">Separated link</a></li>
                 </ul>
             </li>
-            <li class="navbar__menu--toggle">
+            <li class="navbar-dt__menu--toggle">
                 <a href="#" data-toggle="dropdown">PRESS</a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Action</a></li>
@@ -36,7 +35,7 @@
                     <li><a href="#">Separated link</a></li>
                 </ul>
             </li>
-            <li class="navbar__menu--toggle">
+            <li class="navbar-dt__menu--toggle">
                 <a href="#" data-toggle="dropdown">CONTACT US</a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Action</a></li>
@@ -50,3 +49,4 @@
     </div>
 </nav>
 
+{% include '@DhomeWeb/web/partials/_navbar.mobile.html.twig' %}
