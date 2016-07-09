@@ -8,13 +8,13 @@
     <class name="Dhome\Bundle\AdminBundle\Model\Vision">
         <property name="title">
             <constraint name="NotBlank">
-                <option name="message">trans.admin.vision.validation.title.not_blank</option>
+                <option name="message">Title must not blank.</option>
                 <option name="groups">dhome</option>
             </constraint>
         </property>
         <property name="content">
             <constraint name="NotBlank">
-                <option name="message">trans.admin.vision.validation.content.not_blank</option>
+                <option name="message">Content must not blank.</option>
                 <option name="groups">dhome</option>
             </constraint>
         </property>

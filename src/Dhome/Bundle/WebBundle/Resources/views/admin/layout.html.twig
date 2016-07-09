@@ -46,17 +46,15 @@
                     {% endblock %}
                 </div>
 
-                <div id="content">
-                    {% include 'DhomeWebBundle:admin:_flashes.html.twig' %}
+                {% include 'DhomeWebBundle:admin:_flashes.html.twig' %}
 
-                    {% block content %}
-                    {% endblock %}
+                {% block content %}
+                {% endblock %}
 
-                    <hr>
+                <hr>
 
-                     {#Confirmation modal#}
-                    {% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}
-                </div>
+                 {#Confirmation modal#}
+                {% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}
             </div>
         </div>
 

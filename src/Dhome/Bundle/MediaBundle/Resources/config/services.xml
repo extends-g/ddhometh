@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+ This file is part of the Sylius package.
+
+ (c) Paweł Jędrzejewski
+
+ For the full copyright and license information, please view the LICENSE
+ file that was distributed with this source code.
+
+-->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+                               http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="dhome.image_uploader.class">Dhome\Bundle\MediaBundle\Uploader\ImageUploader</parameter>
+        <parameter key="dhome.listener.image_upload.class">Dhome\Bundle\MediaBundle\EventListener\ImageUploadListener</parameter>
+    </parameters>
+
+    <services>
+        <service id="dhome.image_uploader" class="%dhome.image_uploader.class%">
+            <argument type="service">
+                <service class="Gaufrette\Filesystem" factory-service="knp_gaufrette.filesystem_map" factory-method="get">
+                    <argument>%dhome.uploader.filesystem%</argument>
+                </service>
+            </argument>
+        </service>
+
+        <service id="dhome.listener.image_upload" class="%dhome.listener.image_upload.class%">
+            <argument type="service" id="dhome.image_uploader" />
+            <tag name="kernel.event_listener" event="dhome.vision.pre_create" method="uploadVisionImage" />
+            <tag name="kernel.event_listener" event="dhome.vision.pre_update" method="uploadVisionImage" />
+            <!--<tag name="kernel.event_listener" event="dhome.vision.pre_update" method="uploadVisionImage" />-->
+        </service>
+    </services>
+</container>

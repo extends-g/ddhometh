@@ -1,8 +1,0 @@
-trans:
-    admin:
-        vision:
-            validation:
-                title:
-                    not_blank: Title must not blank.
-                content:
-                    not_blank: Content must not blank.

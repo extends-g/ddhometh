@@ -25,6 +25,13 @@ class VisionType extends AbstractResourceType
                     'class' => 'tinymce',
                 )
             ])
+            ->add('images', 'collection', [
+                'type' => 'dhome_vision_image',
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'label' => 'Vision image',
+            ])
         ;
     }
 

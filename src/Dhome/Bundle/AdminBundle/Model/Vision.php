@@ -190,7 +190,7 @@ class Vision implements VisionInterface
     public function removeImage(VisionImageInterface $image)
     {
         if ($this->hasImage($image)) {
-            $image->setImage(null);
+            $image->setVision(null);
             $this->images->removeElement($image);
         }
     }

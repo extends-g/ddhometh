@@ -5,7 +5,7 @@
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
-        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'trans.admin.vision.title'|trans }}</a></li>
+        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
         <li>{{ vision.title[:20] ~ '...' }}</li>
     </ol>
 {% endblock %}
@@ -13,18 +13,33 @@
 {% block content %}
     <div class="page-header">
         <div class="actions-menu">
-            {{ buttons.manage(path('dhome_admin_visions_index'), 'trans.admin.vision.title'|trans) }}
+            {{ buttons.manage(path('dhome_admin_visions_index'), 'Visions'|trans) }}
             {{ buttons.edit(path('dhome_admin_visions_update', {'id': vision.id})) }}
             {{ buttons.delete(path('dhome_admin_visions_delete', {'id': vision.id}), null, false, true) }}
         </div>
     </div>
 
     <div class="row">
-    <div class="col-md-6">
-            xxxxx
-    </div>
-    <div class="col-md-6">
-            111
-    </div>
+        <div class="col-sm-6">
+            <h4>{{ 'Detail'|trans }}</h4><hr>
+
+            <strong>{{ 'Title'|trans ~ ': ' }}</strong>
+            {{ vision.title }}<br>
+
+            <strong>{{ 'Subtitle'|trans ~ ': ' }}</strong>
+            {{ vision.subtitle }}<br>
+
+            <strong>{{ 'Content'|trans ~ ': ' }}</strong>
+            {{ vision.content|raw }}
+
+        </div>
+        <div class="col-sm-6">
+            <h4>{{ 'Vision images'|trans }}</h4><hr>
+            {% for image in vision.images %}
+                <img src="{{ image.path|imagine_filter('dhome_medium') }}">
+            {% else %}
+                No photo.
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

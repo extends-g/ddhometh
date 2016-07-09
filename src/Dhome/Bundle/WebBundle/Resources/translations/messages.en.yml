@@ -29,9 +29,4 @@ trans:
         created_at: Created at
         updated_at: Updated at
         deleted_at: Deleted at
-
-        vision:
-            title: Visions
-            create: Create Vision
-            edit: Edit Vision
-            no_data: No vision result.
+        no_data: No data.
