@@ -30,7 +30,7 @@
 
             a {
                 font-family: 'NeueHansKendrick_thin';
-                color: $ddh-base-text;
+                color: #b0b0b0;
                 font-size: 0.8rem;
                 margin: 1rem .5rem;
                 display: block;
@@ -39,7 +39,6 @@
 
         &--toggle {
             margin-left: 0;
-            max-height: 2rem;
 
             ul {
                 left: auto;

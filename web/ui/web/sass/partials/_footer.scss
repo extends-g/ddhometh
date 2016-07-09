@@ -3,4 +3,23 @@ footer {
     padding: 1rem;
     margin: 0 auto;
     text-align: center;
+
+    a {
+        color: #b0b0b0;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.footer {
+
+    &__sitemap {
+        list-style: none;
+        display: block;
+
+        li{
+            display: inline-block;
+        }
+    }
 }
