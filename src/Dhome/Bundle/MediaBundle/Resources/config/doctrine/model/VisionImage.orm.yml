@@ -5,13 +5,6 @@ Dhome\Bundle\MediaBundle\Model\VisionImage:
     gedmo:
         loggable: true
 
-    id:
-        id:
-            type: integer
-            id: true
-            generator:
-                strategy: AUTO
-
     fields:
         title:
             type: string
@@ -20,30 +13,7 @@ Dhome\Bundle\MediaBundle\Model\VisionImage:
         position:
             type: integer
 
-        createdAt:
-            type: datetime
-            column: created_at
-            gedmo:
-                timestampable:
-                    on: create
-
-        updatedAt:
-            type: datetime
-            column: updated_at
-            gedmo:
-                timestampable:
-                    on: update
-
     manyToOne:
-        image:
-            targetEntity: Dhome\Bundle\MediaBundle\Model\Image
-            cascade: [all]
-            joinColumn:
-                nullable: true
-                onDelete: "CASCADE"
-                image_id:
-                    referencedColumnName: id
-
         vision:
             targetEntity: Dhome\Bundle\AdminBundle\Model\Vision
             inversedBy: images
