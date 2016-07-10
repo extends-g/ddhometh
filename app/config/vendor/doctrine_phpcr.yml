@@ -1,7 +1,7 @@
 doctrine_phpcr:
     session:
-#        username: %phpcr_user%
-#        password: %phpcr_password%
+        username: %phpcr_user%
+        password: %phpcr_password%
         workspace: default
         backend:
             type: doctrinedbal
