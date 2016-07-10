@@ -1,0 +1,26 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+{% from 'DhomeWebBundle:admin/Macros:misc.html.twig' import pagination %}
+{% from 'DhomeWebBundle:admin/PressCategory:macros.html.twig' import list %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li>{{ 'Press Categories'|trans }}</a></li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <div class="actions-menu">
+            {{ buttons.create(path('dhome_admin_press_category_create'), 'trans.admin.create'|trans) }}
+        </div>
+        <h1><i class="fa fa-flag"></i> {{ 'Press Categories'|trans }}</h1>
+    </div>
+
+    {{ pagination(press_categories) }}
+    {{ list(press_categories) }}
+    {{ pagination(press_categories) }}
+{% endblock %}

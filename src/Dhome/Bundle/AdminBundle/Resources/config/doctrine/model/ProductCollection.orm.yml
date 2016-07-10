@@ -63,4 +63,4 @@ Dhome\Bundle\AdminBundle\Model\ProductCollection:
 
         user:
             targetEntity: Sylius\Component\User\Model\User
-            nullable: false
+            nullable: true

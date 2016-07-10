@@ -211,7 +211,7 @@ class Press implements PressInterface
     public function removeImage(PressImageInterface $image)
     {
         if ($this->hasImage($image)) {
-            $image->setImage(null);
+            $image->setPress(null);
             $this->images->removeElement($image);
         }
     }

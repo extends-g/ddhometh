@@ -50,11 +50,7 @@ Dhome\Bundle\AdminBundle\Model\Press:
             targetEntity: Dhome\Bundle\MediaBundle\Model\PressImage
             cascade: [all]
             mappedBy: press
-            joinColumn:
-                nullable: true
-                onDelete: "CASCADE"
-                image_id:
-                    referencedColumnName: id
+            orphanRemoval: true
 
     manyToOne:
         category:
@@ -68,4 +64,4 @@ Dhome\Bundle\AdminBundle\Model\Press:
 
         user:
             targetEntity: Sylius\Component\User\Model\User
-            nullable: false
+            nullable: true

@@ -55,4 +55,4 @@ Dhome\Bundle\AdminBundle\Model\Vision:
     manyToOne:
         user:
             targetEntity: Sylius\Component\User\Model\User
-            nullable: false
+            nullable: true
