@@ -33,6 +33,7 @@
                 {% block sidebar %}
                     <div id="sidebar">
                         <div class="sidebar-nav">
+                            {% include 'DhomeWebBundle:admin:menu.html.twig' %}
                             {#{{ knp_menu_render('sylius.backend.sidebar', {'template': 'DhomeWebBundle::admin:menu.html.twig', 'currentClass': 'active'}) }}#}
                         </div>
                     </div>

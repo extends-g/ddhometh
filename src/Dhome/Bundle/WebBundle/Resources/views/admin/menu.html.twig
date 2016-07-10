@@ -10,12 +10,22 @@
 
 {#{% block spanElement %}<a{{ _self.attributes(item.labelAttributes) }}>{{ block('label') }}{% if item.hasChildren %} <b class="caret">{% endif %}</b></a>{% endblock %}#}
 
-{% extends 'knp_menu.html.twig' %}
+{#{% extends 'knp_menu.html.twig' %}#}
 
-{% block label %}
-    {% if item.labelAttribute('icon') %}<i class="{{ item.labelAttribute('icon') }}"></i>{% endif %}
-    {% if not item.labelAttribute('iconOnly') %}
-        <span>{% if options.allow_safe_labels and item.getExtra('safe_label', false) %}{{ item.label|trans|raw }}{% else %}{{ item.label|trans }}{% endif %}</span>
-    {% endif %}
-    {% if item.labelAttribute('data-image') %}<img src="{{ item.labelAttribute('data-image')|imagine_filter('sylius_small') }}" alt="{{ item.name }}" class="menu-thumbnail"/>{% endif %}
-{% endblock %}
+{#{% block label %}#}
+    {#{% if item.labelAttribute('icon') %}<i class="{{ item.labelAttribute('icon') }}"></i>{% endif %}#}
+    {#{% if not item.labelAttribute('iconOnly') %}#}
+        {#<span>{% if options.allow_safe_labels and item.getExtra('safe_label', false) %}{{ item.label|trans|raw }}{% else %}{{ item.label|trans }}{% endif %}</span>#}
+    {#{% endif %}#}
+    {#{% if item.labelAttribute('data-image') %}<img src="{{ item.labelAttribute('data-image')|imagine_filter('sylius_small') }}" alt="{{ item.name }}" class="menu-thumbnail"/>{% endif %}#}
+{#{% endblock %}#}
+
+<ul class="nav">
+    <li class="active"><a style="font-size: 1em;" href="{{ path('dhome_admin_dashboard') }}">Dashboard</a></li>
+    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_visions_index') }}">Visions</a></li>
+    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_project_category_index') }}">Project Category</a></li>
+    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_projects_index') }}">Project</a></li>
+    <li><a style="font-size: 1em;" href="#">Manage Collection</a></li>
+    <li><a style="font-size: 1em;" href="#">Manage Press</a></li>
+    <li><a style="font-size: 1em;" href="#">Update Contact us</a></li>
+</ul>

@@ -16,15 +16,18 @@ class VisionType extends AbstractResourceType
             ->add('title', 'text', [
                 'label' => 'Title',
             ])
+
             ->add('subTitle', 'text', [
                 'label' => 'Sub Title',
             ])
+
             ->add('content', 'textarea', [
                 'label' => 'content',
                 'attr' => array(
                     'class' => 'tinymce',
                 )
             ])
+
             ->add('images', 'collection', [
                 'type' => 'dhome_vision_image',
                 'allow_add' => true,

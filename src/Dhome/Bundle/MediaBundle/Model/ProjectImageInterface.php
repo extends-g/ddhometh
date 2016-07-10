@@ -6,7 +6,7 @@ use Dhome\Bundle\AdminBundle\Model\ProjectInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
 
-interface ProjectImageInterface extends TimestampableInterface, ResourceInterface
+interface ProjectImageInterface extends ImageInterface
 {
     /**
      * @return string
@@ -29,16 +29,6 @@ interface ProjectImageInterface extends TimestampableInterface, ResourceInterfac
     public function setPosition($position);
 
     /**
-     * @return ImageInterface
-     */
-    public function getImage();
-
-    /**
-     * @param ImageInterface $image
-     */
-    public function setImage(ImageInterface $image = null);
-
-    /**
      * @return ProjectInterface
      */
     public function getProject();
@@ -46,15 +36,5 @@ interface ProjectImageInterface extends TimestampableInterface, ResourceInterfac
     /**
      * @param ProjectInterface $project
      */
-    public function setProject(ProjectInterface $project);
-
-    /**
-     * @return string
-     */
-    public function getSelfImagePath();
-
-    /**
-     * @return string
-     */
-    public function getMediaPath();
+    public function setProject(ProjectInterface $project = null);
 }

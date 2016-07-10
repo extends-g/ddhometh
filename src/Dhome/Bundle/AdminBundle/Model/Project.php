@@ -211,7 +211,7 @@ class Project implements ProjectInterface
     public function removeImage(ProjectImageInterface $image)
     {
         if ($this->hasImage($image)) {
-            $image->setImage(null);
+            $image->setProject(null);
             $this->images->removeElement($image);
         }
     }

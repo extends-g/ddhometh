@@ -1,0 +1,26 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+{% from 'DhomeWebBundle:admin/Macros:misc.html.twig' import pagination %}
+{% from 'DhomeWebBundle:admin/ProjectCategory:macros.html.twig' import list %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li>{{ 'Project Categories'|trans }}</a></li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <div class="actions-menu">
+            {{ buttons.create(path('dhome_admin_project_category_create'), 'trans.admin.create'|trans) }}
+        </div>
+        <h1><i class="fa fa-flag"></i> {{ 'Project Categories'|trans }}</h1>
+    </div>
+
+    {{ pagination(project_categories) }}
+    {{ list(project_categories) }}
+    {{ pagination(project_categories) }}
+{% endblock %}
