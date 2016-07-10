@@ -21,6 +21,8 @@
         &--desc {
             font-family: 'NeueHansKendrick_thin';
             font-size: 0.6rem;
+            color: #fff;
+
         }
     }
 
@@ -60,6 +62,18 @@
             &:hover > ul.dropdown-menu {
                 display: block;
             }
+        }
+    }
+
+    &__search {
+        width: 300px;
+        margin: .25rem;
+        opacity: .9;
+
+        input {
+            background: transparent;
+            font-family: 'NeueHansKendrick_thin';
+            color: #fff;
         }
     }
 }
