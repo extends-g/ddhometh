@@ -1,15 +1,15 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
 {% block carousel %}
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="carousel-index" class="carousel slide carousel-index" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            {% for i in 0..5 %}
+                <li data-target="#carousel-index" data-slide-to="{{ i +1 }}" class="{% if i == 0 %} active {% endif %}"></li>
+            {% endfor %}
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img src="{{ asset('ui/web/img/h.jpg') }}" height="500">
+                <img src="{{ asset('ui/web/img/h.jpg') }}">
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('ui/web/img/h.jpg') }}">
@@ -22,14 +22,14 @@
 {% endblock %}
 
 
-{% block content %}
-    <div class="gallery">
-        <div class="row">
-            {% for i in 0..8 %}
-                <div class="col-sm-4 col-xs-12"><img class="img-fluid" src="{{ asset('ui/web/img/h.jpg') }}"></div>
-                <div class="col-sm-4 col-xs-12"><img class="img-fluid" src="{{ asset('ui/web/img/a.jpg') }}"></div>
-                <div class="col-sm-4 col-xs-12"><img class="img-fluid" src="{{ asset('ui/web/img/b.jpg') }}"></div>
-            {% endfor %}
-        </div>
-    </div>
-{% endblock %}
+{#{% block content %}#}
+    {#<div class="gallery">#}
+        {#<div class="row">#}
+            {#{% for i in 0..8 %}#}
+                {#<div class="col-sm-4 col-xs-12"><img class="img-fluid" src="{{ asset('ui/web/img/h.jpg') }}"></div>#}
+                {#<div class="col-sm-4 col-xs-12"><img class="img-fluid" src="{{ asset('ui/web/img/a.jpg') }}"></div>#}
+                {#<div class="col-sm-4 col-xs-12"><img class="img-fluid" src="{{ asset('ui/web/img/b.jpg') }}"></div>#}
+            {#{% endfor %}#}
+        {#</div>#}
+    {#</div>#}
+{#{% endblock %}#}

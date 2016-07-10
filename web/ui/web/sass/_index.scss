@@ -1,0 +1,14 @@
+
+
+
+@media screen and (max-width: 769px) {
+
+    .carousel-index {
+
+        .carousel-inner > .carousel-item > a > img,
+        .carousel-inner > .carousel-item > img {
+            max-width: 1900px !important;
+            height: 100vh !important;
+        }
+    }
+}
