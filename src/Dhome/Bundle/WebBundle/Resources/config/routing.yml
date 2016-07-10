@@ -2,3 +2,8 @@ dhome_homepage:
     path: /
     defaults:
         _controller: DhomeWebBundle:Frontend:index
+
+dhome_submenu:
+    path: /sub-menu
+    defaults:
+        _controller: DhomeWebBundle:Frontend:submenu

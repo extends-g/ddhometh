@@ -1,10 +1,20 @@
 <nav class="navbar navbar-dt navbar-fixed-top bg-faded">
     <div class="container">
         <div class="navbar-brand navbar-dt__comp">
-            <div class="navbar-dt__comp--name">DDHOME</div>
+            <div class="navbar-dt__comp--name"><a href="{{ path('dhome_homepage') }}">DDHOME</a></div>
             <div class="navbar-dt__comp--desc">LIVING | DECOR</div>
         </div>
         <ul class="navbar-dt__menu">
+            <li class="navbar-dt__menu--toggle">
+                <a href="#" data-toggle="dropdown">VISION</a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
             <li class="navbar-dt__menu--toggle">
                 <a href="#" data-toggle="dropdown">PROJECTS</a>
                 <ul class="dropdown-menu" role="menu">
