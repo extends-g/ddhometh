@@ -13,9 +13,8 @@ Dhome\Bundle\MediaBundle\Model\Image:
                 strategy: AUTO
 
     fields:
-        mediaId:
+        path:
             type: string
-            column: media_id
 
         createdAt:
             type: datetime

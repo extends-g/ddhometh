@@ -3,17 +3,9 @@
 namespace Dhome\Bundle\MediaBundle\Model;
 
 use Dhome\Bundle\AdminBundle\Model\VisionInterface;
-use Sylius\Component\Resource\Model\TimestampableTrait;
 
-class VisionImage implements VisionImageInterface
+class VisionImage extends Image implements VisionImageInterface
 {
-    use TimestampableTrait;
-
-    /**
-     * @var int
-     */
-    protected $id;
-
     /**
      * @var string
      */
@@ -25,22 +17,9 @@ class VisionImage implements VisionImageInterface
     protected $position = 1;
 
     /**
-     * @var ImageInterface
-     */
-    protected $image;
-
-    /**
      * @var VisionInterface
      */
     protected $vision;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * {@inheritdoc}
@@ -69,25 +48,9 @@ class VisionImage implements VisionImageInterface
     /**
      * {@inheritdoc}
      */
-    public function setPosition($position)
+    public function setPosition($position = 1)
     {
         $this->position = $position;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setImage(ImageInterface $image = null)
-    {
-        $this->image = $image;
     }
 
     /**
@@ -101,27 +64,8 @@ class VisionImage implements VisionImageInterface
     /**
      * {@inheritdoc}
      */
-    public function setVision(VisionInterface $vision)
+    public function setVision(VisionInterface $vision = null)
     {
         $this->vision = $vision;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSelfImagePath()
-    {
-        if (!$this->image) {
-            return;
-        }
-        return ltrim($this->image->getMediaId(), '/');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getMediaPath()
-    {
-        return '/vision';
     }
 }

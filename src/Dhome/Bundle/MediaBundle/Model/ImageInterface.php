@@ -4,27 +4,31 @@ namespace Dhome\Bundle\MediaBundle\Model;
 
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
-use Symfony\Cmf\Bundle\MediaBundle\ImageInterface as CmfImageInterface;
 
 interface ImageInterface extends ResourceInterface, TimestampableInterface
 {
     /**
+     * @return bool
+     */
+    public function hasFile();
+
+    /**
+     * @return null|\SplFileInfo
+     */
+    public function getFile();
+
+    /**
+     * @param \SplFileInfo $file
+     */
+    public function setFile(\SplFileInfo $file);
+
+    /**
      * @return string
      */
-    public function getMediaId();
+    public function getPath();
 
     /**
-     * @param string $mediaId
+     * @param string $path
      */
-    public function setMediaId($mediaId);
-
-    /**
-     * @return CmfImageInterface
-     */
-    public function getMedia();
-
-    /**
-     * @param CmfImageInterface $media
-     */
-    public function setMedia($media);
+    public function setPath($path);
 }

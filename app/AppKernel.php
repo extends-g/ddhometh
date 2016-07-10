@@ -17,6 +17,11 @@ class AppKernel extends Kernel
             new \Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new \Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new \Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
+            new \Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
+//            new \Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
+//            new \Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
+//            new \Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
+            new \Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
 
             new \Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
@@ -25,9 +30,16 @@ class AppKernel extends Kernel
             new \Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
 
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new \WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
             new \FOS\RestBundle\FOSRestBundle(),
             new \JMS\SerializerBundle\JMSSerializerBundle(),
+            new \Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+
+            new \Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
+            new \Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new \Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            new \Liip\ImagineBundle\LiipImagineBundle(),
 
             new \Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
             new \Sylius\Bundle\UserBundle\SyliusUserBundle(),

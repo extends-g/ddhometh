@@ -18,7 +18,9 @@ var webRootPath = rootPath + 'web/';
 var paths = {
     admin: {
         js: [
+            'node_modules/tether/dist/js/tether.min.js',
             'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'web/ui/admin/js/**',
             'web/ui/admin/app.js'
         ],
@@ -26,6 +28,9 @@ var paths = {
             'web/ui/admin/sass/**'
         ],
         css: [
+            'node_modules/font-awesome/css/font-awesome.min.css',
+            'node_modules/bootstrap/dist/css/bootstrap.min.css',
+            'node_modules/tether/dist/css/tether.min.css',
             'web/ui/admin/css/**'
         ],
         img: [
@@ -33,8 +38,10 @@ var paths = {
             'web/ui/admin/img/**'
         ],
         fonts: [
+            'node_modules/font-awesome/fonts/**'
         ],
         copy: [
+            ['tinymce', 'node_modules/tinymce/**']
         ]
     },
     web: {
@@ -103,8 +110,22 @@ gulp.task('admin-fonts', function() {
 });
 
 gulp.task('admin-copy', function() {
-    return gulp.src(paths.admin.copy)
-        .pipe(gulp.dest(adminRootPath));
+    gulp.src(paths.admin.fonts)
+        .pipe(gulp.dest(adminRootPath + 'fonts/'))
+    ;
+
+    gulp.src(paths.admin.img)
+        .pipe(gulp.dest(adminRootPath + 'img/'))
+    ;
+
+    for (var i = 0; i < paths.admin.copy.length; i++) {
+        var copy = paths.admin.copy[i];
+        if (typeof copy === "object") {
+            gulp.src(copy[1]).pipe(gulp.dest(adminRootPath + '/' + copy[0]));
+        } else {
+            gulp.src(copy).pipe(gulp.dest(adminRootPath))
+        }
+    }
 });
 
 gulp.task('admin-watch', function() {

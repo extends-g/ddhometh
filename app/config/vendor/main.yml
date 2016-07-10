@@ -4,6 +4,8 @@ imports:
     - { resource: cmf.yml }
     - { resource: doctrine_phpcr.yml }
     - { resource: doctrine_cache.yml }
+    - { resource: knp_gaufrette.yml }
+    - { resource: liip_imagine.yml }
 
 doctrine:
     orm:

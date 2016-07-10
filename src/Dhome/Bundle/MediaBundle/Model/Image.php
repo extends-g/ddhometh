@@ -3,26 +3,26 @@
 namespace Dhome\Bundle\MediaBundle\Model;
 
 use Sylius\Component\Resource\Model\TimestampableTrait;
-use Symfony\Cmf\Bundle\MediaBundle\Doctrine\Phpcr\Image as CmfImage;
 
 class Image implements ImageInterface
 {
     use TimestampableTrait;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $id;
 
     /**
-     * @var string
+     * @var \SplFileInfo
      */
-    protected $mediaId;
+    protected $file;
 
     /**
-     * @var CmfImage
+     * @var string
      */
-    protected $media;
+    protected $path;
+
 
     /**
      * @return int
@@ -33,34 +33,50 @@ class Image implements ImageInterface
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    public function getMediaId()
+    public function hasFile()
     {
-        return $this->mediaId;
+        return null !== $this->file;
     }
 
     /**
-     * @param string $mediaId
+     * {@inheritdoc}
      */
-    public function setMediaId($mediaId)
+    public function getFile()
     {
-        $this->mediaId = $mediaId;
+        return $this->file;
     }
 
     /**
-     * @return CmfImage
+     * {@inheritdoc}
      */
-    public function getMedia()
+    public function setFile(\SplFileInfo $file)
     {
-        return $this->media;
+        $this->file = $file;
     }
 
     /**
-     * @param CmfImage $media
+     * {@inheritdoc}
      */
-    public function setMedia($media)
+    public function hasPath()
     {
-        $this->media = $media;
+        return null !== $this->path;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
     }
 }
