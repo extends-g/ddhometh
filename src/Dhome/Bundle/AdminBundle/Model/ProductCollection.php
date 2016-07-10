@@ -211,7 +211,7 @@ class ProductCollection implements ProductCollectionInterface
     public function removeImage(CollectionImageInterface $image)
     {
         if ($this->hasImage($image)) {
-            $image->setImage(null);
+            $image->setCollection(null);
             $this->images->removeElement($image);
         }
     }

@@ -1,0 +1,48 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_collections_index') }}">{{ 'Collections'|trans }}</a></li>
+        <li>{{ collection.name[:20] ~ '...' }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="actions-menu">
+            {{ buttons.manage(path('dhome_admin_collections_index'), 'Collections'|trans) }}
+            {{ buttons.edit(path('dhome_admin_collections_update', {'id': collection.id})) }}
+            {{ buttons.delete(path('dhome_admin_collections_delete', {'id': collection.id}), null, false, true) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>{{ 'Detail'|trans }}</h4><hr>
+
+            <strong>{{ 'Name'|trans ~ ': ' }}</strong>
+            {{ collection.name }}<br>
+
+            <strong>{{ 'Short description'|trans ~ ': ' }}</strong>
+            {{ collection.shortDescription }}<br>
+
+            <strong>{{ 'Content'|trans ~ ': ' }}</strong>
+            {{ collection.content|raw }}
+
+            <strong>{{ 'Video link'|trans ~ ': ' }}</strong>
+            {{ collection.videoLink }}<br>
+
+        </div>
+        <div class="col-sm-6">
+            <h4>{{ 'Collection images'|trans }}</h4><hr>
+            {% for image in collection.images %}
+                <img src="{{ image.path|imagine_filter('dhome_medium') }}">
+            {% else %}
+                No photo.
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

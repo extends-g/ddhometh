@@ -1,0 +1,26 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+{% from 'DhomeWebBundle:admin/Macros:misc.html.twig' import pagination %}
+{% from 'DhomeWebBundle:admin/CollectionCategory:macros.html.twig' import list %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li>{{ 'Colecction Categories'|trans }}</a></li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <div class="actions-menu">
+            {{ buttons.create(path('dhome_admin_collection_category_create'), 'trans.admin.create'|trans) }}
+        </div>
+        <h1><i class="fa fa-flag"></i> {{ 'Collection Categories'|trans }}</h1>
+    </div>
+
+    {{ pagination(collection_categories) }}
+    {{ list(collection_categories) }}
+    {{ pagination(collection_categories) }}
+{% endblock %}
