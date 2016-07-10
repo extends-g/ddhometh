@@ -1,0 +1,37 @@
+dhome_admin_press_category_index:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.press_category:indexAction
+        _sylius:
+            template: DhomeWebBundle::admin/PressCategory/index.html.twig
+            sortable: true
+            sorting:
+                name: ASC
+            filterable: true
+
+dhome_admin_press_category_create:
+    path: /create
+    methods: [GET, POST]
+    defaults:
+        _controller: dhome.controller.press_category:createAction
+        _sylius:
+            template: DhomeWebBundle::admin/PressCategory/create.html.twig
+            redirect: dhome_admin_press_category_index
+
+dhome_admin_press_category_update:
+    path: /{id}/update
+    methods: [GET, PUT, PATCH, POST]
+    defaults:
+        _controller: dhome.controller.press_category:updateAction
+        _sylius:
+            template: DhomeWebBundle::admin/PressCategory/update.html.twig
+            redirect: dhome_admin_press_category_index
+
+dhome_admin_press_category_delete:
+    path: /{id}/delete
+    methods: [DELETE]
+    defaults:
+        _controller: dhome.controller.press_category:deleteAction
+        _sylius:
+            redirect: dhome_admin_press_category_index

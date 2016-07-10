@@ -1,0 +1,48 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_presses_index') }}">{{ 'Presses'|trans }}</a></li>
+        <li>{{ press.name[:20] ~ '...' }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="actions-menu">
+            {{ buttons.manage(path('dhome_admin_presses_index'), 'Presses'|trans) }}
+            {{ buttons.edit(path('dhome_admin_presses_update', {'id': press.id})) }}
+            {{ buttons.delete(path('dhome_admin_presses_delete', {'id': press.id}), null, false, true) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>{{ 'Detail'|trans }}</h4><hr>
+
+            <strong>{{ 'Name'|trans ~ ': ' }}</strong>
+            {{ press.name }}<br>
+
+            <strong>{{ 'Short description'|trans ~ ': ' }}</strong>
+            {{ press.shortDescription }}<br>
+
+            <strong>{{ 'Content'|trans ~ ': ' }}</strong>
+            {{ press.content|raw }}
+
+            <strong>{{ 'Video link'|trans ~ ': ' }}</strong>
+            {{ press.videoLink }}<br>
+
+        </div>
+        <div class="col-sm-6">
+            <h4>{{ 'Press images'|trans }}</h4><hr>
+            {% for image in press.images %}
+                <img src="{{ image.path|imagine_filter('dhome_medium') }}">
+            {% else %}
+                No photo.
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

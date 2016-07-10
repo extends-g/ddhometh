@@ -47,7 +47,7 @@ class ProductCollectionType extends AbstractResourceType
                 'allow_add' => true,
                 'allow_delete' => true,
                 'by_reference' => false,
-                'label' => 'Project image',
+                'label' => 'Collection image',
             ])
         ;
     }

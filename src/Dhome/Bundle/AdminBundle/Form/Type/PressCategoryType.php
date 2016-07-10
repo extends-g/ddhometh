@@ -15,6 +15,12 @@ class PressCategoryType extends AbstractResourceType
         $builder
             ->add('name', 'text', [
                 'label' => 'Name',
+                'required' => true
+            ])
+
+            ->add('icon', 'text', [
+                'label' => 'Icon',
+                'required' => false
             ])
         ;
     }

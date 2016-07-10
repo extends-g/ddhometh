@@ -3,17 +3,9 @@
 namespace Dhome\Bundle\MediaBundle\Model;
 
 use Dhome\Bundle\AdminBundle\Model\PressInterface;
-use Sylius\Component\Resource\Model\TimestampableTrait;
 
-class PressImage implements PressImageInterface
+class PressImage extends Image implements PressImageInterface
 {
-    use TimestampableTrait;
-
-    /**
-     * @var int
-     */
-    protected $id;
-
     /**
      * @var string
      */
@@ -33,14 +25,6 @@ class PressImage implements PressImageInterface
      * @var PressInterface
      */
     protected $press;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * {@inheritdoc}
@@ -77,22 +61,6 @@ class PressImage implements PressImageInterface
     /**
      * {@inheritdoc}
      */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setImage(ImageInterface $image = null)
-    {
-        $this->image = $image;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getPress()
     {
         return $this->press;
@@ -101,27 +69,8 @@ class PressImage implements PressImageInterface
     /**
      * {@inheritdoc}
      */
-    public function setPress(PressInterface $press)
+    public function setPress(PressInterface $press = null)
     {
         $this->press = $press;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSelfImagePath()
-    {
-        if (!$this->image) {
-            return;
-        }
-        return ltrim($this->image->getMediaId(), '/');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getMediaPath()
-    {
-        return '/press';
     }
 }

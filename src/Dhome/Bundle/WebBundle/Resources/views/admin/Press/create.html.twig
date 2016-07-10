@@ -1,0 +1,29 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import create %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_presses_index') }}">{{ 'Presses'|trans }}</a></li>
+        <li>{{ 'trans.admin.new'|trans }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+    <h1><i class="fa fa-plus"></i> {{ 'Presses'|trans }}</h1>
+    </div>
+
+    {{ form_start(form, {
+        'action': path('dhome_admin_presses_create'),
+        'method': 'post',
+        'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}
+    }) }}
+
+    {% include 'DhomeWebBundle:admin/Press:_form.html.twig' %}
+    {{ form_row(form._token) }}
+    {{ create() }}
+
+    {{ form_end(form, {'render_rest': false}) }}
+{% endblock %}
