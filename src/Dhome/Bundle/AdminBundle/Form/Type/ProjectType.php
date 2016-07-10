@@ -22,7 +22,6 @@ class ProjectType extends AbstractResourceType
 
             ->add('name', 'text', [
                 'label' => 'Name',
-                'max_length' => 4,
                 'required' => true
             ])
 
