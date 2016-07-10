@@ -1,0 +1,23 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import update %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li>{{ 'Contact us'|trans }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1><i class="fa fa-pencil"></i> {{ 'Edit contact us'|trans }}</h1>
+    </div>
+
+    {{ form_errors(form) }}
+
+    <form action="{{ path('route_admin_setting_contact_parameter') }}" method="post" class="form-horizontal" novalidate>
+        {{ form_rest(form) }}
+        {{ update() }}
+    </form>
+{% endblock %}
