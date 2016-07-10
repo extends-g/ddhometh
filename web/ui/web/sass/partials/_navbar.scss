@@ -1,17 +1,23 @@
-.navbar {
+.navbar-dt {
     background: $ddh-base-body;
     margin-bottom: 0;
-    text-align: center;
     color: $ddh-base-text;
+    padding: 0;
 
     &__comp {
+        padding-top: .25rem;
+        padding-bottom: 0;
+        padding-right: 2.5rem;
+
         &--logo {
             font-size: 1.2rem;
         }
+
         &--name {
             font-family: 'NeueHansKendrick';
             font-size: 1.4rem;
         }
+
         &--desc {
             font-family: 'NeueHansKendrick_thin';
             font-size: 0.6rem;
@@ -20,30 +26,47 @@
 
     &__menu {
         padding-left: 0;
-        margin: 1rem 0;
+        margin: 0;
         list-style: none;
         display: block;
 
         li {
             display: inline-block;
-            padding: 1rem .5rem 0 .5rem;
-
-            &:after {
-                content: '|';
-                padding-left: 1rem;
-            }
-
-            &:last-child {
-                &:after {
-                    content: '';
-                }
-            }
 
             a {
                 font-family: 'NeueHansKendrick_thin';
-                color: $ddh-base-text;
+                color: #b0b0b0;
                 font-size: 0.8rem;
+                margin: 1.25rem .5rem;
+                display: block;
             }
         }
+
+        &--toggle {
+            margin-left: 0;
+
+            ul {
+                left: auto;
+                background: $ddh-base-body;
+                border-radius: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            li {
+                display: block;
+            }
+
+            &:hover > ul.dropdown-menu {
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-dt {
+        display: none;
+        visibility: hidden;
     }
 }

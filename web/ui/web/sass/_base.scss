@@ -33,5 +33,12 @@ $ddh-base-text: #fff;
 body {
     background: transparent;
     font-family: 'NeueHansKendrick', Helvetica, Arial, sans-serif;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
+}
+
+a {
+    &:hover {
+        opacity: .8;
+        text-decoration: none;
+    }
 }
