@@ -25,3 +25,7 @@ dhome_admin_press_category:
 dhome_admin_press:
     prefix: /presses
     resource: "@DhomeAdminBundle/Resources/config/routing/press.yml"
+
+dhome_admin_contact:
+    prefix: /contact
+    resource: "@DhomeAdminBundle/Resources/config/routing/setting.yml"

@@ -1,0 +1,8 @@
+route_admin_setting_contact_parameter:
+    path: /
+    defaults:
+        _controller: sylius.controller.settings:updateAction
+        schema: contact
+        template: DhomeWebBundle::admin/Setting/contactParameter.html.twig
+        _sylius:
+            redirect: route_admin_setting_contact_parameter
