@@ -2,6 +2,7 @@
 
 namespace Dhome\Bundle\MediaBundle\EventListener;
 
+use Dhome\Bundle\AdminBundle\Model\ProjectInterface;
 use Dhome\Bundle\AdminBundle\Model\VisionInterface;
 use Dhome\Bundle\MediaBundle\Uploader\ImageUploaderInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
@@ -33,42 +34,16 @@ class ImageUploadListener
         $this->uploadVisionImages($subject);
     }
 
-//    /**
-//     * @param GenericEvent $event
-//     */
-//    public function uploadProductVariantImage(GenericEvent $event)
-//    {
-//        $subject = $event->getSubject();
-//        Assert::isInstanceOf($subject, ProductVariantInterface::class);
-//
-//        $this->uploadProductVariantImages($subject);
-//    }
-//
-//    /**
-//     * @param GenericEvent $event
-//     */
-//    public function uploadProductImage(GenericEvent $event)
-//    {
-//        $subject = $event->getSubject();
-//        Assert::isInstanceOf($subject, ProductInterface::class);
-//
-//        if ($subject->isSimple()) {
-//            $this->uploadProductVariantImages($subject->getFirstVariant());
-//        }
-//    }
-
     /**
      * @param GenericEvent $event
      */
-//    public function uploadTaxonImage(GenericEvent $event)
-//    {
-//        $subject = $event->getSubject();
-//        Assert::isInstanceOf($subject, TaxonInterface::class);
-//
-//        if ($subject->hasFile()) {
-//            $this->uploader->upload($subject);
-//        }
-//    }
+    public function uploadProjectImage(GenericEvent $event)
+    {
+        $subject = $event->getSubject();
+        Assert::isInstanceOf($subject, ProjectInterface::class);
+
+        $this->uploadProjectImages($subject);
+    }
 
     /**
      * @param VisionInterface $vision
@@ -76,6 +51,24 @@ class ImageUploadListener
     private function uploadVisionImages(VisionInterface $vision)
     {
         $images = $vision->getImages();
+        foreach ($images as $image) {
+            if ($image->hasFile()) {
+                $this->uploader->upload($image);
+            }
+
+            // Upload failed? Let's remove that image.
+            if (null === $image->getPath()) {
+                $images->removeElement($image);
+            }
+        }
+    }
+
+    /**
+     * @param ProjectInterface $project
+     */
+    private function uploadProjectImages(ProjectInterface $project)
+    {
+        $images = $project->getImages();
         foreach ($images as $image) {
             if ($image->hasFile()) {
                 $this->uploader->upload($image);

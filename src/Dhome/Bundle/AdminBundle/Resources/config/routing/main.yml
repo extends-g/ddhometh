@@ -5,3 +5,7 @@ dhome_admin_vision:
 dhome_admin_project_category:
     prefix: /project-categories
     resource: "@DhomeAdminBundle/Resources/config/routing/project_category.yml"
+
+dhome_admin_project:
+    prefix: /projects
+    resource: "@DhomeAdminBundle/Resources/config/routing/project.yml"
