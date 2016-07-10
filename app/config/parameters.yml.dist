@@ -19,3 +19,4 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
     phpcr_user: root
     phpcr_password: null
+    dhome.uploader.filesystem: dhome_image
