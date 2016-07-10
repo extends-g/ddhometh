@@ -1,0 +1,19 @@
+.gallery {
+
+    &__tumbnail {
+        padding: .25rem !important;
+    }
+
+    img {
+        min-height: 225px;
+        max-height: 225px;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    a {
+
+    }
+}

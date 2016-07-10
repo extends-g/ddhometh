@@ -1,0 +1,19 @@
+{% extends 'DhomeWebBundle:web:layout.html.twig' %}
+
+{% block content %}
+    <div class="gallery">
+        <div class="row">
+            {% for i in 0..8 %}
+                <div class="col-sm-4 col-xs-12 gallery__tumbnail">
+                    <a href=""><img class="img-fluid" src="{{ asset('ui/web/img/h.jpg') }}"></a>
+                </div>
+                <div class="col-sm-4 col-xs-12 gallery__tumbnail">
+                    <a href=""><img class="img-fluid" src="{{ asset('ui/web/img/a.jpg') }}"></a>
+                </div>
+                <div class="col-sm-4 col-xs-12 gallery__tumbnail">
+                    <a href=""><img class="img-fluid" src="{{ asset('ui/web/img/b.jpg') }}"></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -15,4 +15,9 @@ class FrontendController extends Controller
     {
         return $this->render('DhomeWebBundle::web/_sub-menu.mobile.html.twig');
     }
+
+    public function projectAction()
+    {
+        return $this->render('DhomeWebBundle::web/project.html.twig');
+    }
 }

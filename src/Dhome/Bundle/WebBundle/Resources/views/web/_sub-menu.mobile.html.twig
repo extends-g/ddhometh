@@ -1,8 +1,11 @@
-{% block content %}
-    <div class="sub-menu-opa">
+{% extends 'DhomeWebBundle:web:layout.html.twig' %}
+
+{% block body %}
+    <div class="sub-menu-mb">
         <ul>
-            {% for i in 5 %}
-                <li></li>
+            <li class="sub-menu-mb__header">VISION</li>
+            {% for i in 0..5 %}
+                <li class="sub-menu-mb__list"><a>vision menu list here</a></li>
             {% endfor %}
         </ul>
     </div>

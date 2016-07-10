@@ -7,3 +7,8 @@ dhome_submenu:
     path: /sub-menu
     defaults:
         _controller: DhomeWebBundle:Frontend:submenu
+
+dhome_project:
+    path: /project
+    defaults:
+        _controller: DhomeWebBundle:Frontend:project
