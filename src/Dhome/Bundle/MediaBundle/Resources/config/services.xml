@@ -36,6 +36,8 @@
             <tag name="kernel.event_listener" event="dhome.vision.pre_update" method="uploadVisionImage" />
             <tag name="kernel.event_listener" event="dhome.project.pre_create" method="uploadProjectImage" />
             <tag name="kernel.event_listener" event="dhome.project.pre_update" method="uploadProjectImage" />
+            <tag name="kernel.event_listener" event="dhome.collection.pre_create" method="uploadCollectionImage" />
+            <tag name="kernel.event_listener" event="dhome.collection.pre_update" method="uploadCollectionImage" />
         </service>
     </services>
 </container>

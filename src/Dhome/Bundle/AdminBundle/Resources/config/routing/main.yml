@@ -9,3 +9,11 @@ dhome_admin_project_category:
 dhome_admin_project:
     prefix: /projects
     resource: "@DhomeAdminBundle/Resources/config/routing/project.yml"
+
+dhome_admin_collection_category:
+    prefix: /collection-categories
+    resource: "@DhomeAdminBundle/Resources/config/routing/collection_category.yml"
+
+dhome_admin_collection:
+    prefix: /collections
+    resource: "@DhomeAdminBundle/Resources/config/routing/collection.yml"

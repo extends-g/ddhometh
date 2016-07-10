@@ -3,17 +3,9 @@
 namespace Dhome\Bundle\MediaBundle\Model;
 
 use Dhome\Bundle\AdminBundle\Model\ProductCollectionInterface;
-use Sylius\Component\Resource\Model\TimestampableTrait;
 
-class CollectionImage implements CollectionImageInterface
+class CollectionImage extends Image implements CollectionImageInterface
 {
-    use TimestampableTrait;
-
-    /**
-     * @var int
-     */
-    protected $id;
-
     /**
      * @var string
      */
@@ -33,14 +25,6 @@ class CollectionImage implements CollectionImageInterface
      * @var ProductCollectionInterface
      */
     protected $collection;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * {@inheritdoc}
@@ -77,22 +61,6 @@ class CollectionImage implements CollectionImageInterface
     /**
      * {@inheritdoc}
      */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setImage(ImageInterface $image = null)
-    {
-        $this->image = $image;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getCollection()
     {
         return $this->collection;
@@ -101,27 +69,8 @@ class CollectionImage implements CollectionImageInterface
     /**
      * {@inheritdoc}
      */
-    public function setCollection(ProductCollectionInterface $collection)
+    public function setCollection(ProductCollectionInterface $collection = null)
     {
         $this->collection = $collection;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSelfImagePath()
-    {
-        if (!$this->image) {
-            return;
-        }
-        return ltrim($this->image->getMediaId(), '/');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getMediaPath()
-    {
-        return '/collection';
     }
 }

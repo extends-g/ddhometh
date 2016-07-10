@@ -50,4 +50,34 @@
         </property>
     </class>
 
+    <class name="Dhome\Bundle\AdminBundle\Model\ProductCollectionCategory">
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">Name must not blank.</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+    </class>
+
+    <class name="Dhome\Bundle\AdminBundle\Model\ProductCollection">
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">Name must not blank.</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+        <property name="category">
+            <constraint name="NotNull">
+                <option name="message">Category must not null.</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+        <property name="content">
+            <constraint name="NotBlank">
+                <option name="message">Content must not blank.</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+    </class>
+
 </constraint-mapping>
