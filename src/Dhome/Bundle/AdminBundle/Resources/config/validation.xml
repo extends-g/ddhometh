@@ -20,4 +20,13 @@
         </property>
     </class>
 
+    <class name="Dhome\Bundle\AdminBundle\Model\ProjectCategory">
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">Name must not blank.</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+    </class>
+
 </constraint-mapping>

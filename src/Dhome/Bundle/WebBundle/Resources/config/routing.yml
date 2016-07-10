@@ -7,4 +7,3 @@ dhome_admin_dashboard:
     path: admin
     defaults:
         _controller: DhomeWebBundle:Backend:dashboard
-        
