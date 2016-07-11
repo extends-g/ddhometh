@@ -29,3 +29,6 @@ dhome_admin_press:
 dhome_admin_contact:
     prefix: /contact
     resource: "@DhomeAdminBundle/Resources/config/routing/setting.yml"
+
+dhome_admin_security:
+    resource: "@DhomeAdminBundle/Resources/config/routing/security.yml"

@@ -1,7 +1,11 @@
 imports:
     - { resource: config.yml }
 
+#parameters:
+#    sylius.cache: %sylius.cache%
+
 framework:
+    secret: "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing_dev.yml"
         strict_requirements: true
