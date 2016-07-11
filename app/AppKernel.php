@@ -45,6 +45,8 @@ class AppKernel extends Kernel
             new \Sylius\Bundle\UserBundle\SyliusUserBundle(),
             new \Sylius\Bundle\MailerBundle\SyliusMailerBundle(),
             new \Sylius\Bundle\SettingsBundle\SyliusSettingsBundle(),
+//            new \Sylius\Bundle\RbacBundle\SyliusRbacBundle(),
+            new \Sylius\Bundle\UiBundle\SyliusUiBundle(),
 
             new \Dhome\Bundle\AdminBundle\DhomeAdminBundle(),
             new \Dhome\Bundle\MediaBundle\DhomeMediaBundle(),
