@@ -252,13 +252,31 @@ a:hover {
     height: 100vh !important; } }
 
 .gallery__tumbnail {
-  padding: .25rem !important; }
+  padding: .25rem !important;
+  position: relative; }
+  .gallery__tumbnail--desc {
+    display: none;
+    position: absolute;
+    bottom: .25rem;
+    left: .25rem;
+    padding: 2rem;
+    color: #ffffff;
+    background: #000000;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms; }
 
 .gallery img {
   min-height: 225px;
   max-height: 225px; }
-  .gallery img:hover {
-    opacity: 0.8; }
+  .gallery img:hover + .gallery__tumbnail--desc {
+    display: block; }
+
+.gallery a {
+  display: block; }
 
 @media screen and (max-width: 554px) {
   .gallery img {

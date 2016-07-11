@@ -5,13 +5,22 @@
         <div class="row">
             {% for i in 0..3 %}
                 <div class="col-lg-4 col-sm-6 col-xs-12 gallery__tumbnail">
-                    <a href=""><img class="img-fluid img-lazy" data-original="{{ asset('ui/web/img/h.jpg') }}"></a>
+                    <a href="">
+                        <img class="img-fluid img-lazy" data-original="{{ asset('ui/web/img/h.jpg') }}">
+                    </a>
+                    <div class="gallery__tumbnail--desc">description shown here</div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xs-12 gallery__tumbnail">
-                    <a href=""><img class="img-fluid img-lazy" data-original="{{ asset('ui/web/img/a.jpg') }}"></a>
+                    <a href="">
+                        <img class="img-fluid img-lazy" data-original="{{ asset('ui/web/img/a.jpg') }}">
+                    </a>
+                    <div class="gallery__tumbnail--desc">description shown here</div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xs-12 gallery__tumbnail">
-                    <a href=""><img class="img-fluid img-lazy" data-original="{{ asset('ui/web/img/b.jpg') }}"></a>
+                    <a href="">
+                        <img class="img-fluid img-lazy" data-original="{{ asset('ui/web/img/b.jpg') }}">
+                    </a>
+                    <div class="gallery__tumbnail--desc">description shown here</div>
                 </div>
             {% endfor %}
         </div>
