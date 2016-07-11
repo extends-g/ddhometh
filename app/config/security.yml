@@ -42,7 +42,7 @@ security:
                 use_referer: true
             logout:
                 path: /admin/logout
-                target: /admin/
+                target: /admin
 
             anonymous: true
             remember_me:
