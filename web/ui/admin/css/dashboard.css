@@ -114,3 +114,12 @@ body {
     display: inline-block;
     border-radius: 50%;
 }
+
+.breadcrumb {
+    background-color: #ccc;
+    color: #868686;
+}
+
+.breadcrumb > .active {
+    color: #656565;
+}

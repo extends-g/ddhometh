@@ -35,8 +35,22 @@
                 </div>
 
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div id="topbar">
+                        {% block topbar %}
+                            {% include 'DhomeWebBundle:admin:_breadcrumb.html.twig' %}
+                        {% endblock %}
+                    </div>
 
-                    Content
+                    {#{% include 'DhomeWebBundle:admin:_flashes.html.twig' %}#}
+
+                    {#{% block content %}#}
+                    {#{% endblock %}#}
+
+                    {#<hr>#}
+
+                    {#Confirmation modal#}
+                    {#{% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}#}
+                    {#</div>#}
                 </div>
 
             </div>

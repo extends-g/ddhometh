@@ -7,7 +7,7 @@
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
         <li><a href="{{ path('dhome_admin_project_category_index') }}">{{ 'Project Categories'|trans }}</a></li>
         <li>{{ project_category.name[:20] ~ '...' }}</li>
-        <li>{{ 'trans.admin.edit'|trans }}</li>
+        <li class="active">{{ 'trans.admin.edit'|trans }}</li>
     </ol>
 {% endblock %}
 

@@ -6,7 +6,7 @@
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
         <li><a href="{{ path('dhome_admin_presses_index') }}">{{ 'Presses'|trans }}</a></li>
-        <li>{{ press.name[:20] ~ '...' }}</li>
+        <li class="active">{{ press.name[:20] ~ '...' }}</li>
     </ol>
 {% endblock %}
 

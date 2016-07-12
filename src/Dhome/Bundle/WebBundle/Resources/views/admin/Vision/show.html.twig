@@ -6,7 +6,7 @@
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
         <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
-        <li>{{ vision.title[:20] ~ '...' }}</li>
+        <li class="active">{{ vision.title[:20] ~ '...' }}</li>
     </ol>
 {% endblock %}
 
