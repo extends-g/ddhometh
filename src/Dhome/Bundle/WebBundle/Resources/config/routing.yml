@@ -2,8 +2,3 @@ dhome_homepage:
     path: /
     defaults:
         _controller: DhomeWebBundle:Frontend:index
-
-dhome_admin_dashboard:
-    path: admin
-    defaults:
-        _controller: DhomeWebBundle:Backend:dashboard

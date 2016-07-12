@@ -32,3 +32,15 @@ dhome_admin_contact:
 
 dhome_admin_security:
     resource: "@DhomeAdminBundle/Resources/config/routing/security.yml"
+
+dhome_admin_dashboard:
+    path: /dashboard
+    defaults:
+        _controller: DhomeWebBundle:Backend:dashboard
+
+dhome_admin_root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: dhome_admin_dashboard
+        permanent: true
