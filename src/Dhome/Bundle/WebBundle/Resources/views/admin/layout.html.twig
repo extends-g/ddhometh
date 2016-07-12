@@ -41,52 +41,20 @@
                         {% endblock %}
                     </div>
 
-                    {#{% include 'DhomeWebBundle:admin:_flashes.html.twig' %}#}
+                    {% include 'DhomeWebBundle:admin:_flashes.html.twig' %}
 
-                    {#{% block content %}#}
-                    {#{% endblock %}#}
+                    {% block content %}
+                    {% endblock %}
 
                     {#<hr>#}
 
                     {#Confirmation modal#}
-                    {#{% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}#}
+                    {% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}
                     {#</div>#}
                 </div>
 
             </div>
         </div>
-
-        {#<div class="row main-container">#}
-            {#<div class="col-md-1 col-lg-2 hidden-sm hidden-xs">#}
-                {#{% block sidebar %}#}
-                    {#<div id="sidebar">#}
-                        {#<div class="sidebar-nav">#}
-                            {#{% include 'DhomeWebBundle:admin:menu.html.twig' %}#}
-                            {#{{ knp_menu_render('sylius.backend.sidebar', {'template': 'DhomeWebBundle::admin:menu.html.twig', 'currentClass': 'active'}) }}#}
-                        {#</div>#}
-                    {#</div>#}
-                {#{% endblock %}#}
-            {#</div>#}
-
-            {#<div class="col-md-11 col-lg-10">#}
-                {#<div id="topbar">#}
-                    {#{% block topbar %}#}
-                        {#{% include 'DhomeWebBundle:admin:_breadcrumb.html.twig' %}#}
-                    {#{% endblock %}#}
-                {#</div>#}
-
-                {#{% include 'DhomeWebBundle:admin:_flashes.html.twig' %}#}
-
-                {#{% block content %}#}
-                {#{% endblock %}#}
-
-                {#<hr>#}
-
-                 {#Confirmation modal#}
-                {#{% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}#}
-            {#</div>#}
-        {#</div>#}
-
         {% block javascripts %}
             {{ tinymce_init() }}
             <script src="{{ asset('assets/admin/js/app.js') }}"></script>

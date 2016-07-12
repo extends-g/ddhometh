@@ -6,8 +6,9 @@
 {% endmacro %}
 
 {% macro info(text) %}
+    <br>
     <div class="alert alert-info">
-        <h4 class="alert-heading">{{ 'trans.admin.information'|trans }}</h4>
+        <strong class="alert-heading">{{ 'trans.admin.information'|trans }}</strong>
         {{ text }}
     </div>
 {% endmacro %}
@@ -20,8 +21,9 @@
 {% endmacro %}
 
 {% macro warning(text) %}
+    <br>
     <div class="alert alert-warning">
-        <h4 class="alert-heading">{{ 'trans.admin.warning'|trans }}</h4>
+        <strong class="alert-heading">{{ 'trans.admin.warning'|trans }}</strong>
         {{ text }}
     </div>
 {% endmacro %}

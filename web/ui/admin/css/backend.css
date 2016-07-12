@@ -565,3 +565,15 @@
 /*.content-block-overview i {*/
     /*font-size: 24px;*/
 /*}*/
+
+.delete-action-form {
+    display: inline;
+}
+
+.table > thead > tr > th > a {
+    color: #656565;
+}
+
+.table > tbody > tr > td > a {
+    color: #656565;
+}
