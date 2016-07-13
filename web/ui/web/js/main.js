@@ -11,9 +11,11 @@ $(document).ready(function() {
         elements: true
     };
 
+    //navbar mobile
+    $(".menu-opener").click(function(){
+        $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
+    });
+
 });
 
-//navbar mobile
-$(".menu-opener").click(function(){
-    $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
-});
+

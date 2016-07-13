@@ -19,7 +19,7 @@ var paths = {
     admin: {
         js: [
             'node_modules/tether/dist/js/tether.min.js',
-            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/jquery/jquery.min.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'web/ui/admin/js/**',
             'web/ui/admin/app.js'
@@ -46,7 +46,7 @@ var paths = {
     },
     web: {
         js: [
-            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/jquery/jquery.min.js',
             'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'node_modules/jquery-lazyload/jquery.lazyload.js',
