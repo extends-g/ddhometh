@@ -4,6 +4,13 @@
 {% from 'DhomeWebBundle:admin/Macros:misc.html.twig' import pagination %}
 {% from 'DhomeWebBundle:admin/ProjectCategory:macros.html.twig' import list %}
 
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-folder"></i> {{ 'Project Categories'|trans }}</div>
+    <div class="pull-xs-right">
+        {{ buttons.create(path('dhome_admin_project_category_create'), 'trans.admin.create'|trans) }}
+    </div>
+{% endblock %}
+
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
@@ -12,15 +19,20 @@
 {% endblock %}
 
 {% block content %}
-
-    <div class="page-header">
-        <div class="actions-menu">
-            {{ buttons.create(path('dhome_admin_project_category_create'), 'trans.admin.create'|trans) }}
+    <div class="row index-page-header">
+        <div class="pull-xs-left col-sm-3">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    {# todo: search #}
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                </span>
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
         </div>
-        <h1><i class="fa fa-flag"></i> {{ 'Project Categories'|trans }}</h1>
+        <div class="pull-xs-right col-lg-9 index-paginate">
+            {{ pagination(project_categories) }}
+        </div>
     </div>
 
-    {{ pagination(project_categories) }}
     {{ list(project_categories) }}
-    {{ pagination(project_categories) }}
 {% endblock %}

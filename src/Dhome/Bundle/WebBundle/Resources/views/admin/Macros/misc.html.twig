@@ -1,5 +1,5 @@
 {% macro pagination(paginator, options) %}
-    {% if paginator.haveToPaginate()|default(false) %}
+    {#{% if paginator.haveToPaginate()|default(false) %}#}
     <div class="pull-xs-right">
         {#<div class="col-xs-9">#}
             {{ pagerfanta(paginator, 'twitter_bootstrap4_translated', options|default({})) }}
@@ -13,5 +13,5 @@
             </div>
         {#</div>#}
     </div>
-    {% endif %}
+    {#{% endif %}#}
 {% endmacro %}
