@@ -610,6 +610,11 @@
     padding-top: 20px;
 }
 
+.show-detail-header {
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
 .card-block {
     border-radius: 0;
 }
