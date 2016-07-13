@@ -5,7 +5,7 @@
 {% from 'DhomeWebBundle:admin/Vision:macros.html.twig' import list %}
 
 {% block header %}
-    <div class="pull-xs-left header-text"><i class="fa fa-flag"></i> {{ 'Visions'|trans }}</div>
+    <div class="pull-xs-left header-text"><i class="fa fa-folder"></i> {{ 'Visions'|trans }}</div>
     <div class="pull-xs-right">
         {{ buttons.create(path('dhome_admin_visions_create'), 'trans.admin.create'|trans) }}
     </div>
@@ -23,6 +23,7 @@
         <div class="pull-xs-left col-sm-3">
             <div class="input-group">
                 <span class="input-group-btn">
+                    {# todo: search #}
                 <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
                 </span>
                 <input type="text" class="form-control" placeholder="Search">
