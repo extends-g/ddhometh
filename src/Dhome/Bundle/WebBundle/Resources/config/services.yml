@@ -6,3 +6,16 @@ services:
             - [setContainer, [@service_container]]
         tags:
             - {name: twig.extension}
+
+    pagerfanta.view.twitter_bootstrap4:
+        class: Dhome\Bundle\WebBundle\Pagerfanta\View\TwitterBootstrap4View
+        public: false
+        tags:
+            - { name: pagerfanta.view, alias: twitter_bootstrap4 }
+
+    pagerfanta.view.twitter_bootstrap4_translated:
+        class: Dhome\Bundle\WebBundle\Pagerfanta\View\TwitterBootstrap4TranslatedView
+        public: false
+        arguments: ['@pagerfanta.view.twitter_bootstrap4', '@translator']
+        tags:
+            - { name: pagerfanta.view, alias: twitter_bootstrap4_translated }

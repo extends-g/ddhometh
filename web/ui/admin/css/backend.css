@@ -570,10 +570,83 @@
     display: inline;
 }
 
+.table > thead > tr > th {
+    font-weight: 400;
+}
+
+.table > thead {
+}
+
+/*.table > tbody > tr {*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
+
+.table td, .table th {
+    vertical-align: middle;
+    padding: 0.50rem;
+}
+
+.table > tbody > tr > td {
+    font-weight: 200;
+}
+
 .table > thead > tr > th > a {
     color: #656565;
 }
 
 .table > tbody > tr > td > a {
+    color: #656565;
+}
+
+.header-text {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.page-header {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.card-block {
+    border-radius: 0;
+}
+
+.input-group > input {
+    border-radius: 0;
+    font-weight: 200;
+}
+
+.index-page-header {
+    padding-bottom: 0;
+}
+
+.index-paginate .pull-xs-right {
+    margin: 0;
+}
+
+.pagination {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.page-link {
+    border-radius: 0;
+    color: #656565;
+}
+
+.page-item.active .page-link {
+    background-color: #656565;
+    border-color: #656565;
+}
+
+.page-item.active .page-link:hover {
+    background-color: #656565;
+    border-color: #656565;
+}
+
+.page-link:focus, .page-link:hover {
     color: #656565;
 }
