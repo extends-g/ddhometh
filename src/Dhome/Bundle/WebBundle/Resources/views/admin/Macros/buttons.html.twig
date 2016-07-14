@@ -51,9 +51,9 @@
     {% else %}
         <form action="{{ url }}" method="post" class="delete-action-form" novalidate>
             <input type="hidden" name="_method" value="DELETE">
-            <span class="btn btn-danger{% if modal %} btn-sm btn-confirm{% endif %}" type="submit">
+            <button class="btn btn-danger{% if modal %} btn-sm btn-confirm{% endif %}" type="submit">
                 <i class="fa fa-trash"></i> {{ message is empty ? 'trans.admin.delete'|trans : message }}
-            </span>
+            </button>
         </form>
     {% endif %}
 {% endmacro %}
