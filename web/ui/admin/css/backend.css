@@ -660,3 +660,25 @@
     font-weight: 400 !important;
     vertical-align: top !important;
 }
+
+.form-action-right {
+    padding-top: 20px;
+    padding-right: 20px;
+    float: right;
+}
+
+.form-control {
+    border-radius: 0 !important;
+}
+
+.form-group {
+    font-weight: 200;
+}
+
+.form-title-space {
+    margin-top: 10px;
+}
+
+.file-form {
+    border-width: 0;
+}
