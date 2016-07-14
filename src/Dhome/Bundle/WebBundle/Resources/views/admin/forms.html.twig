@@ -118,12 +118,12 @@
 
 {% block form_row %}
     {% spaceless %}
-        <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+        <div class="form-group{% if errors|length > 0 %} has-danger{% endif %}">
             {{ form_label(form) }}
             <div {% if label is not same as(false) %}class="col-lg-10"{% endif %}>
                 {{ form_widget(form) }}
                 {% for error in errors %}
-                    <span class="help-block form-error">
+                    <span class="help-block has-danger">
                 {{
                 error.messagePluralization is null
                 ? error.messageTemplate|trans(error.messageParameters, 'validators')
