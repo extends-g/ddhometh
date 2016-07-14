@@ -2,20 +2,20 @@
 
 {% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import update %}
 
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-pencil"></i> {{ 'Edit collection category'|trans }}</div>
+{% endblock %}
+
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
         <li><a href="{{ path('dhome_admin_collection_category_index') }}">{{ 'Collection Categories'|trans }}</a></li>
         <li>{{ collection_category.name[:20] ~ '...' }}</li>
-        <li>{{ 'trans.admin.edit'|trans }}</li>
+        <li class="active">{{ 'trans.admin.edit'|trans }}</li>
     </ol>
 {% endblock %}
 
 {% block content %}
-    <div class="page-header">
-        <h1><i class="fa fa-pencil"></i> {{ 'Edit collection category'|trans }}</h1>
-    </div>
-
     {{ form_start(form, {
         'action': path('dhome_admin_collection_category_update', {id: collection_category.id}),
         'method': 'post',

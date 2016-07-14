@@ -1,33 +1,30 @@
-{#{% extends 'SyliusWebBundle::menu.html.twig' %}#}
+<ul class="nav nav-pills nav-stacked">
+    <li class="nav-item">
+        <a class="nav-link last-item" href="{{ path('dhome_admin_visions_index') }}">Visions</a>
+    </li>
 
-{#{% macro attributes(attributes) %}#}
-    {#{% for name, value in attributes %}#}
-        {#{%- if value is not none and value is not same as(false) -%}#}
-            {#{{- ' %s="%s"'|format(name, value is same as(true) ? name|e : value|e)|raw -}}#}
-        {#{%- endif -%}#}
-    {#{%- endfor -%}#}
-{#{% endmacro %}#}
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('dhome_admin_project_category_index') }}">Project Category</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link last-item" href="{{ path('dhome_admin_projects_index') }}">Project</a>
+    </li>
 
-{#{% block spanElement %}<a{{ _self.attributes(item.labelAttributes) }}>{{ block('label') }}{% if item.hasChildren %} <b class="caret">{% endif %}</b></a>{% endblock %}#}
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('dhome_admin_collection_category_index') }}">Collection Category</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link last-item" href="{{ path('dhome_admin_collections_index') }}">Collection</a>
+    </li>
 
-{#{% extends 'knp_menu.html.twig' %}#}
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('dhome_admin_press_category_index') }}">Press Category</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link last-item" href="{{ path('dhome_admin_presses_index') }}">Press</a>
+    </li>
 
-{#{% block label %}#}
-    {#{% if item.labelAttribute('icon') %}<i class="{{ item.labelAttribute('icon') }}"></i>{% endif %}#}
-    {#{% if not item.labelAttribute('iconOnly') %}#}
-        {#<span>{% if options.allow_safe_labels and item.getExtra('safe_label', false) %}{{ item.label|trans|raw }}{% else %}{{ item.label|trans }}{% endif %}</span>#}
-    {#{% endif %}#}
-    {#{% if item.labelAttribute('data-image') %}<img src="{{ item.labelAttribute('data-image')|imagine_filter('sylius_small') }}" alt="{{ item.name }}" class="menu-thumbnail"/>{% endif %}#}
-{#{% endblock %}#}
-
-<ul class="nav">
-    <li class="active"><a style="font-size: 1em;" href="{{ path('dhome_admin_dashboard') }}">Dashboard</a></li>
-    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_visions_index') }}">Visions</a></li>
-    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_project_category_index') }}">Project Category</a></li>
-    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_projects_index') }}">Project</a></li>
-    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_collection_category_index') }}">Collection Category</a></li>
-    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_collections_index') }}">Collection</a></li>
-    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_press_category_index') }}">Press Category</a></li>
-    <li><a style="font-size: 1em;" href="{{ path('dhome_admin_presses_index') }}">Press</a></li>
-    <li><a style="font-size: 1em;" href="{{ path('route_admin_setting_contact_parameter') }}">Contact us</a></li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('dhome_admin_setting_contact_parameter') }}">Contact us</a>
+    </li>
 </ul>

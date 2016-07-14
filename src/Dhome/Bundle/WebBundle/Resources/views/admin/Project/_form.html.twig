@@ -2,9 +2,41 @@
 
 {{ form_errors(form) }}
 
-{{ form_row(form.category) }}
-{{ form_row(form.name) }}
-{{ form_row(form.shortDescription) }}
-{{ form_row(form.content) }}
-{{ form_row(form.videoLink) }}
-{{ form_row(form.images) }}
+<div class="row">
+    <div class="col-sm-6">
+        <span style="color: red;">* </span> {{ 'Category'|trans }}
+        <div class="form-title-space">
+            {# todo: edit select style #}
+            {{ form_row(form.category, {label: false}) }}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <span style="color: red;">* </span> {{ 'Name'|trans }}
+        <div class="form-title-space">
+            {{ form_row(form.name, {label: false}) }}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        {{ 'Short description'|trans }}
+        <div class="form-title-space">
+            {{ form_row(form.shortDescription, {label: false}) }}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        {{ 'Video link'|trans }}
+        <div class="form-title-space">
+            {{ form_row(form.videoLink, {label: false}) }}
+        </div>
+    </div>
+</div>
+
+<span style="color: red;">* </span> {{ 'Content'|trans }}
+<div style="margin-top: 10px;">
+    {{ form_row(form.content, {label: false}) }}
+</div>
+
+{{ 'Images'|trans }}
+{{ form_row(form.images, {label: false}) }}

@@ -10,7 +10,6 @@
             <tr>
                 <th>{{ 'trans.admin.no'|trans }}</th>
                 <th>{{ sylius_resource_sort('name', 'Name'|trans) }}</th>
-                <th>{{ 'Short description' }}</th>
                 <th>{{ 'trans.admin.created_at'|trans }}</th>
                 <th></th>
             </tr>
@@ -20,12 +19,11 @@
             <tr>
                 <td>{{ r.id }}</td>
                 <td><a href="{{ path('dhome_admin_presses_show', {id: r.id}) }}">{{ r.name }}</a></td>
-                <td>{{ r.shortDescription }}</td>
                 <td>{{ r.createdAt|date }}</td>
                 <td>
-                    <div class="pull-right">
-                        {{ buttons.edit(path('dhome_admin_presses_update', {'id': r.id})) }}
-                        {{ buttons.delete(path('dhome_admin_presses_delete', {'id': r.id})) }}
+                    <div class="actions-field">
+                        {{ buttons.edit_small(path('dhome_admin_presses_update', {'id': r.id})) }}
+                        {{ buttons.delete_small(path('dhome_admin_presses_delete', {'id': r.id})) }}
                    </div>
                 </td>
             </tr>

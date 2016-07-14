@@ -2,20 +2,20 @@
 
 {% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import update %}
 
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-pencil"></i> {{ 'Edit press category'|trans }}</div>
+{% endblock %}
+
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
         <li><a href="{{ path('dhome_admin_press_category_index') }}">{{ 'Press Categories'|trans }}</a></li>
         <li>{{ press_category.name[:20] ~ '...' }}</li>
-        <li>{{ 'trans.admin.edit'|trans }}</li>
+        <li class="active">{{ 'trans.admin.edit'|trans }}</li>
     </ol>
 {% endblock %}
 
 {% block content %}
-    <div class="page-header">
-        <h1><i class="fa fa-pencil"></i> {{ 'Edit press category'|trans }}</h1>
-    </div>
-
     {{ form_start(form, {
         'action': path('dhome_admin_press_category_update', {id: press_category.id}),
         'method': 'post',

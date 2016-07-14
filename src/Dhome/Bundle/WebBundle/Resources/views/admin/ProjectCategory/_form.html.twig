@@ -2,5 +2,17 @@
 
 {{ form_errors(form) }}
 
-{{ form_row(form.name) }}
-{{ form_row(form.icon) }}
+<div class="row">
+    <div class="col-sm-6">
+        <span style="color: red;">* </span> {{ 'Name'|trans }}
+        <div class="form-title-space">
+            {{ form_row(form.name, {label: false}) }}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        {{ 'Icon'|trans }}
+        <div class="form-title-space">
+            {{ form_row(form.icon, {label: false}) }}
+        </div>
+    </div>
+</div>

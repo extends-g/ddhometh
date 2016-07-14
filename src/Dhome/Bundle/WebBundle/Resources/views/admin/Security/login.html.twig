@@ -13,7 +13,7 @@
     {% endblock %}
 
     {% block stylesheets %}
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel=stylesheet>
+        {#<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel=stylesheet>#}
         <link rel="stylesheet" href="{{ asset('assets/admin/css/style.css') }}" type="text/css"/>
     {% endblock %}
 
@@ -24,35 +24,37 @@
 </head>
 
 <body>
-<div class="apollo-facebook">
-    <div class="apollo-image"></div>
-</div>
+    <div class="container">
+        {% if error %}
+            <div class="alert alert-block alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
 
-{% if error %}
-    <div class="alert alert-block alert-danger">
-        {{ error.messageKey|trans(error.messageData, 'security') }}
+        <form action="{{ path('dhome_login_check') }}" method="post" class="form-signin">
+            <h2 class="form-signin-heading">Please sign in</h2>
+
+            {{ form_widget(form._username, {attr: {
+                class: 'form-control',
+                placeholder: 'Username or Email'|trans
+            }}) }}
+
+            {{ form_widget(form._password, {attr: {
+                class: 'form-control',
+                placeholder: 'Password'|trans
+            }}) }}
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
     </div>
-{% endif %}
 
-<div class="apollo-login">
-    <form action="{{ path('dhome_login_check') }}" method="post" class="form-signin" >
-        {{ form_widget(form._username, {attr: {
-            class: 'login-content__input',
-            placeholder: 'ui.trans.register.placeholder.username'|trans
-        }}) }}
-
-        {{ form_widget(form._password, {attr: {
-            class: 'login-content__input',
-            placeholder: 'ui.trans.register.placeholder.password'|trans
-        }}) }}
-
-        <button class="btn btn-lg btn-signin btn-block" type="submit">Sign in</button>
-    </form>
-</div>
-
-{% block javascripts %}
-    {{ tinymce_init() }}
-    <script src="{{ asset('assets/admin/js/app.js') }}"></script>
-{% endblock javascripts %}
+    {% block javascripts %}
+        <script src="{{ asset('assets/admin/js/app.js') }}"></script>
+    {% endblock javascripts %}
 </body>
 </html>

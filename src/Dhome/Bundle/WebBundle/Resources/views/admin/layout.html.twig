@@ -25,41 +25,44 @@
 
     <body>
         {% block navbar %}
-            <a href="{{ path('dhome_admin_logout') }}">LOGOUT</a>
-            {#{% include 'DhomeWebBundle:admin:navbar.html.twig' %}#}
+            {% include 'DhomeWebBundle:admin:navbar.html.twig' %}
         {% endblock %}
 
-        <div class="row main-container">
-            <div class="col-md-1 col-lg-2 hidden-sm hidden-xs">
-                {% block sidebar %}
-                    <div id="sidebar">
-                        <div class="sidebar-nav">
-                            {% include 'DhomeWebBundle:admin:menu.html.twig' %}
-                            {#{{ knp_menu_render('sylius.backend.sidebar', {'template': 'DhomeWebBundle::admin:menu.html.twig', 'currentClass': 'active'}) }}#}
-                        </div>
-                    </div>
-                {% endblock %}
-            </div>
-
-            <div class="col-md-11 col-lg-10">
-                <div id="topbar">
-                    {% block topbar %}
-                        {% include 'DhomeWebBundle:admin:_breadcrumb.html.twig' %}
-                    {% endblock %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    {% include 'DhomeWebBundle:admin:menu.html.twig' %}
                 </div>
 
-                {% include 'DhomeWebBundle:admin:_flashes.html.twig' %}
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div class="row page-header">
+                        {% block header %}
+                        {% endblock %}
+                    </div>
+                    <div class="row">
+                    <div id="topbar">
+                        {% block topbar %}
+                            {% include 'DhomeWebBundle:admin:_breadcrumb.html.twig' %}
+                        {% endblock %}
+                    </div>
+                    </div>
 
-                {% block content %}
-                {% endblock %}
+                    {% include 'DhomeWebBundle:admin:_flashes.html.twig' %}
 
-                <hr>
+                    <div class="card card-block">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
 
-                 {#Confirmation modal#}
-                {% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}
+                    {#<hr>#}
+
+                    {#Confirmation modal#}
+                    {% include 'DhomeWebBundle:admin:confirm-modal.html.twig' %}
+                    {#</div>#}
+                </div>
+
             </div>
         </div>
-
         {% block javascripts %}
             {{ tinymce_init() }}
             <script src="{{ asset('assets/admin/js/app.js') }}"></script>

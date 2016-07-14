@@ -2,44 +2,81 @@
 
 {% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
 
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-folder-open"></i> {{ 'Collection Detail'|trans }}</div>
+    <div class="pull-xs-right">
+        {{ buttons.manage(path('dhome_admin_collections_index'), 'Collections'|trans) }}
+        {{ buttons.edit(path('dhome_admin_collections_update', {'id': collection.id})) }}
+        {{ buttons.delete(path('dhome_admin_collections_delete', {'id': collection.id}), null, false, true) }}
+    </div>
+{% endblock %}
+
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
         <li><a href="{{ path('dhome_admin_collections_index') }}">{{ 'Collections'|trans }}</a></li>
-        <li>{{ collection.name[:20] ~ '...' }}</li>
+        <li class="active">{{ collection.name[:20] ~ '...' }}</li>
     </ol>
 {% endblock %}
 
 {% block content %}
-    <div class="page-header">
-        <div class="actions-menu">
-            {{ buttons.manage(path('dhome_admin_collections_index'), 'Collections'|trans) }}
-            {{ buttons.edit(path('dhome_admin_collections_update', {'id': collection.id})) }}
-            {{ buttons.delete(path('dhome_admin_collections_delete', {'id': collection.id}), null, false, true) }}
-        </div>
-    </div>
-
     <div class="row">
         <div class="col-sm-6">
-            <h4>{{ 'Detail'|trans }}</h4><hr>
+            <div class="show-detail-header">
+                {{ 'Information'|trans }}
+            </div><hr>
 
-            <strong>{{ 'Name'|trans ~ ': ' }}</strong>
-            {{ collection.name }}<br>
-
-            <strong>{{ 'Short description'|trans ~ ': ' }}</strong>
-            {{ collection.shortDescription }}<br>
-
-            <strong>{{ 'Content'|trans ~ ': ' }}</strong>
-            {{ collection.content|raw }}
-
-            <strong>{{ 'Video link'|trans ~ ': ' }}</strong>
-            {{ collection.videoLink }}<br>
-
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Name'|trans }}
+                    </td>
+                    <td>
+                        {{ collection.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Short description'|trans }}
+                    </td>
+                    <td>
+                        {{ collection.shortDescription }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Content'|trans }}
+                    </td>
+                    <td>
+                        {{ collection.content|raw }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Video link'|trans }}
+                    </td>
+                    <td>
+                        {{ collection.videoLink }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Created at'|trans }}
+                    </td>
+                    <td>
+                        {{ collection.createdAt|date }}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col-sm-6">
-            <h4>{{ 'Collection images'|trans }}</h4><hr>
+            <div class="show-detail-header">
+                {{ 'Image'|trans }}
+            </div><hr>
             {% for image in collection.images %}
-                <img src="{{ image.path|imagine_filter('dhome_medium') }}">
+                <img style="padding-bottom: 4px;" src="{{ image.path|imagine_filter('dhome_medium') }}">
             {% else %}
                 No photo.
             {% endfor %}

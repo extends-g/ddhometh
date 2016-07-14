@@ -1,17 +1,11 @@
-<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+<nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
     <a class="navbar-brand" href="#">DDHometh</a>
-    <ul class="nav navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Vision <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Project</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Collection</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Press</a>
-        </li>
-    </ul>
+    <div id="navbar">
+        <nav class="nav navbar-nav pull-xs-left">
+            <a class="nav-item nav-link" href="{{ path('dhome_admin_dashboard') }}">Dashboard</a>
+        </nav>
+        <nav class="nav navbar-nav pull-xs-right">
+            <a class="nav-item nav-link" href="{{ path('dhome_admin_logout') }}">Logout</a>
+        </nav>
+    </div>
 </nav>
