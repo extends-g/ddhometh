@@ -1,0 +1,15 @@
+.breadcrumb-dh {
+    background-color: transparent;
+    padding: 1.25rem 0;
+    font-family: 'NeueHansKendrick_thin';
+    color: #696969;
+    font-size: 0.8rem;
+
+    > .active {
+        color: black;
+    }
+
+    a {
+        color: #696969;
+    }
+}

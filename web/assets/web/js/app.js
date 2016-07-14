@@ -275,5 +275,3 @@ $(document).ready(function() {
     });
 
 });
-
-

@@ -1,46 +1,57 @@
 .gallery {
     padding: .6875rem !important;
 
-    &__tumbnail {
+    .thumbnail-list {
         padding: .25rem !important;
-        position: relative;
         text-align: center;
-        display: table;
-        white-space: normal;
         cursor: pointer;
-
-        &--desc {
-            display: none;
-            position: absolute;
-            vertical-align: middle;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            background: #444;
-        }
-
-        img {
-            min-height: 225px;
-            max-height: 225px;
-            &:hover + .gallery__tumbnail--desc {
-                display: block;
-            }
-        }
     }
 
-    a {
+    .thumbnail-list a {
+        color: inherit;
+    }
+
+    .thumbnail-list .image-w {
         display: block;
+        position: relative;
     }
 
-    &__modal {
-
-        img {
-            width: 100%;
-        }
+    .image-w img {
+        min-height: 246px !important;
+        max-height: 246px !important;
     }
+
+    .cover {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: rgba(255, 255, 255, 0);
+        text-align: center;
+        transition: all 1s linear;
+    }
+
+    .thumbnail-list a:hover .cover {
+        background-color: rgba(0, 0, 0, .8);
+        color: rgba(255, 255, 255, 1);
+        transition: all .2s linear;
+    }
+
+    .thumbnail-list a:hover h3 {
+        color: red;
+    }
+
+    .thumbnail-list h3 {
+        font-size: 1.2em;
+    }
+
+    .thumbnail-list p {
+        font-size: .9em;
+    }
+
 }
 
 @media screen and (max-width: 554px) {
@@ -57,9 +68,8 @@
     }
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .modal-lg {
         width: 1000px !important;
     }
 }
-

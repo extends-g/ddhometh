@@ -12,3 +12,8 @@ dhome_project:
     path: /project
     defaults:
         _controller: DhomeWebBundle:Frontend:project
+
+dhome_vision:
+    path: /vision
+    defaults:
+        _controller: DhomeWebBundle:Frontend:vision

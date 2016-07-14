@@ -20,4 +20,9 @@ class FrontendController extends Controller
     {
         return $this->render('DhomeWebBundle::web/project.html.twig');
     }
+
+    public function visionAction()
+    {
+        return $this->render('DhomeWebBundle::web/vision.html.twig');
+    }
 }
