@@ -68,7 +68,7 @@
                 {{ 'Image'|trans }}
             </div><hr>
             {% for image in vision.images %}
-                <img src="{{ image.path|imagine_filter('dhome_medium') }}">
+                <img style="padding-bottom: 4px;" src="{{ image.path|imagine_filter('dhome_medium') }}">
             {% else %}
                 No photo.
             {% endfor %}
