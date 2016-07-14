@@ -22,7 +22,7 @@
                     <td><a href="{{ path('dhome_admin_visions_show', {id: vision.id}) }}">{{ vision.title }}</a></td>
                     <td>{{ vision.createdAt|date }}</td>
                     <td>
-                        <div class="pull-right">
+                        <div class="actions-field">
                             {{ buttons.edit_small(path('dhome_admin_visions_update', {'id': vision.id})) }}
                             {{ buttons.delete_small(path('dhome_admin_visions_delete', {'id': vision.id})) }}
                        </div>

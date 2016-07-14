@@ -21,7 +21,7 @@
                 <td><a href="{{ path('dhome_admin_projects_show', {id: r.id}) }}">{{ r.name }}</a></td>
                 <td>{{ r.createdAt|date }}</td>
                 <td>
-                    <div class="pull-right">
+                    <div class="actions-field">
                         {{ buttons.edit_small(path('dhome_admin_projects_update', {'id': r.id})) }}
                         {{ buttons.delete_small(path('dhome_admin_projects_delete', {'id': r.id})) }}
                    </div>

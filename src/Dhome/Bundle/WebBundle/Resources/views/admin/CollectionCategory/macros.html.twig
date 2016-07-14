@@ -21,7 +21,7 @@
                 <td>{{ r.name }}</td>
                 <td>{{ r.icon }}</td>
                 <td>
-                    <div class="pull-right">
+                    <div class="actions-field">
                         {{ buttons.edit_small(path('dhome_admin_collection_category_update', {'id': r.id})) }}
                         {{ buttons.delete_small(path('dhome_admin_collection_category_delete', {'id': r.id})) }}
                    </div>

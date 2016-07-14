@@ -118,3 +118,7 @@
 .has-danger {
     color: #D9534F;
 }
+.actions-field {
+    min-width: 150px !important;
+    float: right;
+}
