@@ -2,6 +2,10 @@
 
 {% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import update %}
 
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-pencil"></i> {{ 'Edit contact us'|trans }}</div>
+{% endblock %}
+
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
@@ -10,10 +14,6 @@
 {% endblock %}
 
 {% block content %}
-    <div class="page-header">
-        <h1><i class="fa fa-pencil"></i> {{ 'Edit contact us'|trans }}</h1>
-    </div>
-
     {{ form_errors(form) }}
 
     <form action="{{ path('dhome_admin_setting_contact_parameter') }}" method="post" class="form-horizontal" novalidate>

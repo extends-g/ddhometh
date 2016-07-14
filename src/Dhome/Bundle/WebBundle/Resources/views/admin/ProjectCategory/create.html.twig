@@ -2,6 +2,10 @@
 
 {% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import create %}
 
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-plus"></i> {{ 'Create new project category'|trans }}</div>
+{% endblock %}
+
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
@@ -11,10 +15,6 @@
 {% endblock %}
 
 {% block content %}
-    <div class="page-header">
-    <h1><i class="fa fa-plus"></i> {{ 'Project Categories'|trans }}</h1>
-    </div>
-
     {{ form_start(form, {
         'action': path('dhome_admin_project_category_create'),
         'method': 'post',

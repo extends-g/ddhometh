@@ -2,6 +2,10 @@
 
 {% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import create %}
 
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-plus"></i> {{ 'Create new collection'|trans }}</div>
+{% endblock %}
+
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
@@ -11,10 +15,6 @@
 {% endblock %}
 
 {% block content %}
-    <div class="page-header">
-    <h1><i class="fa fa-plus"></i> {{ 'Collections'|trans }}</h1>
-    </div>
-
     {{ form_start(form, {
         'action': path('dhome_admin_collections_create'),
         'method': 'post',
