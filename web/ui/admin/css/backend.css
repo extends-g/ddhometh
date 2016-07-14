@@ -655,3 +655,8 @@
 .page-link:focus, .page-link:hover {
     color: #656565;
 }
+
+.show-detail-td {
+    font-weight: 400 !important;
+    vertical-align: top !important;
+}
