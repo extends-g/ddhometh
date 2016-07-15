@@ -6,12 +6,11 @@
         </div>
         <ul class="navbar-dt__menu">
             <li class="navbar-dt__menu--toggle">
-                <a href="#" data-toggle="dropdown">INSPIRATION</a>
+                <a href="#" data-toggle="dropdown">INSPIRATIONS</a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
+                    <li><a href="{{ path('dhome_inspiration') }}">ALL INSPIRATIONS</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
                     <li><a href="#">Separated link</a></li>
                 </ul>
             </li>
@@ -26,15 +25,14 @@
                             </span>
                         </div>
                     </li>
-                    <li><a href="#">Action</a></li>
+                    <li><a href="{{ path('dhome_project') }}">ALL PROJECTS</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
                     <li><a href="#">Separated link</a></li>
                 </ul>
             </li>
             <li class="navbar-dt__menu--toggle">
-                <a href="#" data-toggle="dropdown">COLLECTION</a>
+                <a href="{{ path('dhome_project') }}" data-toggle="dropdown">COLLECTIONS</a>
                 <ul class="dropdown-menu" role="menu">
                     <li>
                         <div class="input-group navbar-dt__search">
@@ -44,7 +42,7 @@
                             </span>
                         </div>
                     </li>
-                    <li><a href="#">Action</a></li>
+                    <li><a href="{{ path('dhome_project') }}">ALL COLLECTIONS</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
@@ -70,7 +68,7 @@
                 </ul>
             </li>
             <li class="navbar-dt__menu--toggle">
-                <a href="#" data-toggle="dropdown">CONTACT US</a>
+                <a href="{{ path('dhome_contact') }}" data-toggle="dropdown">CONTACT US</a>
             </li>
         </ul>
     </div>

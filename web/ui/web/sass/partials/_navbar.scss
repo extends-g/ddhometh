@@ -78,6 +78,18 @@
     }
 }
 
+@media screen and (max-width: 991px) {
+    .navbar-dt {
+        &__comp {
+            padding-right: 0;
+            margin-right: 0;
+        }
+        &__menu li a {
+            margin: 1.25rem .25rem;
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .navbar-dt {
         display: none;
