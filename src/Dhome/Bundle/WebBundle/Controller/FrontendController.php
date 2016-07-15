@@ -21,8 +21,18 @@ class FrontendController extends Controller
         return $this->render('DhomeWebBundle::web/project.html.twig');
     }
 
-    public function visionAction()
+    public function inspirationAction()
     {
-        return $this->render('DhomeWebBundle::web/vision.html.twig');
+        return $this->render('DhomeWebBundle::web/inspiration.html.twig');
+    }
+
+    public function inspirationShowAction()
+    {
+        return $this->render('DhomeWebBundle::web/_inspiration-show.html.twig');
+    }
+
+    public function contactAction()
+    {
+        return $this->render('DhomeWebBundle::web/contact.html.twig');
     }
 }

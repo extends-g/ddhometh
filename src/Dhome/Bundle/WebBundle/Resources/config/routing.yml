@@ -13,7 +13,17 @@ dhome_project:
     defaults:
         _controller: DhomeWebBundle:Frontend:project
 
-dhome_vision:
-    path: /vision
+dhome_inspiration:
+    path: /inspiration
     defaults:
-        _controller: DhomeWebBundle:Frontend:vision
+        _controller: DhomeWebBundle:Frontend:inspiration
+
+dhome_inspiration-show:
+    path: /inspiration-show
+    defaults:
+        _controller: DhomeWebBundle:Frontend:inspirationShow
+
+dhome_contact:
+    path: /contact
+    defaults:
+        _controller: DhomeWebBundle:Frontend:contact

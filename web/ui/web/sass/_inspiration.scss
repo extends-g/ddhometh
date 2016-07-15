@@ -1,0 +1,35 @@
+.inspi {
+    letter-spacing: 0.1rem;
+
+    &__header {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: #656565;
+    }
+
+    a {
+        color: #656565 !important;
+        letter-spacing: 0.1rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    &__time {
+        font-size: 0.8rem;
+    }
+    &__ct {
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}

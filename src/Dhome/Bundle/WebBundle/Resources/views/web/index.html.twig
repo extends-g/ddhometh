@@ -8,15 +8,11 @@
             {% endfor %}
         </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <img src="{{ asset('ui/web/img/h.jpg') }}">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('ui/web/img/h.jpg') }}">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('ui/web/img/h.jpg') }}">
-            </div>
+            {% for i in 0..5 %}
+                <div class="carousel-item {% if i == 0 %}active{% endif %}">
+                    <img class="img-lazy" src="{{ asset('ui/web/img/h.jpg') }}">
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

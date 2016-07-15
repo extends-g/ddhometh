@@ -6,13 +6,13 @@
         {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
     {% endblock %}
 
-    <div class="projects">
-        <div class="project__header">OUR INSPIRATIONS</div>
+    <div class="inspi">
+        <div class="inspi__header">OUR INSPIRATIONS</div>
 
         <div class="card-columns">
 
             {% for i in 0..3 %}
-            <div class="card">
+            <div class="card inspi__card">
                 <a href="">
                     <img class="card-img-top img-fluid img-lazy" src="{{ asset('ui/web/img/b.jpg') }}" alt="Card image cap">
                 </a>
@@ -23,10 +23,7 @@
                 </div>
             </div>
 
-            <div class="card">
-                <a href="">
-                    <img class="card-img-top img-fluid img-lazy" src="{{ asset('ui/web/img/h.jpg') }}" alt="Card image cap">
-                </a>
+            <div class="card inspi__card">
                 <div class="card-block">
                     <h4 class="card-title"><a href="#">Card title that wraps to a new line</a></h4>
                     <p class="card-text"><a href="#">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</a></p>
@@ -34,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card inspi__card">
                 <a href="">
                     <img class="card-img-top img-fluid img-lazy" src="{{ asset('ui/web/img/a.jpg') }}" alt="Card image cap">
                 </a>
