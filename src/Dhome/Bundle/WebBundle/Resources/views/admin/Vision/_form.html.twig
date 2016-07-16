@@ -22,5 +22,15 @@
     {{ form_row(form.content, {label: false}) }}
 </div>
 
-{{ 'Images'|trans }}
-{{ form_row(form.images, {label: false}) }}
+
+{{ 'Image'|trans }}
+
+<div style="padding-top: 10px;">
+    {% if form.image.vars.value %}
+        {% if form.image.vars.value.path is defined %}
+            <img src="{{ form.image.vars.value.path|imagine_filter('dhome_medium') }}">
+        {% endif %}
+    {% endif %}
+</div>
+
+{{ form_row(form.image, {label: false}) }}

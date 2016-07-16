@@ -1,5 +1,5 @@
 Dhome\Bundle\MediaBundle\Model\Image:
-    type: entity
+    type: mappedSuperclass
     table: dhome_image
 
     gedmo:

@@ -28,12 +28,9 @@ class VisionType extends AbstractResourceType
                 )
             ])
 
-            ->add('images', 'collection', [
-                'type' => 'dhome_vision_image',
-                'allow_add' => true,
-                'allow_delete' => true,
-                'by_reference' => false,
-                'label' => 'Vision image',
+            ->add('image', 'dhome_vision_image', [
+                'required' => false,
+                'label' => 'Vision image'
             ])
         ;
     }
