@@ -1,14 +1,19 @@
 <footer>
     <ul class="footer__sitemap">
-        <li></li>
-        <li></li>
-        <li></li>
+        <li><a href="{{ path('dhome_homepage') }}">HOME</a> |</li>
+        <li><a href="{{ path('dhome_inspiration') }}">INSPIRATIONS</a> |</li>
+        <li><a href="{{ path('dhome_project') }}">PROJECTS</a> |</li>
+        <li><a href="#">COLLECTIONS |</a></li>
+        <li><a href="#">PRESS</a> |</li>
+        <li><a href="{{ path('dhome_contact') }}">CONTACT</a></li>
     </ul>
     <div class="footer__comp">
-        <a><i class="fa fa-facebook"></i></a>
-        <a><i class="fa fa-twitter"></i></a>
-        <a><i class="fa fa-pinterest"></i></a>
-        <a><i class="fa fa-instargram"></i></a>
+        <div class="footer__comp--soc">
+            <a><i class="fa fa-facebook"></i></a>
+            <a><i class="fa fa-twitter"></i></a>
+            <a><i class="fa fa-pinterest"></i></a>
+            <a><i class="fa fa-instagram"></i></a>
+        </div>
         <p>Copyright © 2016. <a>DDHOMETH.COM</a> All rights reserved.</p>
     </div>
 </footer>

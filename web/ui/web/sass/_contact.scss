@@ -1,0 +1,43 @@
+.contact {
+    padding: 2rem 0;
+    letter-spacing: 0.1rem;
+
+    &__header {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: #656565;
+    }
+
+    a {
+        color: #656565 !important;
+    }
+
+    &__ct {
+        h2 {
+
+        }
+
+    }
+    &__add {
+        padding-top: 1rem;
+        p {
+            margin-bottom: 5px;
+        }
+    }
+    &__tel {
+        i {
+            font-size: 1.5rem;
+            cursor: pointer;
+            a {
+                color: #656565;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &__form {
+        padding-top: 3rem;
+    }
+}

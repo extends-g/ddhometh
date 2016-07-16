@@ -19,7 +19,7 @@ var paths = {
     admin: {
         js: [
             'node_modules/tether/dist/js/tether.min.js',
-            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/jquery/jquery.min.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'web/ui/admin/js/**',
             'web/ui/admin/app.js'
@@ -46,9 +46,11 @@ var paths = {
     },
     web: {
         js: [
-            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/jquery/jquery.min.js',
             'node_modules/tether/dist/js/tether.min.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/jquery-lazyload/jquery.lazyload.js',
+            'node_modules/pace-progress/pace.min.js',
             'web/ui/web/js/**',
             'web/ui/web/app.js'
         ],
@@ -58,6 +60,7 @@ var paths = {
         css: [
             'node_modules/font-awesome/css/font-awesome.min.css',
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
+            'node_modules/pace-progress/themes/silver/pace-theme-loading-bar.css',
             'web/ui/web/css/**'
         ],
         img: [

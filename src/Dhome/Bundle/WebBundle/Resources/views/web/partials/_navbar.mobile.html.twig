@@ -1,31 +1,18 @@
-<nav class="navbar navbar-mb navbar-fixed-top bg-faded">
-    <div class="container">
-        <div class="navbar-brand navbar-mb__comp">
-            <div class="navbar__comp--name">DDHOME</div>
-        </div>
-
-        {#TODO: style code agian#}
-        <div class="navbar-mb__menu">
-            <div class="open">
-                <span class="cls"></span>
-            <span>
-                <ul class="sub-menu ">
-                    <li>
-                        <a href="#about" title="about">Sobre / About</a>
-                    </li>
-                    <li>
-                        <a href="#skills" title="skills">Habilidades / Skills</a>
-                    </li>
-                    <li>
-                        <a href="#jobs" title="jobs">Trabalhos / Jobs</a>
-                    </li>
-                    <li>
-                        <a href="#contact" title="contact">Contato / Contact</a>
-                    </li>
-                </ul>
-            </span>
-                <span class="cls"></span>
-            </div>
+<nav class="navbar-mb">
+    <div class="menu-opener">
+        <div class="menu-opener-inner"></div>
+    </div>
+    <div class="menu">
+        <div class="menu-inner">
+            <div class="navbar-mb--name"><a href="{{ path('dhome_homepage') }}">DDHOME</a></div>
+            <div class="navbar-mb--desc">LIVING | DECOR</div>
+            <ul>
+                <li><a href="{{ path('dhome_submenu') }}" class="menu-link">INSPIRATIONS</a></li>
+                <li><a href="{{ path('dhome_submenu') }}" class="menu-link">PROJECTS</a></li>
+                <li><a href="{{ path('dhome_submenu') }}" class="menu-link">COLLECTIONS</a></li>
+                <li><a href="{{ path('dhome_submenu') }}" class="menu-link">PRESS</a></li>
+                <li><a href="{{ path('dhome_contact') }}" class="menu-link">CONTACT US</a></li>
+            </ul>
         </div>
     </div>
 </nav>

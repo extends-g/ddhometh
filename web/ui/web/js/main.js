@@ -1,21 +1,19 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
-    $('#auctions').click(function(){
-        $('.submenu').slideToggle();
-    });
-});
-
-
 $(document).ready(function() {
-    $(document).delegate('.open', 'click', function(event){
-        $(this).addClass('oppenned');
-        event.stopPropagation();
+    console.log('aaa');
+
+    //lazyload img in gallery
+    $("img.img-lazy").lazyload({
+        effect : "fadeIn"
     });
-    $(document).delegate('body', 'click', function(event) {
-        $('.open').removeClass('oppenned');
+
+    //page loader
+    paceOptions = {
+        elements: true
+    };
+
+    //navbar mobile
+    $(".menu-opener").click(function(){
+        $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
     });
-    $(document).delegate('.cls', 'click', function(event){
-        $('.open').removeClass('oppenned');
-        event.stopPropagation();
-    });
+
 });
