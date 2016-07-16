@@ -19,6 +19,7 @@
     "gulp-util": "^3.0.7",
     "jquery": "^1.9.1",
     "jquery-lazyload": "^1.9.7",
+    "lightbox2": "^2.8.2",
     "pace-progress": "^1.0.2",
     "tether": "^1.2.0",
     "tinymce": "^4.3.12"

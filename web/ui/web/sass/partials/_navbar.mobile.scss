@@ -60,7 +60,7 @@
     .menu-opener {
         z-index: 100 !important;
         cursor: pointer;
-        height: 64px;
+        height: 50px;
         position: absolute;
         top: 2%;
         right: 2%;
@@ -68,23 +68,31 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        width: 64px;
+        width: 50px;
         background: #656565;
     }
 
     .menu-opener-inner {
         background: #fff;
-        height: .5rem;
-        margin-left: .75rem;
-        margin-top: 1.75rem;
-        width: 2.5rem;
+        height: .25rem;
+        margin-left: .6rem;
+        margin-top: 1.5rem;
+        width: 2rem;
     }
-    .menu-opener-inner::before, .menu-opener-inner::after {
+    .menu-opener-inner::before {
         background: white;
         content: '';
         display: block;
-        height: .5rem;
-        width: 2.5rem;
+        height: .25rem;
+        width: 2rem;
+    }
+    .menu-opener-inner::after {
+        background: white;
+        content: '';
+        display: block;
+        height: .25rem;
+        margin-top: .25rem;
+        width: 2rem;
     }
     .menu-opener-inner::before {
         -webkit-transform: translateY(-0.75rem);
@@ -190,41 +198,28 @@
 
 .sub-menu-mb {
     color: #fff;
-    height: 768px;
-    padding: 5.5rem 1rem 0 1rem;
+    height: 86vh;
+    padding: 6.5rem 1rem;
+    text-align: center;
     background-image: url('/assets/web/img/h.jpg');
-
-    &__header {
-        font-size: 1.2rem;
-        font-weight: 700;
-    }
 
     a {
         color: #fff;
+        display: block;
+        padding: .25rem 0;
     }
 
-    ul {
-        list-style: none;
-        padding: 2.5rem;
-        background: #656565;
-        opacity: 1;
-        text-align: center;
-
-        li {
-            &:nth-child(2) {
-                padding-top: 2rem;
-            }
-
-            a {
-                display: block;
-                padding: .5rem 0;
-            }
-        }
+    .card {
+        background: transparent;
     }
 
-    &__none {
-        display: none !important;
+    .card-header {
+        background: transparent;
     }
+
+    //    &__none {
+    //        display: none !important;
+    //    }
 }
 
 @media screen and (min-width: 769px) {

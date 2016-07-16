@@ -1,6 +1,21 @@
 .carousel-index {
 
     .carousel-inner {
-        height: 650px !important;
+        height: 650px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .carousel-index {
+
+        .carousel-inner {
+            height: auto;
+
+            img {
+                height: 500px;
+                max-width: initial;
+            }
+        }
     }
 }

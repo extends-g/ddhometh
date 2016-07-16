@@ -13,6 +13,11 @@ dhome_project:
     defaults:
         _controller: DhomeWebBundle:Frontend:project
 
+dhome_project-show:
+    path: /project-show
+    defaults:
+        _controller: DhomeWebBundle:Frontend:projectShow
+
 dhome_inspiration:
     path: /inspiration
     defaults:

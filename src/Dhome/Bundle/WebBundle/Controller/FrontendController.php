@@ -21,6 +21,11 @@ class FrontendController extends Controller
         return $this->render('DhomeWebBundle::web/project.html.twig');
     }
 
+    public function projectShowAction()
+    {
+        return $this->render('DhomeWebBundle::web/_project-show.html.twig');
+    }
+
     public function pressAction()
     {
         return $this->render('DhomeWebBundle::web/press.html.twig');
