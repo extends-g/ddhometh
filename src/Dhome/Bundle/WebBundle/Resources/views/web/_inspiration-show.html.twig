@@ -7,18 +7,14 @@
     {% endblock %}
 
     <div class="inspi">
-        <div class="inspi__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        <div class="inspi__title">{{ inspiration.title }}</div>
         <div class="inspi__img">
+            {# todo: fix vision have on image #}
             <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/h.jpg') }}">
         </div>
-        <div class="inspi__time">{{ ("30 OCT 2016")|date }}</div>
-        <div class="inspi__sub-title">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-        <div class="inspi__ct">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
+        <div class="inspi__time">{{ inspiration.createdAt|date }}</div>
+        <div class="inspi__sub-title">{{ inspiration.subtitle }}</div>
+        <div class="inspi__ct">{{ inspiration.content|raw }}</div>
 
     </div>
 
@@ -26,6 +22,7 @@
         {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
     {% endblock %}
 
+    {# todo: embed controller #}
     <div class="inspi">
         <div class="card-columns">
 

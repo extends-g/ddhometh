@@ -1,0 +1,22 @@
+dhome_homepage:
+    path: /
+    defaults:
+        _controller: DhomeWebBundle:Frontend:index
+
+dhome_web_inspirations:
+    resource: "@DhomeWebBundle/Resources/config/routing/web/inspiration.yml"
+
+dhome_submenu:
+    path: /sub-menu
+    defaults:
+        _controller: DhomeWebBundle:Frontend:submenu
+#
+dhome_project:
+    path: /project
+    defaults:
+        _controller: DhomeWebBundle:Frontend:project
+
+dhome_contact:
+    path: /contact
+    defaults:
+        _controller: DhomeWebBundle:Frontend:contact
