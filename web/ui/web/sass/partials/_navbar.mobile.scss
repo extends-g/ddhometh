@@ -1,6 +1,14 @@
 .navbar-mb {
     z-index: 90;
 
+    &__brand {
+        position: absolute;
+        top: 4%;
+        a {
+            color: #656565 !important;
+        }
+    }
+
     &--name {
         font-family: 'NeueHansKendrick';
         font-size: 1.4rem;
@@ -62,7 +70,6 @@
         user-select: none;
         width: 64px;
         background: #656565;
-        opacity: .95;
     }
 
     .menu-opener-inner {
@@ -116,7 +123,7 @@
         user-select: none;
         width: 0;
         z-index: -1;
-        opacity: .95;
+        opacity: 1;
     }
     .menu.active {
         width: -webkit-calc(100% - 2rem);
@@ -200,7 +207,7 @@
         list-style: none;
         padding: 2.5rem;
         background: #656565;
-        opacity: 0.8;
+        opacity: 1;
         text-align: center;
 
         li {
