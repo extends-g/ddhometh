@@ -2,10 +2,13 @@
 
 namespace Dhome\Bundle\MediaBundle\Model;
 
-use Dhome\Bundle\AdminBundle\Model\VisionInterface;
-
 class VisionImage extends Image implements VisionImageInterface
 {
+    /**
+     * @var int
+     */
+    protected $id;
+
     /**
      * @var string
      */
@@ -16,10 +19,10 @@ class VisionImage extends Image implements VisionImageInterface
      */
     protected $position = 1;
 
-    /**
-     * @var VisionInterface
-     */
-    protected $vision;
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * {@inheritdoc}
@@ -51,21 +54,5 @@ class VisionImage extends Image implements VisionImageInterface
     public function setPosition($position = 1)
     {
         $this->position = $position;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getVision()
-    {
-        return $this->vision;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setVision(VisionInterface $vision = null)
-    {
-        $this->vision = $vision;
     }
 }

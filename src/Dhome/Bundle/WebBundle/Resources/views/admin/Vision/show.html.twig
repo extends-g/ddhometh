@@ -67,11 +67,11 @@
             <div class="show-detail-header">
                 {{ 'Image'|trans }}
             </div><hr>
-            {% for image in vision.images %}
-                <img style="padding-bottom: 4px;" src="{{ image.path|imagine_filter('dhome_medium') }}">
+            {% if vision.image %}
+                <img src="{{ vision.image.path|imagine_filter('dhome_large') }}">
             {% else %}
                 No photo.
-            {% endfor %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}

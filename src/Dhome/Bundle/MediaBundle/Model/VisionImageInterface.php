@@ -2,8 +2,6 @@
 
 namespace Dhome\Bundle\MediaBundle\Model;
 
-use Dhome\Bundle\AdminBundle\Model\VisionInterface;
-
 interface VisionImageInterface extends ImageInterface
 {
     /**
@@ -25,14 +23,4 @@ interface VisionImageInterface extends ImageInterface
      * @param int $position
      */
     public function setPosition($position);
-
-    /**
-     * @return VisionInterface
-     */
-    public function getVision();
-
-    /**
-     * @param VisionInterface $vision
-     */
-    public function setVision(VisionInterface $vision = null);
 }

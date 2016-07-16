@@ -2,6 +2,13 @@ Dhome\Bundle\MediaBundle\Model\VisionImage:
     type: entity
     table: dhome_vision_image
 
+    attributeOverride:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
     gedmo:
         loggable: true
 
@@ -14,8 +21,3 @@ Dhome\Bundle\MediaBundle\Model\VisionImage:
         position:
             type: integer
             nullable: true
-
-    manyToOne:
-        vision:
-            targetEntity: Dhome\Bundle\AdminBundle\Model\Vision
-            inversedBy: images
