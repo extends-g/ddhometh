@@ -1,0 +1,50 @@
+{% extends 'DhomeWebBundle:web:layout.html.twig' %}
+
+{% block content %}
+
+    {% block breadcrumb %}
+        {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
+    {% endblock %}
+
+    <div class="project">
+        <div class="project__header">PROJECTS</div>
+
+
+        <div class="row product-show">
+            <div class="col-md-6 col-xs-12">
+                <div class="product-show-pictures">
+
+                    <div class="product-show-pictures__preview">
+                        <img src="{{ product_picture_l }}" class="zoom" data-magnify-src="{{ product_picture_xl }}">
+                    </div>
+                </div>
+
+                <div class="product-show-box__share">
+                    <span>Share</span>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+
+                <h1 class="product-show-box__header"></h1>
+                <h2 class="product-show-box__sub"></h2>
+                <h2 class="product-show-box__description"></h2>
+
+                <div class="product-show-box__share">
+                    <span>{{ 'Share'|trans|raw }}</span>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% block paginator %}
+        {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
+    {% endblock %}
+
+{% endblock %}

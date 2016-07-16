@@ -57,6 +57,10 @@ a {
     }
 }
 
+img {
+    border-radius: .25rem .25rem 0 0 !important;
+}
+
 @media screen and (max-width: 769px) {
 
     .main-content {

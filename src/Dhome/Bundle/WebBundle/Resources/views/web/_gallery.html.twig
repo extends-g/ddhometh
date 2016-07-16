@@ -1,10 +1,46 @@
 <div class="gallery">
     <div class="row">
 
-        {% for i in 0..11 %}
+        {% for i in 0..2 %}
             <div class="col-lg-4 col-sm-6 col-xs-12 thumbnail-list">
                 <a href="#" class="image-w" data-toggle="modal" data-target=".bd-example-modal-lg">
-                    <img class="img-fluid img-lazy thumbnail" data-original="{{ asset('ui/web/img/h.jpg') }}">
+                    <img class="img-fluid img-lazy thumbnail" data-original="{{ asset('ui/web/img/t4.jpg') }}">
+
+                    <div class="cover">
+                        <h3>A little bit more about the thing</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12 thumbnail-list">
+                <a href="#" class="image-w" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <img class="img-fluid img-lazy thumbnail" data-original="{{ asset('ui/web/img/a.jpg') }}">
+
+                    <div class="cover">
+                        <h3>A little bit more about the thing</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12 thumbnail-list">
+                <a href="#" class="image-w" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <img class="img-fluid img-lazy thumbnail" data-original="{{ asset('ui/web/img/b.jpg') }}">
+
+                    <div class="cover">
+                        <h3>A little bit more about the thing</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12 thumbnail-list">
+                <a href="#" class="image-w" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <img class="img-fluid img-lazy thumbnail" data-original="{{ asset('ui/web/img/t.jpg') }}">
+
+                    <div class="cover">
+                        <h3>A little bit more about the thing</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12 thumbnail-list">
+                <a href="#" class="image-w" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <img class="img-fluid img-lazy thumbnail" data-original="{{ asset('ui/web/img/t3.jpg') }}">
 
                     <div class="cover">
                         <h3>A little bit more about the thing</h3>
@@ -13,26 +49,6 @@
             </div>
         {% endfor %}
 
-    </div>
-
-    <div class="gallery__modal modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="row">
-                    <div class="col-md-8">
-                        <img class="img-fluid " src="{{ asset('ui/web/img/b.jpg') }}">
-                    </div>
-                    <div class="col-md-4">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {{ 'description' }}
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 </div>

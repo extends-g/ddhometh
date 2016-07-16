@@ -18,6 +18,17 @@ dhome_inspiration:
     defaults:
         _controller: DhomeWebBundle:Frontend:inspiration
 
+dhome_press:
+    path: /press
+    defaults:
+        _controller: DhomeWebBundle:Frontend:press
+
+dhome_collection:
+    path: /inspiration
+    defaults:
+        _controller: DhomeWebBundle:Frontend:collection
+
+
 dhome_inspiration-show:
     path: /inspiration-show
     defaults:
