@@ -1,0 +1,38 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+{% from 'DhomeWebBundle:admin/Macros:misc.html.twig' import pagination %}
+{% from 'DhomeWebBundle:admin/CollectionCategory:macros.html.twig' import list %}
+
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-folder"></i> {{ 'Collection Categories'|trans }}</div>
+    <div class="pull-xs-right">
+        {{ buttons.create(path('dhome_admin_collection_category_create'), 'trans.admin.create'|trans) }}
+    </div>
+{% endblock %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li class="active">{{ 'Collection Categories'|trans }}</a></li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="row index-page-header">
+        <div class="pull-xs-left col-sm-3">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    {# todo: search #}
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                </span>
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </div>
+        <div class="pull-xs-right col-lg-9 index-paginate">
+            {{ pagination(collection_categories) }}
+        </div>
+    </div>
+
+    {{ list(collection_categories) }}
+{% endblock %}

@@ -3,17 +3,9 @@
 namespace Dhome\Bundle\MediaBundle\Model;
 
 use Dhome\Bundle\AdminBundle\Model\ProjectInterface;
-use Sylius\Component\Resource\Model\TimestampableTrait;
 
-class ProjectImage implements ProjectImageInterface
+class ProjectImage extends Image implements ProjectImageInterface
 {
-    use TimestampableTrait;
-
-    /**
-     * @var int
-     */
-    protected $id;
-
     /**
      * @var string
      */
@@ -25,22 +17,9 @@ class ProjectImage implements ProjectImageInterface
     protected $position = 1;
 
     /**
-     * @var ImageInterface
-     */
-    protected $image;
-
-    /**
      * @var ProjectInterface
      */
     protected $project;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * {@inheritdoc}
@@ -77,22 +56,6 @@ class ProjectImage implements ProjectImageInterface
     /**
      * {@inheritdoc}
      */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setImage(ImageInterface $image = null)
-    {
-        $this->image = $image;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getProject()
     {
         return $this->project;
@@ -101,27 +64,8 @@ class ProjectImage implements ProjectImageInterface
     /**
      * {@inheritdoc}
      */
-    public function setProject(ProjectInterface $project)
+    public function setProject(ProjectInterface $project = null)
     {
         $this->project = $project;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSelfImagePath()
-    {
-        if (!$this->image) {
-            return;
-        }
-        return ltrim($this->image->getMediaId(), '/');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getMediaPath()
-    {
-        return '/project';
     }
 }

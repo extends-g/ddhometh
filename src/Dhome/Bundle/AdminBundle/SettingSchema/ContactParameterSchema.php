@@ -16,6 +16,7 @@ class ContactParameterSchema implements SchemaInterface
     {
         $builder
             ->setDefaults(array(
+                'name' => 'DD DESIGN AT HOME',
                 'address' => 'DD DESIGN AT HOME Minburi Minburi, Bangkok 11111',
                 'tel' => '+662-345-6789',
                 'fax' => '-345-6789',
@@ -33,6 +34,7 @@ class ContactParameterSchema implements SchemaInterface
                 'line_app' => 'http://app.line.com/ddhometh',
             ))
             ->setAllowedTypes(array(
+                'name' => array('string', 'null'),
                 'address' => array('string', 'null'),
                 'tel' => array('string', 'null'),
                 'fax' => array('string', 'null'),
@@ -58,6 +60,12 @@ class ContactParameterSchema implements SchemaInterface
     public function buildForm(FormBuilderInterface $builder)
     {
         $builder
+            ->add('name', 'text', array(
+                'label' => 'Name',
+                'constraints' => array(
+                    new NotBlank(),
+                ),
+            ))
             ->add('address', 'textarea', array(
                 'label' => 'Address',
                 'constraints' => array(

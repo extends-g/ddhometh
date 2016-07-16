@@ -43,8 +43,7 @@
         {% set type = type|default('text') %}
 
         {% if 'file' == type %}
-
-            {#{% set attr = attr|merge({'class': attr.class|default('') ~ ' hidden'}) %}#}
+            {% set attr = attr|merge({'class': attr.class|default('') ~ ' hidden file-form'}) %}
             {#<label for="{{ id }}" class="btn-primary btn-lg file-overlay"><i class="glyphicon glyphicon-folder-open"></i>&nbsp; {{ 'sylius.ui.choose_file'|trans }}</label>#}
             {#&nbsp;#}
         {% endif %}
@@ -55,6 +54,10 @@
 {% block form_label %}
     {% spaceless %}
         {% set label_attr = label_attr|merge({'class': label_attr.class|default('col-lg-2') ~ ' control-label'}) %}
+
+        {% if name == 'file' %}
+            {% set label_attr = label_attr|merge({'class': label_attr.class|default('col-lg-2') ~ ' control-label', 'style': 'display: none;'}) %}
+        {% endif %}
         {{ parent() }}
     {% endspaceless %}
 {% endblock form_label %}
@@ -115,12 +118,12 @@
 
 {% block form_row %}
     {% spaceless %}
-        <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+        <div class="form-group{% if errors|length > 0 %} has-danger{% endif %}">
             {{ form_label(form) }}
             <div {% if label is not same as(false) %}class="col-lg-10"{% endif %}>
                 {{ form_widget(form) }}
                 {% for error in errors %}
-                    <span class="help-block form-error">
+                    <span class="help-block has-danger">
                 {{
                 error.messagePluralization is null
                 ? error.messageTemplate|trans(error.messageParameters, 'validators')
@@ -172,9 +175,9 @@
             </div>
 
             {% if prototype is defined and allow_add %}
-                <a href="#" class="btn btn-success btn-block"
+                <a href="#" class="btn btn-success btn-sm"
                    data-form-collection="add">
-                    <i class="glyphicon glyphicon-plus"></i>
+                    <i class="fa fa-plus"></i>
                     {{ button_add_label|trans }}
                 </a>
             {% endif %}
@@ -188,26 +191,31 @@
              data-form-collection-index="{{ index }}"
              class="collection-item">
             <div class="collection-box{% if form|length == 1 %} unique-field{% endif %}">
-
-                {% if form.vars.value %}
-                    {% if form.vars.value.path is defined %}
-                        <img src="{{ form.vars.value.path|imagine_filter('dhome_small') }}">
+            <div class="row">
+                <div class="col-sm-3">
+                    {% if form.vars.value %}
+                        {% if form.vars.value.path is defined %}
+                            <img src="{{ form.vars.value.path|imagine_filter('dhome_medium') }}">
+                        {% endif %}
                     {% endif %}
-                {% endif %}
 
-                {% if allow_delete %}
-                    <p class="text-right">
-                        <a href="#" data-form-collection="delete" class="btn btn-danger">
-                            <i class="glyphicon glyphicon-remove collection-button-remove"></i>
-                            {{ button_delete_label|trans }}
-                        </a>
-                    </p>
-                {% endif %}
+                    {% if allow_delete %}
+                        <p class="text-right">
+                            <a href="#" data-form-collection="delete" class="btn btn-danger btn-sm">
+                                <i class="fa fa-remove collection-button-remove"></i>
+                                {{ button_delete_label|trans }}
+                            </a>
+                        </p>
+                    {% endif %}
+            </div>
+            <div class="col-sm-9">
                 {% if not form.children|length %}
                     {{ form_widget(form) }}
                 {% else %}
                     {{ form_rest(form) }}
                 {% endif %}
+                </div>
+            </div>
             </div>
         </div>
     {% endspaceless %}

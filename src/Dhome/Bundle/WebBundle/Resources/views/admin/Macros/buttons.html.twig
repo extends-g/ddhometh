@@ -17,7 +17,13 @@
 {% endmacro %}
 
 {% macro edit(url, message) %}
-    <a href="{{ url }}" class="btn btn-primary">
+    <a href="{{ url }}" class="btn btn-info">
+        <i class="fa fa-pencil"></i> {{ message is empty ? 'trans.admin.edit'|trans : message }}
+    </a>
+{% endmacro %}
+
+{% macro edit_small(url, message) %}
+    <a href="{{ url }}" class="btn btn-info btn-sm">
         <i class="fa fa-pencil"></i> {{ message is empty ? 'trans.admin.edit'|trans : message }}
     </a>
 {% endmacro %}
@@ -34,6 +40,21 @@
             <i class="fa fa-trash"></i> {{ message is empty ? 'trans.admin.delete'|trans : message }}
         </button>
     </form>
+    {% endif %}
+{% endmacro %}
+
+{% macro delete_small(url, message, disabled=false, modal=true) %}
+    {% if disabled %}
+        <span class="btn btn-danger btn-sm disabled">
+        <i class="fa fa-trash"></i> {{ message is empty ? 'trans.admin.delete'|trans : message }}
+    </span>
+    {% else %}
+        <form action="{{ url }}" method="post" class="delete-action-form" novalidate>
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-danger{% if modal %} btn-sm btn-confirm{% endif %}" type="submit">
+                <i class="fa fa-trash"></i> {{ message is empty ? 'trans.admin.delete'|trans : message }}
+            </button>
+        </form>
     {% endif %}
 {% endmacro %}
 

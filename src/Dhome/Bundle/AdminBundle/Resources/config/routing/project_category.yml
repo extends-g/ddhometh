@@ -1,0 +1,37 @@
+dhome_admin_project_category_index:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.project_category:indexAction
+        _sylius:
+            template: DhomeWebBundle::admin/ProjectCategory/index.html.twig
+            sortable: true
+            sorting:
+                name: ASC
+            filterable: true
+
+dhome_admin_project_category_create:
+    path: /create
+    methods: [GET, POST]
+    defaults:
+        _controller: dhome.controller.project_category:createAction
+        _sylius:
+            template: DhomeWebBundle::admin/ProjectCategory/create.html.twig
+            redirect: dhome_admin_project_category_index
+
+dhome_admin_project_category_update:
+    path: /{id}/update
+    methods: [GET, PUT, PATCH, POST]
+    defaults:
+        _controller: dhome.controller.project_category:updateAction
+        _sylius:
+            template: DhomeWebBundle::admin/ProjectCategory/update.html.twig
+            redirect: dhome_admin_project_category_index
+
+dhome_admin_project_category_delete:
+    path: /{id}/delete
+    methods: [DELETE]
+    defaults:
+        _controller: dhome.controller.project_category:deleteAction
+        _sylius:
+            redirect: dhome_admin_project_category_index

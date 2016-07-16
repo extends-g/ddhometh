@@ -1,0 +1,37 @@
+{% macro list(collection_categories) %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+{% import 'DhomeWebBundle:admin/Macros:alerts.html.twig' as alerts %}
+{% import 'DhomeWebBundle:admin/Macros:misc.html.twig' as misc %}
+
+{% if collection_categories|length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ 'trans.admin.no'|trans }}</th>
+                <th>{{ sylius_resource_sort('name', 'Name'|trans) }}</th>
+                <th>{{ 'Icon'|trans }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in collection_categories %}
+            <tr>
+                <td>{{ r.id }}</td>
+                <td>{{ r.name }}</td>
+                <td>{{ r.icon }}</td>
+                <td>
+                    <div class="actions-field">
+                        {{ buttons.edit_small(path('dhome_admin_collection_category_update', {'id': r.id})) }}
+                        {{ buttons.delete_small(path('dhome_admin_collection_category_delete', {'id': r.id})) }}
+                   </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    {{ alerts.info('trans.admin.no_data'|trans) }}
+{% endif %}
+
+{% endmacro %}

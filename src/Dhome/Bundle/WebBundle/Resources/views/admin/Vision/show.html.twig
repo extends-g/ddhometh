@@ -2,41 +2,73 @@
 
 {% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
 
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-folder-open"></i> {{ 'Vision Detail'|trans }}</div>
+    <div class="pull-xs-right">
+        {{ buttons.manage(path('dhome_admin_visions_index'), 'Visions'|trans) }}
+        {{ buttons.edit(path('dhome_admin_visions_update', {'id': vision.id})) }}
+        {{ buttons.delete(path('dhome_admin_visions_delete', {'id': vision.id}), null, false, true) }}
+    </div>
+{% endblock %}
+
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
         <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
-        <li>{{ vision.title[:20] ~ '...' }}</li>
+        <li class="active">{{ vision.title[:20] ~ '...' }}</li>
     </ol>
 {% endblock %}
 
 {% block content %}
-    <div class="page-header">
-        <div class="actions-menu">
-            {{ buttons.manage(path('dhome_admin_visions_index'), 'Visions'|trans) }}
-            {{ buttons.edit(path('dhome_admin_visions_update', {'id': vision.id})) }}
-            {{ buttons.delete(path('dhome_admin_visions_delete', {'id': vision.id}), null, false, true) }}
-        </div>
-    </div>
-
     <div class="row">
         <div class="col-sm-6">
-            <h4>{{ 'Detail'|trans }}</h4><hr>
+            <div class="show-detail-header">
+                {{ 'Information'|trans }}
+            </div><hr>
 
-            <strong>{{ 'Title'|trans ~ ': ' }}</strong>
-            {{ vision.title }}<br>
-
-            <strong>{{ 'Subtitle'|trans ~ ': ' }}</strong>
-            {{ vision.subtitle }}<br>
-
-            <strong>{{ 'Content'|trans ~ ': ' }}</strong>
-            {{ vision.content|raw }}
-
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="show-detail-td">
+                            {{ 'Title'|trans }}
+                        </td>
+                        <td>
+                            {{ vision.title }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="show-detail-td">
+                            {{ 'Subtitle'|trans }}
+                        </td>
+                        <td>
+                            {{ vision.subtitle }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="show-detail-td">
+                            {{ 'Content'|trans }}
+                        </td>
+                        <td>
+                            {{ vision.content|raw }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="show-detail-td">
+                            {{ 'Created at'|trans }}
+                        </td>
+                        <td>
+                            {{ vision.createdAt|date }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col-sm-6">
-            <h4>{{ 'Vision images'|trans }}</h4><hr>
+            <div class="show-detail-header">
+                {{ 'Image'|trans }}
+            </div><hr>
             {% for image in vision.images %}
-                <img src="{{ image.path|imagine_filter('dhome_medium') }}">
+                <img style="padding-bottom: 4px;" src="{{ image.path|imagine_filter('dhome_medium') }}">
             {% else %}
                 No photo.
             {% endfor %}

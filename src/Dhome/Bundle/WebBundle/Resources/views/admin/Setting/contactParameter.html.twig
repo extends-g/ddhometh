@@ -1,0 +1,64 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+{% form_theme form 'DhomeWebBundle:admin:forms.html.twig' %}
+
+{% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import update %}
+
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-pencil"></i> {{ 'Edit contact us'|trans }}</div>
+{% endblock %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li class="active">{{ 'Contact us'|trans }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    {{ form_errors(form) }}
+
+    <form action="{{ path('dhome_admin_setting_contact_parameter') }}" method="post" class="form-horizontal" novalidate>
+        <span style="color: red;">* </span> {{ 'Name'|trans }}
+        <div class="form-title-space">
+            {{ form_row(form.name, {label: false}) }}
+        </div>
+
+        <span style="color: red;">* </span> {{ 'Address'|trans }}
+        <div class="form-title-space">
+            {{ form_row(form.address, {label: false}) }}
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                {{ 'Email'|trans }}
+                <div class="form-title-space">
+                    {{ form_row(form.email, {label: false}) }}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                {{ 'Website'|trans }}
+                <div class="form-title-space">
+                    {{ form_row(form.website, {label: false}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span style="color: red;">* </span> {{ 'Tel'|trans }}
+                <div class="form-title-space">
+                    {{ form_row(form.tel, {label: false}) }}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                {{ 'Fax'|trans }}
+                <div class="form-title-space">
+                    {{ form_row(form.fax, {label: false}) }}
+                </div>
+            </div>
+        </div>
+
+        {{ form_row(form._token) }}
+        {{ update() }}
+    </form>
+{% endblock %}

@@ -13,8 +13,41 @@ class ProductCollectionType extends AbstractResourceType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('category', 'dhome_collection_category_choice', [
+                'required' => true,
+                'choice_label' => 'name',
+                'empty_value' => 'Please select collection category.',
+                'label' => 'Collection category'
+            ])
+
             ->add('name', 'text', [
                 'label' => 'Name',
+                'required' => true
+            ])
+
+            ->add('shortDescription', 'text', [
+                'label' => 'Short description',
+                'required' => false
+            ])
+
+            ->add('content', 'textarea', [
+                'label' => 'content',
+                'attr' => array(
+                    'class' => 'tinymce',
+                )
+            ])
+
+            ->add('videoLink', 'url', [
+                'required' => false,
+                'label' => 'Video link'
+            ])
+
+            ->add('images', 'collection', [
+                'type' => 'dhome_collection_image',
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'label' => 'Collection image',
             ])
         ;
     }

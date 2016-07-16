@@ -49,11 +49,7 @@ Dhome\Bundle\AdminBundle\Model\ProductCollection:
             targetEntity: Dhome\Bundle\MediaBundle\Model\CollectionImage
             cascade: [all]
             mappedBy: collection
-            joinColumn:
-                nullable: true
-                onDelete: "CASCADE"
-                image_id:
-                    referencedColumnName: id
+            orphanRemoval: true
 
     manyToOne:
         category:
@@ -67,4 +63,4 @@ Dhome\Bundle\AdminBundle\Model\ProductCollection:
 
         user:
             targetEntity: Sylius\Component\User\Model\User
-            nullable: false
+            nullable: true

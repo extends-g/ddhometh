@@ -1,0 +1,37 @@
+dhome_admin_collection_category_index:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.collection_category:indexAction
+        _sylius:
+            template: DhomeWebBundle::admin/CollectionCategory/index.html.twig
+            sortable: true
+            sorting:
+                name: ASC
+            filterable: true
+
+dhome_admin_collection_category_create:
+    path: /create
+    methods: [GET, POST]
+    defaults:
+        _controller: dhome.controller.collection_category:createAction
+        _sylius:
+            template: DhomeWebBundle::admin/CollectionCategory/create.html.twig
+            redirect: dhome_admin_collection_category_index
+
+dhome_admin_collection_category_update:
+    path: /{id}/update
+    methods: [GET, PUT, PATCH, POST]
+    defaults:
+        _controller: dhome.controller.collection_category:updateAction
+        _sylius:
+            template: DhomeWebBundle::admin/CollectionCategory/update.html.twig
+            redirect: dhome_admin_collection_category_index
+
+dhome_admin_collection_category_delete:
+    path: /{id}/delete
+    methods: [DELETE]
+    defaults:
+        _controller: dhome.controller.collection_category:deleteAction
+        _sylius:
+            redirect: dhome_admin_collection_category_index

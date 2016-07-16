@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block head %}
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+    {% endblock %}
+
+    {% block stylesheets %}
+        {#<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel=stylesheet>#}
+        <link rel="stylesheet" href="{{ asset('assets/admin/css/style.css') }}" type="text/css"/>
+    {% endblock %}
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        {% if error %}
+            <div class="alert alert-block alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+        <form action="{{ path('dhome_login_check') }}" method="post" class="form-signin">
+            <h2 class="form-signin-heading">Please sign in</h2>
+
+            {{ form_widget(form._username, {attr: {
+                class: 'form-control',
+                placeholder: 'Username or Email'|trans
+            }}) }}
+
+            {{ form_widget(form._password, {attr: {
+                class: 'form-control',
+                placeholder: 'Password'|trans
+            }}) }}
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div>
+
+    {% block javascripts %}
+        <script src="{{ asset('assets/admin/js/app.js') }}"></script>
+    {% endblock javascripts %}
+</body>
+</html>

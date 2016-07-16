@@ -1,0 +1,85 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-folder-open"></i> {{ 'Project Detail'|trans }}</div>
+    <div class="pull-xs-right">
+        {{ buttons.manage(path('dhome_admin_presses_index'), 'Presses'|trans) }}
+        {{ buttons.edit(path('dhome_admin_presses_update', {'id': press.id})) }}
+        {{ buttons.delete(path('dhome_admin_presses_delete', {'id': press.id}), null, false, true) }}
+    </div>
+{% endblock %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_presses_index') }}">{{ 'Presses'|trans }}</a></li>
+        <li class="active">{{ press.name[:20] ~ '...' }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="show-detail-header">
+                {{ 'Information'|trans }}
+            </div><hr>
+
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Name'|trans }}
+                    </td>
+                    <td>
+                        {{ press.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Short description'|trans }}
+                    </td>
+                    <td>
+                        {{ press.shortDescription }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Content'|trans }}
+                    </td>
+                    <td>
+                        {{ press.content|raw }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Video link'|trans }}
+                    </td>
+                    <td>
+                        {{ press.videoLink }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="show-detail-td">
+                        {{ 'Created at'|trans }}
+                    </td>
+                    <td>
+                        {{ press.createdAt|date }}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <div class="show-detail-header">
+                {{ 'Image'|trans }}
+            </div><hr>
+            {% for image in press.images %}
+                <img style="padding-bottom: 4px;" src="{{ image.path|imagine_filter('dhome_medium') }}">
+            {% else %}
+                No photo.
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

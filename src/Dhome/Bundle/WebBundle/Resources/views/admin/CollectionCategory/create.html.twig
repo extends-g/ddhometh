@@ -1,0 +1,29 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import create %}
+
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-plus"></i> {{ 'Create new collection category'|trans }}</div>
+{% endblock %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_collection_category_index') }}">{{ 'Collection Categories'|trans }}</a></li>
+        <li class="active">{{ 'trans.admin.new'|trans }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    {{ form_start(form, {
+        'action': path('dhome_admin_collection_category_create'),
+        'method': 'post',
+        'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}
+    }) }}
+
+    {% include 'DhomeWebBundle:admin/CollectionCategory:_form.html.twig' %}
+    {{ form_row(form._token) }}
+    {{ create() }}
+
+    {{ form_end(form, {'render_rest': false}) }}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'DhomeWebBundle:admin:layout.html.twig' %}
+
+{% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import update %}
+
+{% block header %}
+    <div class="pull-xs-left header-text"><i class="fa fa-pencil"></i> {{ 'Edit project'|trans }}</div>
+{% endblock %}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
+        <li><a href="{{ path('dhome_admin_projects_index') }}">{{ 'Projects'|trans }}</a></li>
+        <li>{{ project.name[:20] ~ '...' }}</li>
+        <li class="active">{{ 'trans.admin.edit'|trans }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    {{ form_start(form, {
+        'action': path('dhome_admin_projects_update', {id: project.id}),
+        'method': 'post',
+        'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}
+    }) }}
+
+    {% include 'DhomeWebBundle:admin/Project:_form.html.twig' %}
+
+    {{ form_row(form._token) }}
+    {{ update() }}
+    {{ form_end(form, {'render_rest': false}) }}
+{% endblock %}
