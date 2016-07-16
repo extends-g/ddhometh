@@ -21,7 +21,6 @@ Dhome\Bundle\AdminBundle\Model\ProductCollection:
             type: string
             length: 255
             column: short_description
-            nullable: true
 
         content:
             type: text

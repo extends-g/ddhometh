@@ -21,7 +21,6 @@ Dhome\Bundle\AdminBundle\Model\Vision:
             type: string
             length: 255
             column: sub_title
-            nullable: true
 
         content:
             type: text

@@ -27,14 +27,15 @@ class ProductCollectionType extends AbstractResourceType
 
             ->add('shortDescription', 'text', [
                 'label' => 'Short description',
-                'required' => false
+                'required' => true
             ])
 
             ->add('content', 'textarea', [
                 'label' => 'content',
                 'attr' => array(
                     'class' => 'tinymce',
-                )
+                ),
+                'required' => true,
             ])
 
             ->add('videoLink', 'url', [

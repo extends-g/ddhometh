@@ -21,7 +21,6 @@ Dhome\Bundle\AdminBundle\Model\Project:
             type: string
             length: 255
             column: short_description
-            nullable: true
 
         content:
             type: text
