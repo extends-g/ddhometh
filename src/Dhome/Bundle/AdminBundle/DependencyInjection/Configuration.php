@@ -2,7 +2,11 @@
 
 namespace Dhome\Bundle\AdminBundle\DependencyInjection;
 
+use Dhome\Bundle\AdminBundle\Controller\PressController;
+use Dhome\Bundle\AdminBundle\Controller\ProductCollectionController;
+use Dhome\Bundle\AdminBundle\Controller\ProjectController;
 use Dhome\Bundle\AdminBundle\Controller\VisionController;
+use Dhome\Bundle\AdminBundle\Doctrine\ORM\VisionRepository;
 use Dhome\Bundle\AdminBundle\Form\Type\PressCategoryType;
 use Dhome\Bundle\AdminBundle\Form\Type\PressType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProductCollectionCategoryType;
@@ -75,7 +79,7 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode('model')->defaultValue(Vision::class)->cannotBeEmpty()->end()
                                         ->scalarNode('interface')->defaultValue(VisionInterface::class)->cannotBeEmpty()->end()
                                         ->scalarNode('controller')->defaultValue(VisionController::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('repository')->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->defaultValue(VisionRepository::class)->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->arrayNode('form')
                                             ->addDefaultsIfNotSet()
@@ -106,7 +110,7 @@ class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode('model')->defaultValue(Project::class)->cannotBeEmpty()->end()
                                         ->scalarNode('interface')->defaultValue(ProjectInterface::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(ProjectController::class)->cannotBeEmpty()->end()
                                         ->scalarNode('repository')->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->arrayNode('form')
@@ -170,7 +174,7 @@ class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode('model')->defaultValue(ProductCollection::class)->cannotBeEmpty()->end()
                                         ->scalarNode('interface')->defaultValue(ProductCollectionInterface::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(ProductCollectionController::class)->cannotBeEmpty()->end()
                                         ->scalarNode('repository')->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->arrayNode('form')
@@ -234,7 +238,7 @@ class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode('model')->defaultValue(Press::class)->cannotBeEmpty()->end()
                                         ->scalarNode('interface')->defaultValue(PressInterface::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(PressController::class)->cannotBeEmpty()->end()
                                         ->scalarNode('repository')->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->arrayNode('form')

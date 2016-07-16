@@ -3,7 +3,7 @@ dhome_admin:
     prefix:   /
 
 dhome_web:
-    resource: "@DhomeWebBundle/Resources/config/routing.yml"
+    resource: "@DhomeWebBundle/Resources/config/routing/web/main.yml"
     prefix:   /
 
 cmf_media_file:
