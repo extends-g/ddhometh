@@ -13,3 +13,11 @@
         color: #696969;
     }
 }
+
+@media screen and (max-width: 769px) {
+
+    .breadcrumb-dh {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}

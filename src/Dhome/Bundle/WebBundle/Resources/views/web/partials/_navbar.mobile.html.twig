@@ -1,18 +1,28 @@
 <nav class="navbar-mb">
-    <div class="menu-opener">
-        <div class="menu-opener-inner"></div>
-    </div>
-    <div class="menu">
-        <div class="menu-inner">
-            <div class="navbar-mb--name"><a href="{{ path('dhome_homepage') }}">DDHOME</a></div>
-            <div class="navbar-mb--desc">LIVING | DECOR</div>
-            <ul>
-                <li><a href="{{ path('dhome_submenu') }}" class="menu-link">INSPIRATIONS</a></li>
-                <li><a href="{{ path('dhome_submenu') }}" class="menu-link">PROJECTS</a></li>
-                <li><a href="{{ path('dhome_submenu') }}" class="menu-link">COLLECTIONS</a></li>
-                <li><a href="{{ path('dhome_submenu') }}" class="menu-link">PRESS</a></li>
-                <li><a href="{{ path('dhome_contact') }}" class="menu-link">CONTACT US</a></li>
-            </ul>
+    <div class="container">
+        <div class="navbar-mb__brand">
+            <div class="navbar-mb--name">
+                <a href="{{ path('dhome_homepage') }}">DDHOME</a>
+            </div>
+            <div class="navbar-mb--desc">
+                <a href="{{ path('dhome_homepage') }}">LIVING | DECOR</a>
+            </div>
+        </div>
+        <div class="menu-opener">
+            <div class="menu-opener-inner"></div>
+        </div>
+        <div class="menu">
+            <div class="menu-inner">
+                <div class="navbar-mb--name"><a href="{{ path('dhome_homepage') }}">DDHOME</a></div>
+                <div class="navbar-mb--desc">LIVING | DECOR</div>
+                <ul>
+                    <li><a href="{{ path('dhome_submenu') }}" class="menu-link">INSPIRATIONS</a></li>
+                    <li><a href="{{ path('dhome_submenu') }}" class="menu-link">PROJECTS</a></li>
+                    <li><a href="{{ path('dhome_submenu') }}" class="menu-link">COLLECTIONS</a></li>
+                    <li><a href="{{ path('dhome_submenu') }}" class="menu-link">PRESS</a></li>
+                    <li><a href="{{ path('dhome_contact') }}" class="menu-link">CONTACT US</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
