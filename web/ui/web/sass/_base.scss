@@ -37,6 +37,7 @@ body {
 }
 
 a {
+    cursor: pointer;
     &:hover, &:active, &:focus {
         opacity: .8;
         text-decoration: none;
@@ -45,4 +46,13 @@ a {
 
 .main-content {
     padding-top: 60px;
+}
+
+.icon-rounded {
+    border-radius: 50%;
+    padding: .5rem;
+    background: #fff;
+    i {
+        vertical-align: middle;
+    }
 }

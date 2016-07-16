@@ -29,6 +29,7 @@
         i {
             font-size: 1.5rem;
             cursor: pointer;
+            color: #656565;
             a {
                 color: #656565;
                 &:hover {
@@ -36,6 +37,7 @@
                 }
             }
         }
+
     }
     &__form {
         padding-top: 3rem;
