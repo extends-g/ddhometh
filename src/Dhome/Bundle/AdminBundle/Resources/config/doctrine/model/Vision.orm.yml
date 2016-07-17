@@ -21,7 +21,6 @@ Dhome\Bundle\AdminBundle\Model\Vision:
             type: string
             length: 255
             column: sub_title
-            nullable: true
 
         content:
             type: text
@@ -45,14 +44,17 @@ Dhome\Bundle\AdminBundle\Model\Vision:
                 timestampable:
                     on: update
 
-    oneToMany:
-        images:
-            targetEntity: Dhome\Bundle\MediaBundle\Model\VisionImage
-            cascade: [all]
-            mappedBy: vision
-            orphanRemoval: true
-
     manyToOne:
         user:
             targetEntity: Sylius\Component\User\Model\User
             nullable: true
+
+        image:
+            targetEntity: Dhome\Bundle\MediaBundle\Model\VisionImage
+            nullable: true
+            cascade: ["persist"]
+            joinColumn:
+                nullable: true
+                onDelete: "CASCADE"
+                image_id:
+                    referencedColumnName: id

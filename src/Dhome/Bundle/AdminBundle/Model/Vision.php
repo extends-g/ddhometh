@@ -3,8 +3,6 @@
 namespace Dhome\Bundle\AdminBundle\Model;
 
 use Dhome\Bundle\MediaBundle\Model\VisionImageInterface;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 use Sylius\Component\User\Model\UserInterface;
 
@@ -43,14 +41,9 @@ class Vision implements VisionInterface
     protected $user;
 
     /**
-     * @var Collection|VisionImageInterface[]
+     * @var VisionImageInterface
      */
-    protected $images;
-
-    public function __construct()
-    {
-        $this->images = new ArrayCollection();
-    }
+    protected $image;
 
     /**
      * {@inheritdoc}
@@ -143,55 +136,16 @@ class Vision implements VisionInterface
     /**
      * {@inheritdoc}
      */
-    public function getImages()
+    public function getImage()
     {
-        return $this->images;
+        return $this->image;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setImages(Collection $images)
+    public function setImage(VisionImageInterface $image)
     {
-        if (!$images instanceof Collection) {
-            $images = new ArrayCollection($images);
-        }
-
-        /** @var VisionImageInterface $image */
-        foreach($images as $image) {
-            $image->setVision($this);
-        }
-
-        $this->images = $images;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function hasImage(VisionImageInterface $image)
-    {
-        return $this->images->contains($image);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function addImage(VisionImageInterface $image)
-    {
-        if (!$this->hasImage($image)) {
-            $image->setVision($this);
-            $this->images->add($image);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function removeImage(VisionImageInterface $image)
-    {
-        if ($this->hasImage($image)) {
-            $image->setVision(null);
-            $this->images->removeElement($image);
-        }
+        $this->image = $image;
     }
 }

@@ -9,12 +9,20 @@ use Dhome\Bundle\AdminBundle\Model\ProductCollectionInterface;
 use Dhome\Bundle\AdminBundle\Model\ProjectCategoryInterface;
 use Dhome\Bundle\AdminBundle\Model\ProjectInterface;
 use Dhome\Bundle\AdminBundle\Model\VisionInterface;
+use Dhome\Bundle\MediaBundle\Model\CollectionImageInterface;
+use Dhome\Bundle\MediaBundle\Model\PressImageInterface;
+use Dhome\Bundle\MediaBundle\Model\ProjectImageInterface;
+use Dhome\Bundle\MediaBundle\Model\VisionImageInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Dhome\Bundle\FixturesBundle\DataFixtures\DataFixture;
 use Sylius\Component\User\Model\UserInterface;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class AdminBundle extends DataFixture
 {
+    protected $path = '/../../Resources/fixtures';
+
     /**
      * @return null|UserInterface
      */
@@ -31,7 +39,20 @@ class AdminBundle extends DataFixture
      */
     public function load(ObjectManager $manager)
     {
+        $add = true;;
+        $imageDummy = null;
+
+        $finder = new Finder();
+        foreach ($finder->files()->in(__DIR__.$this->path) as $dummy) {
+            if ($add == true) {
+                $imageDummy = $dummy;
+            }
+
+            $add = false;
+        }
+
         for ($i = 1; $i <= 10; $i++) {
+            $manager->persist($this->createVisionImage($i, $imageDummy));
             $manager->persist($this->createVision($i));
         }
 
@@ -41,6 +62,11 @@ class AdminBundle extends DataFixture
 
         for ($i = 1; $i <= 20; $i++) {
             $manager->persist($this->createProject($i));
+
+            $finder = new Finder();
+            foreach ($finder->files()->in(__DIR__.$this->path) as $img) {
+                $manager->persist($this->createProjectImage($i, $img->getFilename(), $img));
+            }
         }
 
         for ($i = 1; $i <= 4; $i++) {
@@ -49,6 +75,10 @@ class AdminBundle extends DataFixture
 
         for ($i = 1; $i <= 20; $i++) {
             $manager->persist($this->createCollection($i));
+            $finder = new Finder();
+            foreach ($finder->files()->in(__DIR__.$this->path) as $img) {
+                $manager->persist($this->createCollectionImage($i, $img->getFilename(), $img));
+            }
         }
 
         for ($i = 1; $i <= 4; $i++) {
@@ -57,9 +87,28 @@ class AdminBundle extends DataFixture
 
         for ($i = 1; $i <= 20; $i++) {
             $manager->persist($this->createPress($i));
+            $finder = new Finder();
+            foreach ($finder->files()->in(__DIR__.$this->path) as $img) {
+                $manager->persist($this->createPressImage($i, $img->getFilename(), $img));
+            }
         }
 
         $manager->flush();
+    }
+
+    protected function createVisionImage($i, $img)
+    {
+        $uploader = $this->container->get('dhome.image_uploader');
+
+        /** @var VisionImageInterface  $image */
+        $image = $this->container->get('dhome.factory.vision_image')->createNew();
+
+        $image->setFile(new UploadedFile($img->getRealPath(), $img->getFilename()));
+        $uploader->upload($image);
+
+        $this->setReference('vision_image' . $i, $image);
+
+        return $image;
     }
 
     /**
@@ -73,12 +122,13 @@ class AdminBundle extends DataFixture
          * @var VisionInterface $vision
          */
         $vision = $this->container->get('dhome.factory.vision')->createNew();
-        $vision->setTitle($this->faker->text(100));
-        $vision->setSubTitle($this->faker->text(150));
+        $vision->setTitle($this->faker->text(30));
+        $vision->setSubTitle($this->faker->text(100));
         // todo faker html content
         $vision->setContent($this->faker->text(200));
 
         $vision->setUser($this->getDemoUser());
+        $vision->setImage($this->getReference('vision_image' . $i));
 
         $this->setReference('vision' . $i, $vision);
 
@@ -116,7 +166,7 @@ class AdminBundle extends DataFixture
          * @var ProjectInterface $project
          */
         $project = $this->container->get('dhome.factory.project')->createNew();
-        $project->setName($this->faker->text(70));
+        $project->setName($this->faker->text(30));
         $project->setShortDescription($this->faker->text(100));
         // todo faker html content
         $project->setContent($this->faker->text(200));
@@ -129,6 +179,24 @@ class AdminBundle extends DataFixture
         $this->setReference('project' . $i, $project);
 
         return $project;
+    }
+
+
+    protected function createProjectImage($i, $filename, $img)
+    {
+        $uploader = $this->container->get('dhome.image_uploader');
+
+        /** @var ProjectImageInterface $image */
+        $image = $this->container->get('dhome.factory.project_image')->createNew();
+
+        $image->setFile(new UploadedFile($img->getRealPath(), $img->getFilename()));
+        $uploader->upload($image);
+
+        $image->setProject($this->getReference('project' . $i));
+
+        $this->setReference('project_image' . $i . $filename, $image);
+
+        return $image;
     }
 
     /**
@@ -161,7 +229,7 @@ class AdminBundle extends DataFixture
          * @var ProductCollectionInterface $collection
          */
         $collection = $this->container->get('dhome.factory.collection')->createNew();
-        $collection->setName($this->faker->text(70));
+        $collection->setName($this->faker->text(30));
         $collection->setShortDescription($this->faker->text(100));
         // todo faker html content
         $collection->setContent($this->faker->text(200));
@@ -174,6 +242,23 @@ class AdminBundle extends DataFixture
         $this->setReference('collection' . $i, $collection);
 
         return $collection;
+    }
+
+    protected function createCollectionImage($i, $filename, $img)
+    {
+        $uploader = $this->container->get('dhome.image_uploader');
+
+        /** @var CollectionImageInterface  $image */
+        $image = $this->container->get('dhome.factory.collection_image')->createNew();
+
+        $image->setFile(new UploadedFile($img->getRealPath(), $img->getFilename()));
+        $uploader->upload($image);
+
+        $image->setCollection($this->getReference('collection' . $i));
+
+        $this->setReference('collection_image' . $i . $filename, $image);
+
+        return $image;
     }
 
     /**
@@ -201,7 +286,7 @@ class AdminBundle extends DataFixture
          * @var PressInterface $press
          */
         $press = $this->container->get('dhome.factory.press')->createNew();
-        $press->setName($this->faker->text(70));
+        $press->setName($this->faker->text(30));
         $press->setShortDescription($this->faker->text(100));
         // todo faker html content
         $press->setContent($this->faker->text(200));
@@ -214,6 +299,23 @@ class AdminBundle extends DataFixture
         $this->setReference('press' . $i, $press);
 
         return $press;
+    }
+
+    protected function createPressImage($i, $filename, $img)
+    {
+        $uploader = $this->container->get('dhome.image_uploader');
+
+        /** @var PressImageInterface  $image */
+        $image = $this->container->get('dhome.factory.press_image')->createNew();
+
+        $image->setFile(new UploadedFile($img->getRealPath(), $img->getFilename()));
+        $uploader->upload($image);
+
+        $image->setPress($this->getReference('press' . $i));
+
+        $this->setReference('press_image' . $i . $filename, $image);
+
+        return $image;
     }
 
     /**

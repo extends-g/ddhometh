@@ -1,7 +1,6 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
 {% block content %}
-
     {% block breadcrumb %}
         {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
     {% endblock %}
@@ -11,42 +10,27 @@
 
         <div class="card-columns">
 
-            {% for i in 0..3 %}
-            <div class="card inspi__card">
-                <a href="">
-                    <img class="card-img-top img-fluid img-lazy" src="{{ asset('ui/web/img/b.jpg') }}" alt="Card image cap">
-                </a>
-                <div class="card-block">
-                    <h4 class="card-title"><a href="#">Card title that wraps to a new line</a></h4>
-                    <p class="card-text"><a href="#">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</a></p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            {% for r in inspirations %}
+                <div class="card inspi__card">
+                    {% if r.images|length %}
+                        {% set thumbnail = r.images|first %}
+                        <a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">
+                            <img class="card-img-top img-fluid img-lazy" src="{{ thumbnail.path|imagine_filter('dhome_large') }}" alt="Card image cap">
+                        </a>
+                    {% endif %}
+                    <div class="card-block">
+                        <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.title }}</a></h4>
+                        <p class="card-text"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.subtitle }}</a></p>
+                        <p class="card-text"><small class="text-muted">{{ r.createdAt|date }}</small></p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card inspi__card">
-                <div class="card-block">
-                    <h4 class="card-title"><a href="#">Card title that wraps to a new line</a></h4>
-                    <p class="card-text"><a href="#">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</a></p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-
-            <div class="card inspi__card">
-                <a href="">
-                    <img class="card-img-top img-fluid img-lazy" src="{{ asset('ui/web/img/a.jpg') }}" alt="Card image cap">
-                </a>
-                <div class="card-block">
-                    <h4 class="card-title"><a href="#">Card title that wraps to a new line</a></h4>
-                    <p class="card-text"><a href="#">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</a></p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
             {% endfor %}
 
         </div>
     </div>
 
     {% block paginator %}
+        {# todo: implement paginator #}
         {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
     {% endblock %}
 
