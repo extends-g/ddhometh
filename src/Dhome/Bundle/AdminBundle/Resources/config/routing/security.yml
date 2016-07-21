@@ -17,3 +17,12 @@ dhome_admin_logout:
     methods: [GET, POST]
     defaults:
         _controller: sylius.controller.user_security:logoutAction
+
+dhome_admin_change_password:
+    path: /change-password
+    methods: [GET, POST]
+    defaults:
+        _controller: sylius.controller.user:changePasswordAction
+        _sylius:
+            template: DhomeWebBundle::admin/Security/password.html.twig
+            redirect: dhome_admin_dashboard
