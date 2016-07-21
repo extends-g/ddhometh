@@ -86,4 +86,9 @@ interface ProductCollectionInterface extends TimestampableInterface, ResourceInt
      * @param CollectionImageInterface $image
      */
     public function removeImage(CollectionImageInterface $image);
+
+    /**
+     * @return null|CollectionImageInterface
+     */
+    public function getFirstImage();
 }

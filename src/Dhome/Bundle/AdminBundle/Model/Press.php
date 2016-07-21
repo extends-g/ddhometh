@@ -215,4 +215,16 @@ class Press implements PressInterface
             $this->images->removeElement($image);
         }
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getFirstImage()
+    {
+        if ($this->images) {
+            return $this->images->first();
+        }
+
+        return null;
+    }
 }

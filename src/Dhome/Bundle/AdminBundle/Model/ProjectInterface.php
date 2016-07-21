@@ -86,4 +86,9 @@ interface ProjectInterface extends TimestampableInterface, ResourceInterface, Us
      * @param ProjectImageInterface $image
      */
     public function removeImage(ProjectImageInterface $image);
+
+    /**
+     * @return null|ProjectImageInterface
+     */
+    public function getFirstImage();
 }

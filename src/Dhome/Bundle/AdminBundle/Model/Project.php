@@ -215,4 +215,16 @@ class Project implements ProjectInterface
             $this->images->removeElement($image);
         }
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getFirstImage()
+    {
+        if ($this->images) {
+            return $this->images->first();
+        }
+
+        return null;
+    }
 }

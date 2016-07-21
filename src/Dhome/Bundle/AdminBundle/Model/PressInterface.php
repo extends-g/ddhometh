@@ -86,4 +86,9 @@ interface PressInterface extends TimestampableInterface, ResourceInterface, User
      * @param PressImageInterface $image
      */
     public function removeImage(PressImageInterface $image);
+
+    /**
+     * @return null|PressImageInterface
+     */
+    public function getFirstImage();
 }
