@@ -194,7 +194,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     {% if form.vars.value %}
-                        {% if form.vars.value.path is defined %}
+                        {% if form.vars.value.path is defined and form.vars.value.path %}
                             <img src="{{ form.vars.value.path|imagine_filter('dhome_medium') }}">
                         {% endif %}
                     {% endif %}

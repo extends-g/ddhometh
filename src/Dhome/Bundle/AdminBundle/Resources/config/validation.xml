@@ -60,6 +60,14 @@
                 <option name="groups">dhome</option>
             </constraint>
         </property>
+        <property name="images">
+            <constraint name="Count">
+                <option name="min">5</option>
+                <option name="minMessage">Please add images 5 items up.</option>
+                <option name="groups">dhome</option>
+            </constraint>
+            <constraint name="Valid" />
+        </property>
     </class>
 
     <class name="Dhome\Bundle\AdminBundle\Model\ProductCollectionCategory">
@@ -96,6 +104,14 @@
                 <option name="groups">dhome</option>
             </constraint>
         </property>
+        <property name="images">
+            <constraint name="Count">
+                <option name="min">5</option>
+                <option name="minMessage">Please add images 5 items up.</option>
+                <option name="groups">dhome</option>
+            </constraint>
+            <constraint name="Valid" />
+        </property>
     </class>
 
     <class name="Dhome\Bundle\AdminBundle\Model\PressCategory">
@@ -131,6 +147,14 @@
                 <option name="message">Content must not blank.</option>
                 <option name="groups">dhome</option>
             </constraint>
+        </property>
+        <property name="images">
+            <constraint name="Count">
+                <option name="min">5</option>
+                <option name="minMessage">Please add images 5 items up.</option>
+                <option name="groups">dhome</option>
+            </constraint>
+            <constraint name="Valid" />
         </property>
     </class>
 

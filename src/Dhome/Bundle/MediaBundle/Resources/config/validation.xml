@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+                                        http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
+
+    <class name="Dhome\Bundle\MediaBundle\Model\InspirationImage">
+        <property name="file">
+            <constraint name="Image">
+                <option name="minWidth">825</option>
+                <option name="minHeight">550</option>
+                <option name="maxRatio">1.5</option>
+                <option name="minRatio">1.5</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+    </class>
+
+    <class name="Dhome\Bundle\MediaBundle\Model\ProjectImage">
+        <property name="file">
+            <constraint name="Image">
+                <option name="minWidth">825</option>
+                <option name="minHeight">550</option>
+                <option name="maxRatio">1.5</option>
+                <option name="minRatio">1.5</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+    </class>
+
+    <class name="Dhome\Bundle\MediaBundle\Model\CollectionImage">
+        <property name="file">
+            <constraint name="Image">
+                <option name="minWidth">825</option>
+                <option name="minHeight">550</option>
+                <option name="maxRatio">1.5</option>
+                <option name="minRatio">1.5</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+    </class>
+
+    <class name="Dhome\Bundle\MediaBundle\Model\PressImage">
+        <property name="file">
+            <constraint name="Image">
+                <option name="minWidth">825</option>
+                <option name="minHeight">550</option>
+                <option name="maxRatio">1.5</option>
+                <option name="minRatio">1.5</option>
+                <option name="groups">dhome</option>
+            </constraint>
+        </property>
+    </class>
+
+</constraint-mapping>
