@@ -66,6 +66,7 @@
                 <option name="minMessage">Please add images 5 items up.</option>
                 <option name="groups">dhome</option>
             </constraint>
+            <constraint name="Valid" />
         </property>
     </class>
 
@@ -109,6 +110,7 @@
                 <option name="minMessage">Please add images 5 items up.</option>
                 <option name="groups">dhome</option>
             </constraint>
+            <constraint name="Valid" />
         </property>
     </class>
 
@@ -152,6 +154,7 @@
                 <option name="minMessage">Please add images 5 items up.</option>
                 <option name="groups">dhome</option>
             </constraint>
+            <constraint name="Valid" />
         </property>
     </class>
 
