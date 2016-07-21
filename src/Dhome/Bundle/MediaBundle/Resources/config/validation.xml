@@ -10,8 +10,8 @@
             <constraint name="Image">
                 <option name="minWidth">825</option>
                 <option name="minHeight">550</option>
-                <option name="maxRatio">1.5</option>
-                <option name="minRatio">1.5</option>
+                <option name="maxRatio">1.6</option>
+                <option name="minRatio">1.4</option>
                 <option name="groups">dhome</option>
             </constraint>
         </property>
@@ -22,8 +22,8 @@
             <constraint name="Image">
                 <option name="minWidth">825</option>
                 <option name="minHeight">550</option>
-                <option name="maxRatio">1.5</option>
-                <option name="minRatio">1.5</option>
+                <option name="maxRatio">1.6</option>
+                <option name="minRatio">1.4</option>
                 <option name="groups">dhome</option>
             </constraint>
         </property>
@@ -34,8 +34,8 @@
             <constraint name="Image">
                 <option name="minWidth">825</option>
                 <option name="minHeight">550</option>
-                <option name="maxRatio">1.5</option>
-                <option name="minRatio">1.5</option>
+                <option name="maxRatio">1.6</option>
+                <option name="minRatio">1.4</option>
                 <option name="groups">dhome</option>
             </constraint>
         </property>
@@ -46,8 +46,8 @@
             <constraint name="Image">
                 <option name="minWidth">825</option>
                 <option name="minHeight">550</option>
-                <option name="maxRatio">1.5</option>
-                <option name="minRatio">1.5</option>
+                <option name="maxRatio">1.6</option>
+                <option name="minRatio">1.4</option>
                 <option name="groups">dhome</option>
             </constraint>
         </property>
