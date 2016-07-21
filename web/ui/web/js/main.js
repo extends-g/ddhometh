@@ -16,4 +16,13 @@ $(document).ready(function() {
         $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
     });
 
+    //gallery-show slider
+    $('#lightSlider').lightSlider({
+        gallery: true,
+        item: 1,
+        loop:true,
+        slideMargin: 0,
+        thumbItem: 4
+    });
+
 });
