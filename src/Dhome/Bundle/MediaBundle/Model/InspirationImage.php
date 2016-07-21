@@ -2,7 +2,7 @@
 
 namespace Dhome\Bundle\MediaBundle\Model;
 
-class VisionImage extends Image implements VisionImageInterface
+class InspirationImage extends Image implements InspirationImageInterface
 {
     /**
      * @var int

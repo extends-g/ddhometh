@@ -4,30 +4,30 @@ namespace Dhome\Bundle\AdminBundle\Controller;
 
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 
-class VisionController extends ResourceController
+class InspirationController extends ResourceController
 {
     /**
      * @return \Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository
      */
-    protected function getVisionRepository()
+    protected function getInspirationRepository()
     {
-        return $this->get('dhome.repository.vision');
+        return $this->get('dhome.repository.inspiration');
     }
 
     public function webIndexAction($limit = 12, $currentPage = 1)
     {
-        $visions = $this->getVisionRepository()->createPaginator([], ['o.createdAt' => 'desc']);
-        $visions->setMaxPerPage($limit);
+        $inspirations = $this->getInspirationRepository()->createPaginator([], ['o.createdAt' => 'desc']);
+        $inspirations->setMaxPerPage($limit);
 
         return $this->render('DhomeWebBundle::web/inspiration.html.twig', [
-            'inspirations' => $visions,
+            'inspirations' => $inspirations,
         ]);
     }
 
     public function webShowAction($id)
     {
         return $this->render('DhomeWebBundle::web/_inspiration-show.html.twig', [
-            'inspiration' => $this->getVisionRepository()->find($id),
+            'inspiration' => $this->getInspirationRepository()->find($id),
         ]);
     }
 }

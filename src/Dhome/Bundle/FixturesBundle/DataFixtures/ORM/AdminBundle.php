@@ -2,17 +2,17 @@
 
 namespace Dhome\Bundle\FixturesBundle\DataFixtures\ORM;
 
+use Dhome\Bundle\AdminBundle\Model\InspirationInterface;
 use Dhome\Bundle\AdminBundle\Model\PressCategoryInterface;
 use Dhome\Bundle\AdminBundle\Model\PressInterface;
 use Dhome\Bundle\AdminBundle\Model\ProductCollectionCategoryInterface;
 use Dhome\Bundle\AdminBundle\Model\ProductCollectionInterface;
 use Dhome\Bundle\AdminBundle\Model\ProjectCategoryInterface;
 use Dhome\Bundle\AdminBundle\Model\ProjectInterface;
-use Dhome\Bundle\AdminBundle\Model\VisionInterface;
 use Dhome\Bundle\MediaBundle\Model\CollectionImageInterface;
+use Dhome\Bundle\MediaBundle\Model\InspirationImageInterface;
 use Dhome\Bundle\MediaBundle\Model\PressImageInterface;
 use Dhome\Bundle\MediaBundle\Model\ProjectImageInterface;
-use Dhome\Bundle\MediaBundle\Model\VisionImageInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Dhome\Bundle\FixturesBundle\DataFixtures\DataFixture;
 use Sylius\Component\User\Model\UserInterface;
@@ -52,8 +52,8 @@ class AdminBundle extends DataFixture
         }
 
         for ($i = 1; $i <= 10; $i++) {
-            $manager->persist($this->createVisionImage($i, $imageDummy));
-            $manager->persist($this->createVision($i));
+            $manager->persist($this->createInspirationImage($i, $imageDummy));
+            $manager->persist($this->createInspiration($i));
         }
 
         for ($i = 1; $i <= 4; $i++) {
@@ -96,17 +96,17 @@ class AdminBundle extends DataFixture
         $manager->flush();
     }
 
-    protected function createVisionImage($i, $img)
+    protected function createInspirationImage($i, $img)
     {
         $uploader = $this->container->get('dhome.image_uploader');
 
-        /** @var VisionImageInterface  $image */
-        $image = $this->container->get('dhome.factory.vision_image')->createNew();
+        /** @var InspirationImageInterface  $image */
+        $image = $this->container->get('dhome.factory.inspiration_image')->createNew();
 
         $image->setFile(new UploadedFile($img->getRealPath(), $img->getFilename()));
         $uploader->upload($image);
 
-        $this->setReference('vision_image' . $i, $image);
+        $this->setReference('inspiration_image' . $i, $image);
 
         return $image;
     }
@@ -114,25 +114,25 @@ class AdminBundle extends DataFixture
     /**
      * @param $i
      *
-     * @return VisionInterface
+     * @return InspirationInterface
      */
-    protected function createVision($i)
+    protected function createInspiration($i)
     {
         /**
-         * @var VisionInterface $vision
+         * @var InspirationInterface $inspiration
          */
-        $vision = $this->container->get('dhome.factory.vision')->createNew();
-        $vision->setTitle($this->faker->text(30));
-        $vision->setSubTitle($this->faker->text(100));
+        $inspiration = $this->container->get('dhome.factory.inspiration')->createNew();
+        $inspiration->setTitle($this->faker->text(30));
+        $inspiration->setSubTitle($this->faker->text(100));
         // todo faker html content
-        $vision->setContent($this->faker->text(200));
+        $inspiration->setContent($this->faker->text(200));
 
-        $vision->setUser($this->getDemoUser());
-        $vision->setImage($this->getReference('vision_image' . $i));
+        $inspiration->setUser($this->getDemoUser());
+        $inspiration->setImage($this->getReference('inspiration_image' . $i));
 
-        $this->setReference('vision' . $i, $vision);
+        $this->setReference('inspiration' . $i, $inspiration);
 
-        return $vision;
+        return $inspiration;
     }
 
     /**

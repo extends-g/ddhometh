@@ -1,6 +1,6 @@
-Dhome\Bundle\AdminBundle\Model\Vision:
+Dhome\Bundle\AdminBundle\Model\Inspiration:
     type: entity
-    table: dhome_vision
+    table: dhome_inspiration
 
     gedmo:
         loggable: true
@@ -50,7 +50,7 @@ Dhome\Bundle\AdminBundle\Model\Vision:
             nullable: true
 
         image:
-            targetEntity: Dhome\Bundle\MediaBundle\Model\VisionImage
+            targetEntity: Dhome\Bundle\MediaBundle\Model\InspirationImage
             nullable: true
             cascade: ["persist"]
             joinColumn:

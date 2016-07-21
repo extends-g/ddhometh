@@ -4,19 +4,19 @@ namespace Dhome\Bundle\MediaBundle\DependencyInjection;
 
 use Dhome\Bundle\MediaBundle\Form\Type\CollectionImageType;
 use Dhome\Bundle\MediaBundle\Form\Type\ImageType;
+use Dhome\Bundle\MediaBundle\Form\Type\InspirationImageType;
 use Dhome\Bundle\MediaBundle\Form\Type\PressImageType;
 use Dhome\Bundle\MediaBundle\Form\Type\ProjectImageType;
-use Dhome\Bundle\MediaBundle\Form\Type\VisionImageType;
 use Dhome\Bundle\MediaBundle\Model\CollectionImage;
 use Dhome\Bundle\MediaBundle\Model\CollectionImageInterface;
 use Dhome\Bundle\MediaBundle\Model\Image;
 use Dhome\Bundle\MediaBundle\Model\ImageInterface;
+use Dhome\Bundle\MediaBundle\Model\InspirationImage;
+use Dhome\Bundle\MediaBundle\Model\InspirationImageInterface;
 use Dhome\Bundle\MediaBundle\Model\PressImage;
 use Dhome\Bundle\MediaBundle\Model\PressImageInterface;
 use Dhome\Bundle\MediaBundle\Model\ProjectImage;
 use Dhome\Bundle\MediaBundle\Model\ProjectImageInterface;
-use Dhome\Bundle\MediaBundle\Model\VisionImage;
-use Dhome\Bundle\MediaBundle\Model\VisionImageInterface;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Component\Resource\Factory\Factory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
@@ -90,22 +90,22 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                             ->end()
                         ->end()
-                        ->arrayNode('vision_image')
+                        ->arrayNode('inspiration_image')
                             ->addDefaultsIfNotSet()
                             ->children()
                                 ->variableNode('options')->end()
                                 ->arrayNode('classes')
                                     ->addDefaultsIfNotSet()
                                     ->children()
-                                        ->scalarNode('model')->defaultValue(VisionImage::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('interface')->defaultValue(VisionImageInterface::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('model')->defaultValue(InspirationImage::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('interface')->defaultValue(InspirationImageInterface::class)->cannotBeEmpty()->end()
                                         ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
                                         ->scalarNode('repository')->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->arrayNode('form')
                                             ->addDefaultsIfNotSet()
                                             ->children()
-                                                ->scalarNode('default')->defaultValue(VisionImageType::class)->cannotBeEmpty()->end()
+                                                ->scalarNode('default')->defaultValue(InspirationImageType::class)->cannotBeEmpty()->end()
                                                 ->scalarNode('choice')->defaultValue(ResourceChoiceType::class)->cannotBeEmpty()->end()
                                             ->end()
                                         ->end()

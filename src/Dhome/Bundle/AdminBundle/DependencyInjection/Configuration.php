@@ -2,18 +2,19 @@
 
 namespace Dhome\Bundle\AdminBundle\DependencyInjection;
 
+use Dhome\Bundle\AdminBundle\Controller\InspirationController;
 use Dhome\Bundle\AdminBundle\Controller\PressController;
 use Dhome\Bundle\AdminBundle\Controller\ProductCollectionController;
 use Dhome\Bundle\AdminBundle\Controller\ProjectController;
-use Dhome\Bundle\AdminBundle\Controller\VisionController;
-use Dhome\Bundle\AdminBundle\Doctrine\ORM\VisionRepository;
+use Dhome\Bundle\AdminBundle\Form\Type\InspirationType;
 use Dhome\Bundle\AdminBundle\Form\Type\PressCategoryType;
 use Dhome\Bundle\AdminBundle\Form\Type\PressType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProductCollectionCategoryType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProductCollectionType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProjectCategoryType;
 use Dhome\Bundle\AdminBundle\Form\Type\ProjectType;
-use Dhome\Bundle\AdminBundle\Form\Type\VisionType;
+use Dhome\Bundle\AdminBundle\Model\Inspiration;
+use Dhome\Bundle\AdminBundle\Model\InspirationInterface;
 use Dhome\Bundle\AdminBundle\Model\Press;
 use Dhome\Bundle\AdminBundle\Model\PressCategory;
 use Dhome\Bundle\AdminBundle\Model\PressCategoryInterface;
@@ -26,9 +27,8 @@ use Dhome\Bundle\AdminBundle\Model\Project;
 use Dhome\Bundle\AdminBundle\Model\ProjectCategory;
 use Dhome\Bundle\AdminBundle\Model\ProjectCategoryInterface;
 use Dhome\Bundle\AdminBundle\Model\ProjectInterface;
-use Dhome\Bundle\AdminBundle\Model\Vision;
-use Dhome\Bundle\AdminBundle\Model\VisionInterface;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
+use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 use Sylius\Component\Resource\Factory\Factory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -69,22 +69,22 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('resources')
                     ->addDefaultsIfNotSet()
                     ->children()
-                        ->arrayNode('vision')
+                        ->arrayNode('inspiration')
                             ->addDefaultsIfNotSet()
                             ->children()
                                 ->variableNode('options')->end()
                                 ->arrayNode('classes')
                                     ->addDefaultsIfNotSet()
                                     ->children()
-                                        ->scalarNode('model')->defaultValue(Vision::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('interface')->defaultValue(VisionInterface::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('controller')->defaultValue(VisionController::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('repository')->defaultValue(VisionRepository::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('model')->defaultValue(Inspiration::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('interface')->defaultValue(InspirationInterface::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(InspirationController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->defaultValue(EntityRepository::class)->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->arrayNode('form')
                                             ->addDefaultsIfNotSet()
                                             ->children()
-                                                ->scalarNode('default')->defaultValue(VisionType::class)->cannotBeEmpty()->end()
+                                                ->scalarNode('default')->defaultValue(InspirationType::class)->cannotBeEmpty()->end()
                                                 ->scalarNode('choice')->defaultValue(ResourceChoiceType::class)->cannotBeEmpty()->end()
                                             ->end()
                                         ->end()

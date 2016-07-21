@@ -2,11 +2,11 @@
 
 namespace Dhome\Bundle\AdminBundle\Model;
 
-use Dhome\Bundle\MediaBundle\Model\VisionImageInterface;
+use Dhome\Bundle\MediaBundle\Model\InspirationImageInterface;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 use Sylius\Component\User\Model\UserInterface;
 
-class Vision implements VisionInterface
+class Inspiration implements InspirationInterface
 {
     use TimestampableTrait;
 
@@ -41,7 +41,7 @@ class Vision implements VisionInterface
     protected $user;
 
     /**
-     * @var VisionImageInterface
+     * @var InspirationImageInterface
      */
     protected $image;
 
@@ -144,7 +144,7 @@ class Vision implements VisionInterface
     /**
      * {@inheritdoc}
      */
-    public function setImage(VisionImageInterface $image)
+    public function setImage(InspirationImageInterface $image)
     {
         $this->image = $image;
     }

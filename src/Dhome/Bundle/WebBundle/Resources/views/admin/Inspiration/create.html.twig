@@ -3,25 +3,25 @@
 {% from 'DhomeWebBundle:admin/Macros:actions.html.twig' import create %}
 
 {% block header %}
-    <div class="pull-xs-left header-text"><i class="fa fa-plus"></i> {{ 'Create new vision'|trans }}</div>
+    <div class="pull-xs-left header-text"><i class="fa fa-plus"></i> {{ 'Create new inspiration'|trans }}</div>
 {% endblock %}
 
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
-        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
+        <li><a href="{{ path('dhome_admin_inspirations_index') }}">{{ 'Inspirations'|trans }}</a></li>
         <li class="active">{{ 'trans.admin.new'|trans }}</li>
     </ol>
 {% endblock %}
 
 {% block content %}
     {{ form_start(form, {
-        'action': path('dhome_admin_visions_create'),
+        'action': path('dhome_admin_inspirations_create'),
         'method': 'post',
         'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}
     }) }}
 
-    {% include 'DhomeWebBundle:admin/Vision:_form.html.twig' %}
+    {% include 'DhomeWebBundle:admin/Inspiration:_form.html.twig' %}
     {{ form_row(form._token) }}
     {{ create() }}
 

@@ -2,19 +2,19 @@
 
 {% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
 {% from 'DhomeWebBundle:admin/Macros:misc.html.twig' import pagination %}
-{% from 'DhomeWebBundle:admin/Vision:macros.html.twig' import list %}
+{% from 'DhomeWebBundle:admin/Inspiration:macros.html.twig' import list %}
 
 {% block header %}
-    <div class="pull-xs-left header-text"><i class="fa fa-folder"></i> {{ 'Visions'|trans }}</div>
+    <div class="pull-xs-left header-text"><i class="fa fa-folder"></i> {{ 'Inspirations'|trans }}</div>
     <div class="pull-xs-right">
-        {{ buttons.create(path('dhome_admin_visions_create'), 'trans.admin.create'|trans) }}
+        {{ buttons.create(path('dhome_admin_inspirations_create'), 'trans.admin.create'|trans) }}
     </div>
 {% endblock %}
 
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
-        <li class="active">{{ 'Visions'|trans }}</a></li>
+        <li class="active">{{ 'Inspirations'|trans }}</a></li>
     </ol>
 {% endblock %}
 
@@ -30,9 +30,9 @@
             </div>
         </div>
         <div class="pull-xs-right col-lg-9 index-paginate">
-            {{ pagination(visions) }}
+            {{ pagination(inspirations) }}
         </div>
     </div>
 
-    {{ list(visions) }}
+    {{ list(inspirations) }}
 {% endblock %}
