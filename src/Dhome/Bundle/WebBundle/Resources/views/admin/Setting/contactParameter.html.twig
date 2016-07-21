@@ -18,9 +18,24 @@
     {{ form_errors(form) }}
 
     <form action="{{ path('dhome_admin_setting_contact_parameter') }}" method="post" class="form-horizontal" novalidate>
-        <span style="color: red;">* </span> {{ 'Name'|trans }}
+        <span style="color: red;">* </span> {{ 'Web name'|trans }}
         <div class="form-title-space">
-            {{ form_row(form.name, {label: false}) }}
+            {{ form_row(form.webName, {label: false}) }}
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span style="color: red;">* </span> {{ 'Company name (EN)'|trans }}
+                <div class="form-title-space">
+                    {{ form_row(form.companyNameEN, {label: false}) }}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <span style="color: red;">* </span> {{ 'Company name (TH)'|trans }}
+                <div class="form-title-space">
+                    {{ form_row(form.companyNameTH, {label: false}) }}
+                </div>
+            </div>
         </div>
 
         <span style="color: red;">* </span> {{ 'Address'|trans }}
