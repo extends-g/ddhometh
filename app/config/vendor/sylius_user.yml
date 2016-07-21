@@ -1,0 +1,5 @@
+sylius_user:
+    resources:
+        user:
+            classes:
+                controller: Dhome\Bundle\AdminBundle\Controller\UserController

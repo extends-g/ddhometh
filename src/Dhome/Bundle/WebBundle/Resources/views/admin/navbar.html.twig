@@ -2,10 +2,11 @@
     <a class="navbar-brand" href="#">DDHometh</a>
     <div id="navbar">
         <nav class="nav navbar-nav pull-xs-left">
-            <a class="nav-item nav-link" href="{{ path('dhome_admin_dashboard') }}">Dashboard</a>
+            <a class="nav-item nav-link" href="{{ path('dhome_admin_dashboard') }}">{{ 'Dashboard'|upper }}</a>
         </nav>
         <nav class="nav navbar-nav pull-xs-right">
-            <a class="nav-item nav-link" href="{{ path('dhome_admin_logout') }}">Logout</a>
+            <a class="nav-item nav-link" href="{{ path('dhome_admin_change_password') }}">{{ 'Change Password'|upper }}</a>
+            <a class="nav-item nav-link" href="{{ path('dhome_admin_logout') }}">{{ 'Logout'|upper }}</a>
         </nav>
     </div>
 </nav>
