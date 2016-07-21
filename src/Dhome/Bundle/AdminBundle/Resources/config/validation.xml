@@ -5,7 +5,7 @@
                     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
                                         http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
 
-    <class name="Dhome\Bundle\AdminBundle\Model\Vision">
+    <class name="Dhome\Bundle\AdminBundle\Model\Inspiration">
         <property name="title">
             <constraint name="NotBlank">
                 <option name="message">Title must not blank.</option>

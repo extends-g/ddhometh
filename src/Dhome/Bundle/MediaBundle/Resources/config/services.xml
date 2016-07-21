@@ -32,8 +32,8 @@
 
         <service id="dhome.listener.image_upload" class="%dhome.listener.image_upload.class%">
             <argument type="service" id="dhome.image_uploader" />
-            <tag name="kernel.event_listener" event="dhome.vision.pre_create" method="uploadVisionImage" />
-            <tag name="kernel.event_listener" event="dhome.vision.pre_update" method="uploadVisionImage" />
+            <tag name="kernel.event_listener" event="dhome.inspiration.pre_create" method="uploadInspirationImage" />
+            <tag name="kernel.event_listener" event="dhome.inspiration.pre_update" method="uploadInspirationImage" />
             <tag name="kernel.event_listener" event="dhome.project.pre_create" method="uploadProjectImage" />
             <tag name="kernel.event_listener" event="dhome.project.pre_update" method="uploadProjectImage" />
             <tag name="kernel.event_listener" event="dhome.collection.pre_create" method="uploadCollectionImage" />

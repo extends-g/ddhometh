@@ -2,12 +2,12 @@
 
 namespace Dhome\Bundle\AdminBundle\Model;
 
-use Dhome\Bundle\MediaBundle\Model\VisionImageInterface;
+use Dhome\Bundle\MediaBundle\Model\InspirationImageInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
 use Sylius\Component\User\Model\UserAwareInterface;
 
-interface VisionInterface extends ResourceInterface, TimestampableInterface, UserAwareInterface
+interface InspirationInterface extends ResourceInterface, TimestampableInterface, UserAwareInterface
 {
     /**
      * @param string $title
@@ -50,12 +50,12 @@ interface VisionInterface extends ResourceInterface, TimestampableInterface, Use
     public function setVideoLink($videoLink);
 
     /**
-     * @return VisionImageInterface
+     * @return InspirationImageInterface
      */
     public function getImage();
 
     /**
-     * @param VisionImageInterface $image
+     * @param InspirationImageInterface $image
      */
-    public function setImage(VisionImageInterface $image);
+    public function setImage(InspirationImageInterface $image);
 }

@@ -5,7 +5,7 @@ namespace Dhome\Bundle\MediaBundle\Form\Type;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class VisionImageType extends AbstractResourceType
+class InspirationImageType extends AbstractResourceType
 {
     /**
      * {@inheritdoc}
@@ -32,6 +32,6 @@ class VisionImageType extends AbstractResourceType
      */
     public function getName()
     {
-        return 'dhome_vision_image';
+        return 'dhome_inspiration_image';
     }
 }

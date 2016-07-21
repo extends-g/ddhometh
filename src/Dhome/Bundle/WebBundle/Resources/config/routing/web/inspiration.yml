@@ -1,10 +1,10 @@
 dhome_web_inspiration:
     path: /inspirations.html
     defaults:
-        _controller: dhome.controller.vision:webIndexAction
+        _controller: dhome.controller.inspiration:webIndexAction
 
 dhome_web_inspiration_show:
     # todo: use slug
     path: /inspiration/{id}/show.html
     defaults:
-        _controller: dhome.controller.vision:webShowAction
+        _controller: dhome.controller.inspiration:webShowAction

@@ -1,0 +1,46 @@
+dhome_admin_inspirations_index:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.inspiration:indexAction
+        _sylius:
+            template: DhomeWebBundle::admin/Inspiration/index.html.twig
+            sortable: true
+            sorting:
+                id: ASC
+            filterable: true
+
+dhome_admin_inspirations_create:
+    path: /create
+    methods: [GET, POST]
+    defaults:
+        _controller: dhome.controller.inspiration:createAction
+        _sylius:
+            template: DhomeWebBundle::admin/Inspiration/create.html.twig
+            redirect: dhome_admin_inspirations_index
+
+
+dhome_admin_inspirations_show:
+    path: /{id}
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.inspiration:showAction
+        _sylius:
+            template: DhomeWebBundle::admin/Inspiration/show.html.twig
+
+dhome_admin_inspirations_update:
+    path: /{id}/update
+    methods: [GET, PUT, PATCH, POST]
+    defaults:
+        _controller: dhome.controller.inspiration:updateAction
+        _sylius:
+            template: DhomeWebBundle::admin/Inspiration/update.html.twig
+            redirect: dhome_admin_inspirations_index
+
+dhome_admin_inspirations_delete:
+    path: /{id}/delete
+    methods: [DELETE]
+    defaults:
+        _controller: dhome.controller.inspiration:deleteAction
+        _sylius:
+            redirect: dhome_admin_inspirations_index

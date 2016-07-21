@@ -3,19 +3,19 @@
 {% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
 
 {% block header %}
-    <div class="pull-xs-left header-text"><i class="fa fa-folder-open"></i> {{ 'Vision Detail'|trans }}</div>
+    <div class="pull-xs-left header-text"><i class="fa fa-folder-open"></i> {{ 'Inspiration Detail'|trans }}</div>
     <div class="pull-xs-right">
-        {{ buttons.manage(path('dhome_admin_visions_index'), 'Visions'|trans) }}
-        {{ buttons.edit(path('dhome_admin_visions_update', {'id': vision.id})) }}
-        {{ buttons.delete(path('dhome_admin_visions_delete', {'id': vision.id}), null, false, true) }}
+        {{ buttons.manage(path('dhome_admin_inspirations_index'), 'Inspirations'|trans) }}
+        {{ buttons.edit(path('dhome_admin_inspirations_update', {'id': inspiration.id})) }}
+        {{ buttons.delete(path('dhome_admin_inspirations_delete', {'id': inspiration.id}), null, false, true) }}
     </div>
 {% endblock %}
 
 {% block topbar %}
     <ol class="breadcrumb">
         <li>{{ 'trans.admin.breadcrumb.dashboard'|trans }}</li>
-        <li><a href="{{ path('dhome_admin_visions_index') }}">{{ 'Visions'|trans }}</a></li>
-        <li class="active">{{ vision.title[:20] ~ '...' }}</li>
+        <li><a href="{{ path('dhome_admin_inspirations_index') }}">{{ 'Inspirations'|trans }}</a></li>
+        <li class="active">{{ inspiration.title[:20] ~ '...' }}</li>
     </ol>
 {% endblock %}
 
@@ -33,7 +33,7 @@
                             {{ 'Title'|trans }}
                         </td>
                         <td>
-                            {{ vision.title }}
+                            {{ inspiration.title }}
                         </td>
                     </tr>
                     <tr>
@@ -41,7 +41,7 @@
                             {{ 'Subtitle'|trans }}
                         </td>
                         <td>
-                            {{ vision.subtitle }}
+                            {{ inspiration.subtitle }}
                         </td>
                     </tr>
                     <tr>
@@ -49,7 +49,7 @@
                             {{ 'Content'|trans }}
                         </td>
                         <td>
-                            {{ vision.content|raw }}
+                            {{ inspiration.content|raw }}
                         </td>
                     </tr>
                     <tr>
@@ -57,7 +57,7 @@
                             {{ 'Created at'|trans }}
                         </td>
                         <td>
-                            {{ vision.createdAt|date }}
+                            {{ inspiration.createdAt|date }}
                         </td>
                     </tr>
                 </tbody>
@@ -67,8 +67,8 @@
             <div class="show-detail-header">
                 {{ 'Image'|trans }}
             </div><hr>
-            {% if vision.image %}
-                <img src="{{ vision.image.path|imagine_filter('dhome_large') }}">
+            {% if inspiration.image %}
+                <img src="{{ inspiration.image.path|imagine_filter('dhome_large') }}">
             {% else %}
                 No photo.
             {% endif %}

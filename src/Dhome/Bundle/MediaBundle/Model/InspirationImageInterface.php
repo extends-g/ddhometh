@@ -2,7 +2,7 @@
 
 namespace Dhome\Bundle\MediaBundle\Model;
 
-interface VisionImageInterface extends ImageInterface
+interface InspirationImageInterface extends ImageInterface
 {
     /**
      * @return string

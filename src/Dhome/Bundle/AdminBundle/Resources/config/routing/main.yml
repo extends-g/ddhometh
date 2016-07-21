@@ -1,6 +1,6 @@
-dhome_admin_vision:
-    prefix: /visions
-    resource: "@DhomeAdminBundle/Resources/config/routing/vision.yml"
+dhome_admin_inspiration:
+    prefix: /inspirations
+    resource: "@DhomeAdminBundle/Resources/config/routing/inspiration.yml"
 
 dhome_admin_project_category:
     prefix: /project-categories

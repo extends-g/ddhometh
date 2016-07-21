@@ -1,11 +1,11 @@
-{% macro list(visions) %}
+{% macro list(inspirations) %}
 
 {% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
 {% import 'DhomeWebBundle:admin/Macros:alerts.html.twig' as alerts %}
 {% import 'DhomeWebBundle:admin/Macros:misc.html.twig' as misc %}
 
 <div class="table-responsive">
-    {% if visions|length > 0 %}
+    {% if inspirations|length > 0 %}
         <table class="table">
             <thead>
                 <tr>
@@ -16,15 +16,15 @@
                 </tr>
             </thead>
             <tbody>
-            {% for vision in visions %}
+            {% for inspiration in inspirations %}
                 <tr>
-                    <td>{{ vision.id }}</td>
-                    <td><a href="{{ path('dhome_admin_visions_show', {id: vision.id}) }}">{{ vision.title }}</a></td>
-                    <td>{{ vision.createdAt|date }}</td>
+                    <td>{{ inspiration.id }}</td>
+                    <td><a href="{{ path('dhome_admin_inspirations_show', {id: inspiration.id}) }}">{{ inspiration.title }}</a></td>
+                    <td>{{ inspiration.createdAt|date }}</td>
                     <td>
                         <div class="actions-field">
-                            {{ buttons.edit_small(path('dhome_admin_visions_update', {'id': vision.id})) }}
-                            {{ buttons.delete_small(path('dhome_admin_visions_delete', {'id': vision.id})) }}
+                            {{ buttons.edit_small(path('dhome_admin_inspirations_update', {'id': inspiration.id})) }}
+                            {{ buttons.delete_small(path('dhome_admin_inspirations_delete', {'id': inspiration.id})) }}
                        </div>
                     </td>
                 </tr>

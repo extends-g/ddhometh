@@ -1,6 +1,6 @@
-Dhome\Bundle\MediaBundle\Model\VisionImage:
+Dhome\Bundle\MediaBundle\Model\InspirationImage:
     type: entity
-    table: dhome_vision_image
+    table: dhome_inspiration_image
 
     attributeOverride:
         id:

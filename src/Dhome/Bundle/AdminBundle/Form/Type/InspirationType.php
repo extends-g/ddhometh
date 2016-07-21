@@ -5,7 +5,7 @@ namespace Dhome\Bundle\AdminBundle\Form\Type;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class VisionType extends AbstractResourceType
+class InspirationType extends AbstractResourceType
 {
     /**
      * {@inheritdoc}
@@ -31,9 +31,9 @@ class VisionType extends AbstractResourceType
                 'required' => true,
             ])
 
-            ->add('image', 'dhome_vision_image', [
+            ->add('image', 'dhome_inspiration_image', [
                 'required' => false,
-                'label' => 'Vision image'
+                'label' => 'Inspiration image'
             ])
         ;
     }
@@ -43,6 +43,6 @@ class VisionType extends AbstractResourceType
      */
     public function getName()
     {
-        return 'dhome_vision';
+        return 'dhome_inspiration';
     }
 }
