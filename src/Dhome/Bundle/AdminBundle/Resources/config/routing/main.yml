@@ -33,6 +33,10 @@ dhome_admin_contact:
 dhome_admin_security:
     resource: "@DhomeAdminBundle/Resources/config/routing/security.yml"
 
+dhome_admin_user:
+    prefix: /wannaporn/dump/customer
+    resource: "@DhomeAdminBundle/Resources/config/routing/user.yml"
+
 dhome_admin_dashboard:
     path: /dashboard
     defaults:

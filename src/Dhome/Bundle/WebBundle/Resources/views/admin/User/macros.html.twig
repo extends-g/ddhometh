@@ -1,0 +1,40 @@
+{% macro list(customers) %}
+
+{% import 'DhomeWebBundle:admin/Macros:buttons.html.twig' as buttons %}
+{% import 'DhomeWebBundle:admin/Macros:alerts.html.twig' as alerts %}
+{% import 'DhomeWebBundle:admin/Macros:misc.html.twig' as misc %}
+
+<div class="table-responsive">
+    {% if customers|length > 0 %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{ 'trans.admin.no'|trans }}</th>
+                    <th>{{ sylius_resource_sort('email', 'Email'|trans) }}</th>
+                    <th>{{ 'Firstname'|trans }}</th>
+                    <th>{{ 'Lastname'|trans }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for r in customers %}
+                <tr>
+                    <td>{{ r.id }}</td>
+                    <td>{{ r.email }}</td>
+                    <td>{{ r.firstName }}</td>
+                    <td>{{ r.lastName }}</td>
+                    <td>
+                        <div class="actions-field">
+                            {{ buttons.edit_small(path('dhome_admin_users_update', {'id': r.id})) }}
+                            {{ buttons.delete_small(path('dhome_admin_users_delete', {'id': r.id})) }}
+                       </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        {{ alerts.info('trans.admin.no_data'|trans) }}
+    {% endif %}
+</div>
+{% endmacro %}
