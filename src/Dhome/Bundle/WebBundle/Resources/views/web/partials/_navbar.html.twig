@@ -32,19 +32,25 @@
                     {% if collectionSubmenus|length %}
                         {% for r in collectionSubmenus %}
                             <li><a href="{{ path('dhome_web_collection_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
-                                    {{ r.name|upper }}
-                                </a></li>
+                                {{ r.name|upper }}
+                            </a></li>
                         {% endfor %}
                     {% endif %}
                 </ul>
             </li>
             <li class="navbar-dt__menu--toggle">
                 <a href="#" data-toggle="dropdown">PRESS</a>
-                {#<a href="{{ path('dhome_project') }}" data-toggle="dropdown">PRESS</a>#}
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">ALL PRESS</a></li>
-                    {#<li><a href="{{ path('dhome_project') }}">ALL PRESS</a></li>#}
-                    <li><a href="#">SOMTHING ELSE HERE</a></li>
+                    <li><a href="{{ path('dhome_web_press_all_index') }}">ALL PRESS</a></li>
+                    {% set pressSubmenus = dhome_press_submenu() %}
+
+                    {% if pressSubmenus|length %}
+                        {% for r in pressSubmenus %}
+                        <li><a href="{{ path('dhome_web_press_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                            {{ r.name|upper }}
+                        </a></li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </li>
             <li class="navbar-dt__menu--toggle">
