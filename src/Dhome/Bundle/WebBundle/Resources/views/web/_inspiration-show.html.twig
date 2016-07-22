@@ -29,12 +29,12 @@
                 {% for r in dhome_latest_inspiration(inspiration.id) %}
                     <div class="card inspi__card">
                         {% if r.image %}
-                            <a href="">
+                            <a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">
                                 <img class="card-img-top img-fluid img-lazy" src="{{ r.image.path|imagine_filter('dhome_web_relative') }}" alt="Card image cap">
                             </a>
                         {% endif %}
                         <div class="card-block">
-                            <h4 class="card-title"><a href="#">{{ r.title }}</a></h4>
+                            <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.title }}</a></h4>
                             <p class="card-text"><small class="text-muted">{{ r.createdAt|date }}</small></p>
                         </div>
                     </div>
