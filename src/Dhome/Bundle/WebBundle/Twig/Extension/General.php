@@ -2,6 +2,7 @@
 
 namespace Dhome\Bundle\WebBundle\Twig\Extension;
 
+use Dhome\Bundle\AdminBundle\Model\InspirationInterface;
 use Symfony\Bridge\Twig\Extension\HttpKernelExtension;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -50,8 +51,20 @@ class General extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-
+            new \Twig_SimpleFunction('dhome_latest_inspiration', array($this, 'getLatestInspiration'))
         );
+    }
+
+    /**
+     * @param $inspirationId
+     *
+     * @return null|InspirationInterface[]
+     */
+    public function getLatestInspiration($inspirationId)
+    {
+        $inspirationRepository = $this->container->get('dhome.repository.inspiration');
+
+        return $inspirationRepository->findLatest($inspirationId);
     }
 
     /**

@@ -13,3 +13,6 @@ liip_imagine:
         dhome_large:
             filters:
                 thumbnail: { size: [640, 480], mode: outbound }
+        dhome_web_relative:
+            filters:
+                relative_resize: { scale: 1.5 }
