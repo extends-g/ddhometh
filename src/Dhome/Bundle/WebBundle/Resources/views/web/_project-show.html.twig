@@ -3,36 +3,31 @@
 {% block content %}
 
     {% block breadcrumb %}
+        {# todo: add route #}
         {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
     {% endblock %}
 
     <div class="project">
-        <div class="project__header">GLOBAL PROJECTS</div>
-
-
+        <div class="project__header">{{ project.name|upper }}</div>
+        {# todo:ถ้าเบียเพิ่มชื่อ cate เข้ามา ให้ใช้ตัวแปร project.category.name #}
         <div class="row project-show">
             <div class="col-md-6 col-xs-12">
                 <div class="project-show-pictures row">
-                    <div class="col-xs-12">
-                        <a href="{{ asset('ui/web/img/b.jpg') }}" data-lightbox="roadtrip">
-                            <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/b.jpg') }}">
-                        </a>
-                    </div>
-                    <div class="col-xs-4 project-show-pictures__t">
-                        <a href="{{ asset('ui/web/img/t.jpg') }}" data-lightbox="roadtrip">
-                            <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/t.jpg') }}">
-                        </a>
-                    </div>
-                    <div class="col-xs-4 project-show-pictures__t">
-                        <a href="{{ asset('ui/web/img/t2.jpg') }}" data-lightbox="roadtrip">
-                            <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/t2.jpg') }}">
-                        </a>
-                    </div>
-                    <div class="col-xs-4 project-show-pictures__t">
-                        <a href="{{ asset('ui/web/img/t3.jpg') }}" data-lightbox="roadtrip">
-                            <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/t3.jpg') }}">
-                        </a>
-                    </div>
+                    {% for image in project.images %}
+                        {% if loop.index == 1 %}
+                            <div class="col-xs-12">
+                                <a href="{{ image.path|imagine_filter('dhome_web_relative') }}" data-lightbox="roadtrip">
+                                    <img class="img-fluid img-lazy" src="{{ image.path|imagine_filter('dhome_web_relative') }}">
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="col-xs-4 project-show-pictures__t">
+                                <a href="{{ image.path|imagine_filter('dhome_web_relative') }}" data-lightbox="roadtrip">
+                                    <img class="img-fluid img-lazy" src="{{ image.path|imagine_filter('dhome_web_relative') }}">
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
 
                 <div class="project-show-box__share">
@@ -43,21 +38,10 @@
                 </div>
             </div>
             <div class="col-md-4 col-xs-12 project-show-box">
-
-                <h4 class="project-show-box__header">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                <p class="project-show-box__description">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-                <p class="project-show-box__description">
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
+                <h4 class="project-show-box__header">{{ project.shortDescription }}</h4>
+                <p class="project-show-box__description">{{ project.content|raw }}</p>
             </div>
         </div>
 
     </div>
-
-    {% block paginator %}
-        {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
-    {% endblock %}
-
 {% endblock %}

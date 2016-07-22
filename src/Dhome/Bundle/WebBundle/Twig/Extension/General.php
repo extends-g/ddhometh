@@ -3,6 +3,7 @@
 namespace Dhome\Bundle\WebBundle\Twig\Extension;
 
 use Dhome\Bundle\AdminBundle\Model\InspirationInterface;
+use Dhome\Bundle\AdminBundle\Model\ProjectCategoryInterface;
 use Symfony\Bridge\Twig\Extension\HttpKernelExtension;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -51,7 +52,8 @@ class General extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('dhome_latest_inspiration', array($this, 'getLatestInspiration'))
+            new \Twig_SimpleFunction('dhome_latest_inspiration', array($this, 'getLatestInspiration')),
+            new \Twig_SimpleFunction('dhome_project_submenu', array($this, 'getProjectSubmenu'))
         );
     }
 
@@ -65,6 +67,14 @@ class General extends \Twig_Extension
         $inspirationRepository = $this->container->get('dhome.repository.inspiration');
 
         return $inspirationRepository->findLatest($inspirationId);
+    }
+
+    /**
+     * @return null|ProjectCategoryInterface[]
+     */
+    public function getProjectSubmenu()
+    {
+        return $this->container->get('dhome.repository.project_category')->findBy([], ['name' => 'ASC']);
     }
 
     /**
