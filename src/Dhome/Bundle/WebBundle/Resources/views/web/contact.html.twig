@@ -1,24 +1,25 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
 {% block content %}
+    {% set contact = sylius_settings('contact') %}
 
     <div class="contact">
         <div class="contact__ct">
 
             <div class="jumbotron">
-                <h1 class="display-5">DDHOMETH</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <h1 class="display-5">{{ contact.webName|upper }}</h1>
+                <p class="lead">{{ contact.companyNameEN }}</p>
+                <p class="lead">{{ contact.companyNameTH }}</p>
                 <hr class="m-y-2">
 
                 <div class="row contact__add">
                     <div class="col-md-6">
-                        <p>31/66666 title that wraps to a new line</p>
-                        <p>title that new line</p>
-                        <p>12190</p>
+                        <p>{{ contact.address }}</p>
                     </div>
                     <div class="col-md-6 contact__tel">
-                        <p><i class="fa fa-phone" aria-hidden="true"></i>(+66)85-33304033</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i>085-00004033</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i>{{ contact.tel }}</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i>{{ contact.fax }}</p>
+                        <p><i class="fa fa-envelope-o" aria-hidden="true"></i>{{ contact.email }}</p>
 
                         <div class="contact__soc">
                             FOLLOW US:
