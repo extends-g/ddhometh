@@ -1,5 +1,7 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
+{% from 'DhomeWebBundle:web/partials:_paginator.html.twig' import pagination %}
+
 {% block content %}
 
     {% block breadcrumb %}
@@ -31,7 +33,8 @@
     </div>
 
     {% block paginator %}
-        {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
+        {# ถ้าข้อมูลน้อยกว่า limit ที่กำหนดไว้ page จะไม่ขึ้น #}
+        {{ pagination(inspirations) }}
     {% endblock %}
 
 {% endblock %}
