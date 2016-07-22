@@ -1,0 +1,63 @@
+{% extends 'DhomeWebBundle:web:layout.html.twig' %}
+
+{% block content %}
+
+    {% block breadcrumb %}
+        {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
+    {% endblock %}
+
+    <div class="project">
+        <div class="project__header">GLOBAL PROJECTS</div>
+
+
+        <div class="row project-show">
+            <div class="col-md-6 col-xs-12">
+                <div class="project-show-pictures row">
+                    <div class="col-xs-12">
+                        <a href="{{ asset('ui/web/img/b.jpg') }}" data-lightbox="roadtrip">
+                            <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/b.jpg') }}">
+                        </a>
+                    </div>
+                    <div class="col-xs-4 project-show-pictures__t">
+                        <a href="{{ asset('ui/web/img/t.jpg') }}" data-lightbox="roadtrip">
+                            <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/t.jpg') }}">
+                        </a>
+                    </div>
+                    <div class="col-xs-4 project-show-pictures__t">
+                        <a href="{{ asset('ui/web/img/t2.jpg') }}" data-lightbox="roadtrip">
+                            <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/t2.jpg') }}">
+                        </a>
+                    </div>
+                    <div class="col-xs-4 project-show-pictures__t">
+                        <a href="{{ asset('ui/web/img/t3.jpg') }}" data-lightbox="roadtrip">
+                            <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/t3.jpg') }}">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-show-box__share">
+                    <span>Share :</span>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12 project-show-box">
+
+                <h4 class="project-show-box__header">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                <p class="project-show-box__description">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <p class="project-show-box__description">
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    {% block paginator %}
+        {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
+    {% endblock %}
+
+{% endblock %}

@@ -51,6 +51,8 @@ var paths = {
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'node_modules/jquery-lazyload/jquery.lazyload.js',
             'node_modules/pace-progress/pace.min.js',
+            'node_modules/lightbox2/dist/js/lightbox.min.js',
+            'node_modules/lightslider/dist/js/lightslider.min.js',
             'web/ui/web/js/**',
             'web/ui/web/app.js'
         ],
@@ -61,10 +63,13 @@ var paths = {
             'node_modules/font-awesome/css/font-awesome.min.css',
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/pace-progress/themes/silver/pace-theme-loading-bar.css',
+            'node_modules/lightbox2/dist/css/lightbox.min.css',
+            'node_modules/lightslider/dist/css/lightslider.min.css',
             'web/ui/web/css/**'
         ],
         img: [
-            'web/ui/web/img/**'
+            'web/ui/web/img/**',
+            'web/ui/web/images/**'
         ],
         fonts: [
             'node_modules/font-awesome/fonts/**',
