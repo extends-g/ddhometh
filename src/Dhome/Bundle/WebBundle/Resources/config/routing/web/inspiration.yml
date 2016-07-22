@@ -1,4 +1,4 @@
-dhome_web_inspiration:
+dhome_web_inspiration_index:
     path: /inspirations.html
     methods: [GET]
     defaults:
