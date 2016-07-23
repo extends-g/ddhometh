@@ -6,6 +6,7 @@ use Dhome\Bundle\AdminBundle\Controller\InspirationController;
 use Dhome\Bundle\AdminBundle\Controller\PressController;
 use Dhome\Bundle\AdminBundle\Controller\ProductCollectionController;
 use Dhome\Bundle\AdminBundle\Controller\ProjectController;
+use Dhome\Bundle\AdminBundle\Doctrine\ORM\InspirationRepository;
 use Dhome\Bundle\AdminBundle\Form\Type\InspirationType;
 use Dhome\Bundle\AdminBundle\Form\Type\PressCategoryType;
 use Dhome\Bundle\AdminBundle\Form\Type\PressType;
@@ -79,7 +80,7 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode('model')->defaultValue(Inspiration::class)->cannotBeEmpty()->end()
                                         ->scalarNode('interface')->defaultValue(InspirationInterface::class)->cannotBeEmpty()->end()
                                         ->scalarNode('controller')->defaultValue(InspirationController::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('repository')->defaultValue(EntityRepository::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('repository')->defaultValue(InspirationRepository::class)->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->arrayNode('form')
                                             ->addDefaultsIfNotSet()

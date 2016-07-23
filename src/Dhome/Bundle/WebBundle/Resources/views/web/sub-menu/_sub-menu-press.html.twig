@@ -5,12 +5,15 @@
         <div class="card">
             <h3 class="card-header">PRESS</h3>
             <div class="card-block">
-                <a href="{{ path('dhome_submenupress') }}"><i class="fa fa-angle-right"></i>ALL PRESS</a>
-                <a href="#"><i class="fa fa-angle-right"></i>SUB MENU HERE</a>
-                <a href="#"><i class="fa fa-angle-right"></i>SUB MENU HERE</a>
-                <a href="#"><i class="fa fa-angle-right"></i>SUB MENU HERE</a>
-                <a href="#"><i class="fa fa-angle-right"></i>SUB MENU HERE</a>
-                <a href="#"><i class="fa fa-angle-right"></i>SUB MENU HERE</a>
+                <a href="{{ path('dhome_web_press_all_index') }}"><i class="fa fa-angle-right"></i>ALL PRESS</a>
+                {% set pressSubmenus = dhome_press_submenu() %}
+
+                {% if pressSubmenus|length %}
+                    {% for r in pressSubmenus %}
+                        <a href="{{ path('dhome_web_press_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                            <i class="fa fa-angle-right"></i>{{ r.name|upper }}</a>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>

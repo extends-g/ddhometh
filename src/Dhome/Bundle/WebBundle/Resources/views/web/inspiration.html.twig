@@ -1,8 +1,11 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
+{% from 'DhomeWebBundle:web/partials:_paginator.html.twig' import pagination %}
+
 {% block content %}
 
     {% block breadcrumb %}
+        {# todo: menu & routing #}
         {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
     {% endblock %}
 
@@ -11,34 +14,17 @@
 
         <div class="card-columns">
 
-            {% for i in 0..3 %}
+            {% for r in inspirations %}
                 <div class="card inspi__card">
-                    <a href="{{ path('dhome_web_inspiration_show') }}">
-                        <img class="card-img-top img-fluid img-lazy" src="{{ asset('ui/web/img/b.jpg') }}" alt="Card image cap">
-                    </a>
+                    {% if r.image %}
+                        <a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">
+                            <img class="card-img-top img-fluid img-lazy" src="{{ r.image.path|imagine_filter('dhome_web_relative') }}" alt="Card image cap">
+                        </a>
+                    {% endif %}
                     <div class="card-block">
-                        <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show') }}">Card title that wraps to a new line</a></h4>
-                        <p class="card-text"><a href="{{ path('dhome_web_inspiration_show') }}">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</a></p>
-                        <p class="card-text"><small class="text-muted">{{ ("30 OCT 2016")|date }}</small></p>
-                    </div>
-                </div>
-
-                <div class="card inspi__card">
-                    <div class="card-block">
-                        <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show') }}">Card title that wraps to a new line</a></h4>
-                        <p class="card-text"><a href="{{ path('dhome_web_inspiration_show') }}">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</a></p>
-                        <p class="card-text"><small class="text-muted">{{ ("30 OCT 2016")|date }}</small></p>
-                    </div>
-                </div>
-
-                <div class="card inspi__card">
-                    <a href="{{ path('dhome_web_inspiration_show') }}">
-                        <img class="card-img-top img-fluid img-lazy" src="{{ asset('ui/web/img/a.jpg') }}" alt="Card image cap">
-                    </a>
-                    <div class="card-block">
-                        <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show') }}">Card title that wraps to a new line</a></h4>
-                        <p class="card-text"><a href="{{ path('dhome_web_inspiration_show') }}">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</a></p>
-                        <p class="card-text"><small class="text-muted">{{ ("30 OCT 2016")|date }}</small></p>
+                        <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.title }}</a></h4>
+                        <p class="card-text"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.subTitle }}</a></p>
+                        <p class="card-text"><small class="text-muted">{{ r.createdAt|date }}</small></p>
                     </div>
                 </div>
             {% endfor %}
@@ -47,7 +33,8 @@
     </div>
 
     {% block paginator %}
-        {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
+        {# ถ้าข้อมูลน้อยกว่า limit ที่กำหนดไว้ page จะไม่ขึ้น #}
+        {{ pagination(inspirations) }}
     {% endblock %}
 
 {% endblock %}

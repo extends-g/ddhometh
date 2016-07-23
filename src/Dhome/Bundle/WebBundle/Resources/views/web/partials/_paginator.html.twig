@@ -1,6 +1,11 @@
-<nav>
-    <ul class="pager paginate">
-        <li ><a href="#">Newer</a></li>
-        <li ><a href="#">Older</a></li>
-    </ul>
-</nav>
+{#<nav>#}
+    {#<ul class="pager paginate">#}
+        {#<li ><a href="#">Newer</a></li>#}
+        {#<li ><a href="#">Older</a></li>#}
+    {#</ul>#}
+{#</nav>#}
+{% macro pagination(paginator) %}
+    {% if paginator.haveToPaginate() %}
+        {{ pagerfanta(paginator, 'twitter_bootstrap4_translated') }}
+    {% endif %}
+{% endmacro %}

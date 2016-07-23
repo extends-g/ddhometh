@@ -3,45 +3,47 @@
 {% block content %}
 
     {% block breadcrumb %}
+        {# todo: add route #}
         {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
     {% endblock %}
+
     <div class="row">
         <div class="inspi col-md-9">
-            <div class="inspi__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-            <div class="inspi__img">
-                <img class="img-fluid img-lazy" src="{{ asset('ui/web/img/h.jpg') }}">
-            </div>
-            <div class="inspi__time">{{ ("30 OCT 2016")|date }}</div>
-            <div class="inspi__sub-title">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-            <div class="inspi__ct">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
+            <div class="inspi__title">{{ inspiration.title }}</div>
+
+            {% if inspiration.image %}
+                <div class="inspi__img">
+                    <img class="img-fluid img-lazy" src="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
+                </div>
+            {% endif %}
+
+            <div class="inspi__time">{{ inspiration.createdAt|date }}</div>
+            <div class="inspi__sub-title">{{ inspiration.subTitle }}</div>
+            <div class="inspi__ct">{{ inspiration.content|raw }}</div>
 
         </div>
         <div class="col-md-3" style="background: #f1f1f1;">
             <div class="inspi">
                 <div class="inspi__header">Latest</div>
 
-                {% for i in 0..2 %}
+                {% for r in dhome_latest_inspiration(inspiration.id) %}
                     <div class="card inspi__card">
-                        <a href="">
-                            <img class="card-img-top img-fluid img-lazy" src="{{ asset('ui/web/img/b.jpg') }}" alt="Card image cap">
-                        </a>
+                        {% if r.image %}
+                            <a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">
+                                <img class="card-img-top img-fluid img-lazy" src="{{ r.image.path|imagine_filter('dhome_web_relative') }}" alt="Card image cap">
+                            </a>
+                        {% endif %}
                         <div class="card-block">
-                            <h4 class="card-title"><a href="#">Card title that wraps to a new line</a></h4>
-                            <p class="card-text"><small class="text-muted">{{ ("30 OCT 2016")|date }}</small></p>
+                            <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.title }}</a></h4>
+                            <p class="card-text"><small class="text-muted">{{ r.createdAt|date }}</small></p>
                         </div>
                     </div>
+                {% else %}
+                    {# todo: style #}
+                    No latest result.
                 {% endfor %}
 
             </div>
         </div>
     </div>
-    {% block paginator %}
-        {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
-    {% endblock %}
-
 {% endblock %}
