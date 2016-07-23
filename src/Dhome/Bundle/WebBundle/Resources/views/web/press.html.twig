@@ -1,19 +1,22 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
+{% from 'DhomeWebBundle:web/partials:_paginator.html.twig' import pagination %}
+
 {% block content %}
 
     {% block breadcrumb %}
+        {# todo: add route #}
         {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
     {% endblock %}
 
     <div class="project">
         <div class="project__header">PRESS</div>
 
-        {% include 'DhomeWebBundle:web:_gallery.html.twig' %}
+        {% include 'DhomeWebBundle:web:_press-gallery.html.twig' %}
     </div>
 
     {% block paginator %}
-        {% include 'DhomeWebBundle:web/partials:_paginator.html.twig' %}
+        {{ pagination(presses) }}
     {% endblock %}
 
 {% endblock %}

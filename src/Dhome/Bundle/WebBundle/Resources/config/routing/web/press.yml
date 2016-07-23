@@ -1,0 +1,44 @@
+dhome_web_press_all_index:
+    path: /presses.html
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.press:indexAction
+        _sylius:
+            paginate: 15
+            filterable: true
+            sortable: true
+            sorting:
+                createdAt: DESC
+            template: DhomeWebBundle::web/press.html.twig
+
+dhome_web_press_category_index:
+    path: /presses/{categoryId}-{categoryName}.html
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.press:indexAction
+        _sylius:
+            paginate: 15
+            filterable: true
+            sortable: true
+            sorting:
+                createdAt: DESC
+            criteria:
+                category: $categoryId
+            template: DhomeWebBundle::web/press.html.twig
+
+dhome_web_press_show:
+    path: /presses/{id}/show.html
+    defaults:
+        _controller: dhome.controller.press:showAction
+        _sylius:
+            template: DhomeWebBundle::web/_press-show.html.twig
+
+dhome_web_press_submenu:
+    path: /presses/menu.html
+    defaults:
+        _controller: dhome.controller.press_category:indexAction
+        _sylius:
+            sortable: true
+            sorting:
+                name: ASC
+            template: DhomeWebBundle::web/sub-menu/_sub-menu-press.html.twig

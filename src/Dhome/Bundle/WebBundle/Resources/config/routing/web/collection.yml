@@ -1,0 +1,44 @@
+dhome_web_collection_all_index:
+    path: /collections.html
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.collection:indexAction
+        _sylius:
+            paginate: 15
+            filterable: true
+            sortable: true
+            sorting:
+                createdAt: DESC
+            template: DhomeWebBundle::web/collection.html.twig
+
+dhome_web_collection_category_index:
+    path: /collections/{categoryId}-{categoryName}.html
+    methods: [GET]
+    defaults:
+        _controller: dhome.controller.collection:indexAction
+        _sylius:
+            paginate: 15
+            filterable: true
+            sortable: true
+            sorting:
+                createdAt: DESC
+            criteria:
+                category: $categoryId
+            template: DhomeWebBundle::web/collection.html.twig
+
+dhome_web_collection_show:
+    path: /collections/{id}/show.html
+    defaults:
+        _controller: dhome.controller.collection:showAction
+        _sylius:
+            template: DhomeWebBundle::web/_collection-show.html.twig
+
+dhome_web_collection_submenu:
+    path: /collections/menu.html
+    defaults:
+        _controller: dhome.controller.collection_category:indexAction
+        _sylius:
+            sortable: true
+            sorting:
+                name: ASC
+            template: DhomeWebBundle::web/sub-menu/_sub-menu-coll.html.twig

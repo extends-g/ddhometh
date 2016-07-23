@@ -6,33 +6,55 @@
         </div>
         <ul class="navbar-dt__menu">
             <li class="navbar-dt__menu--toggle">
-                <a href="{{ path('dhome_web_inspiration') }}">INSPIRATIONS</a>
+                <a href="{{ path('dhome_web_inspiration_index') }}">INSPIRATIONS</a>
             </li>
             <li class="navbar-dt__menu--toggle">
                 <a href="#" data-toggle="dropdown">PROJECTS</a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="{{ path('dhome_project') }}">ALL PROJECTS</a></li>
-                    <li><a href="#">ANOTHER ACTION</a></li>
-                    <li><a href="#">SOMETHING ELSE HERE</a></li>
+                    <li><a href="{{ path('dhome_web_project_all_index') }}">ALL PROJECTS</a></li>
+                    {% set projectSubmenus = dhome_project_submenu() %}
+
+                    {% if projectSubmenus|length %}
+                        {% for r in projectSubmenus %}
+                            <li><a href="{{ path('dhome_web_project_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                                {{ r.name|upper }}
+                            </a></li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </li>
             <li class="navbar-dt__menu--toggle">
-                <a href="{{ path('dhome_project') }}" data-toggle="dropdown">COLLECTIONS</a>
+                <a href="#" data-toggle="dropdown">COLLECTIONS</a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="{{ path('dhome_project') }}">ALL COLLECTIONS</a></li>
-                    <li><a href="#">ANOTHER ACTION</a></li>
-                    <li><a href="#">SOMETHING ELSE HERE</a></li>
+                    <li><a href="{{ path('dhome_web_collection_all_index') }}">ALL COLLECTIONS</a></li>
+                    {% set collectionSubmenus = dhome_collection_submenu() %}
+
+                    {% if collectionSubmenus|length %}
+                        {% for r in collectionSubmenus %}
+                            <li><a href="{{ path('dhome_web_collection_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                                {{ r.name|upper }}
+                            </a></li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </li>
             <li class="navbar-dt__menu--toggle">
-                <a href="{{ path('dhome_project') }}" data-toggle="dropdown">PRESS</a>
+                <a href="#" data-toggle="dropdown">PRESS</a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="{{ path('dhome_project') }}">ALL PRESS</a></li>
-                    <li><a href="#">SOMTHING ELSE HERE</a></li>
+                    <li><a href="{{ path('dhome_web_press_all_index') }}">ALL PRESS</a></li>
+                    {% set pressSubmenus = dhome_press_submenu() %}
+
+                    {% if pressSubmenus|length %}
+                        {% for r in pressSubmenus %}
+                        <li><a href="{{ path('dhome_web_press_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                            {{ r.name|upper }}
+                        </a></li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </li>
             <li class="navbar-dt__menu--toggle">
-                <a href="{{ path('dhome_contact') }}">CONTACT US</a>
+                <a href="{{ path('dhome_web_contact') }}">CONTACT US</a>
             </li>
         </ul>
     </div>

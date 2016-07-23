@@ -1,0 +1,26 @@
+<div class="gallery">
+    <div class="row">
+
+        {% for r in presses %}
+            <div class="col-lg-4 col-sm-6 col-xs-12 thumbnail-list">
+                <a href="{{ path('dhome_web_press_show', {'id': r.id}) }}" class="image-w">
+                    <img class="img-fluid img-lazy thumbnail" data-original="{{ r.firstImage.path|imagine_filter('dhome_web_relative') }}">
+
+                    <div class="cover">
+                        <h3>{{ r.name|upper }}</h3>
+                        <p>{{ r.shortDescription|upper }}</p>
+                    </div>
+                    <div class="cover-mb">
+                        <h3>{{ r.name|upper }}</h3>
+                        <p>{{ r.shortDescription|upper }}</p>
+                    </div>
+                </a>
+            </div>
+        {% else %}
+            {# todo: style #}
+            No result.
+        {% endfor %}
+
+    </div>
+
+</div>
