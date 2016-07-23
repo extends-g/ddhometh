@@ -35,8 +35,14 @@
         padding-left: 0;
 
         li {
+            float: none !important;
+
             &:first-child {
                 padding-top: 1rem;
+            }
+
+            i {
+                margin-right: .5rem;
             }
 
             a {
