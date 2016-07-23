@@ -1,43 +1,36 @@
-footer {
+.footer {
+    color: #b0b0b0;
     background: #353535;
     padding: 1rem;
     margin: 0 auto;
     text-align: center;
-
     a {
         color: #b0b0b0;
         cursor: pointer;
         font-size: .8rem;
         &:hover {
             text-decoration: none;
-            color: inherit;
+            color: #fff;
         }
     }
-}
-
-.footer {
-    color: #b0b0b0;
 
     &__sitemap {
-        list-style: none;
-        display: block;
-
-        li {
-            display: inline-block;
+        a {
+            padding-right: .75rem;
         }
     }
     &__comp {
         text-align: center;
         &--soc {
+            padding-top: 1.2rem;
+
             a {
-                color: #fff;
-                font-size: 1.5rem;
+                font-size: 1.1rem;
             }
         }
         p {
             color: #b0b0b0;
             font-size: .7rem;
-            padding: 1rem 0 0 0;
             margin-bottom: 0;
             a {
                 color: #fff;

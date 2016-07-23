@@ -5,8 +5,7 @@
     padding: 0;
 
     &__comp {
-        padding-top: .25rem;
-        padding-bottom: 0;
+        padding-top: .5rem;
         padding-right: 2.5rem;
 
         &--name {
@@ -22,6 +21,7 @@
             font-family: 'NeueHansKendrick_thin';
             font-size: 0.6rem;
             color: #fff;
+            line-height: .3;
 
         }
     }
@@ -41,6 +41,12 @@
                 font-size: 0.8rem;
                 margin: 1.25rem .5rem;
                 display: block;
+                &:hover {
+                    color: #fff !important;
+                }
+            }
+            &:hover {
+                color: #fff !important;
             }
         }
 
@@ -57,6 +63,7 @@
 
             li {
                 display: block;
+                float: none;
             }
 
             &:hover > ul.dropdown-menu {
