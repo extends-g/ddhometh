@@ -3,8 +3,11 @@
 {% block content %}
 
     {% block breadcrumb %}
-        {# todo: add route #}
-        {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
+        <ol class="breadcrumb breadcrumb-dh">
+            <li><a href="{{ path('dhome_homepage') }}">Home</a></li>
+            <li><a href="{{ path('dhome_web_inspiration_index') }}">Inspiration</a></li>
+            <li class="active">{{ inspiration.title }}</li>
+        </ol>
     {% endblock %}
 
     <div class="row">
@@ -22,7 +25,7 @@
             <div class="inspi__ct">{{ inspiration.content|raw }}</div>
 
         </div>
-        <div class="col-md-3" style="background: #f1f1f1;">
+        <div class="col-md-3 inspi__similar">
             <div class="inspi">
                 <div class="inspi__header">Latest</div>
 

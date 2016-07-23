@@ -5,8 +5,10 @@
 {% block content %}
 
     {% block breadcrumb %}
-        {# todo: menu & routing #}
-        {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
+        <ol class="breadcrumb breadcrumb-dh">
+            <li><a href="{{ path('dhome_homepage') }}">Home</a></li>
+            <li><a href="{{ path('dhome_web_inspiration_index') }}">Inspiration</a></li>
+        </ol>
     {% endblock %}
 
     <div class="inspi">
