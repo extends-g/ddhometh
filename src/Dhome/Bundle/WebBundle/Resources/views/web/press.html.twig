@@ -5,8 +5,12 @@
 {% block content %}
 
     {% block breadcrumb %}
-        {# todo: add route #}
-        {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
+        {% block breadcrumb %}
+            <ol class="breadcrumb breadcrumb-dh">
+                <li><a href="{{ path('dhome_homepage') }}">Home</a></li>
+                <li class="active"><a href="#">Press</a></li>
+            </ol>
+        {% endblock %}
     {% endblock %}
 
     <div class="project">

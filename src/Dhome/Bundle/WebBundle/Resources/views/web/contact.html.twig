@@ -1,6 +1,14 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
 {% block content %}
+
+    {% block breadcrumb %}
+        <ol class="breadcrumb breadcrumb-dh">
+            <li><a href="{{ path('dhome_homepage') }}">Home</a></li>
+            <li class="active"><a href="#">Contact Us</a></li>
+        </ol>
+    {% endblock %}
+
     {% set contact = sylius_settings('contact') %}
 
     <div class="contact">
