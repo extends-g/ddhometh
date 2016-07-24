@@ -13,7 +13,7 @@ class Request extends \Symfony\Component\HttpFoundation\Request
             return $info;
         }
 
-        if (preg_match('#^/(staff|admin|editor|author)/#', $info)) {
+        if (preg_match('#^/(admin)/#', $info)) {
             return $info;
         }
 
