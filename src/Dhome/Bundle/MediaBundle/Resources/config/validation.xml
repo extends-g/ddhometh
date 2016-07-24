@@ -19,6 +19,10 @@
 
     <class name="Dhome\Bundle\MediaBundle\Model\ProjectImage">
         <property name="file">
+            <constraint name="NotBlank">
+                <option name="message">Image must not blank.</option>
+                <option name="groups">dhome</option>
+            </constraint>
             <constraint name="Image">
                 <option name="minWidth">825</option>
                 <option name="minHeight">550</option>
@@ -31,6 +35,10 @@
 
     <class name="Dhome\Bundle\MediaBundle\Model\CollectionImage">
         <property name="file">
+            <constraint name="NotBlank">
+                <option name="message">Image must not blank.</option>
+                <option name="groups">dhome</option>
+            </constraint>
             <constraint name="Image">
                 <option name="minWidth">825</option>
                 <option name="minHeight">550</option>
@@ -43,6 +51,10 @@
 
     <class name="Dhome\Bundle\MediaBundle\Model\PressImage">
         <property name="file">
+            <constraint name="NotBlank">
+                <option name="message">Image must not blank.</option>
+                <option name="groups">dhome</option>
+            </constraint>
             <constraint name="Image">
                 <option name="minWidth">825</option>
                 <option name="minHeight">550</option>

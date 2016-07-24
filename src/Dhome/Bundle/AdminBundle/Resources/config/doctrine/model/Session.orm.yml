@@ -1,0 +1,26 @@
+Dhome\Bundle\AdminBundle\Model\Session:
+    type: entity
+    table: sessions
+    options:
+        collate: utf8_bin
+
+    id:
+        id:
+            id: true
+            type: string
+            column: sess_id
+            generator:
+                strategy: NONE
+
+    fields:
+        data:
+            column: sess_data
+            type: blob
+
+        time:
+            column: sess_time
+            type: integer
+
+        lifetime:
+            column: sess_lifetime
+            type: bigint

@@ -19,7 +19,6 @@ dhome_admin_inspirations_create:
             template: DhomeWebBundle::admin/Inspiration/create.html.twig
             redirect: dhome_admin_inspirations_index
 
-
 dhome_admin_inspirations_show:
     path: /{id}
     methods: [GET]

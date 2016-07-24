@@ -1,4 +1,6 @@
 security:
+    acl:
+        connection: default
     providers:
         sylius_user_provider:
             id: sylius.user_provider.name_or_email
