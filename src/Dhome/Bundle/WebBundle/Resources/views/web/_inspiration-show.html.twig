@@ -1,5 +1,25 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
+{% block head %}
+    <title>DDHOMETH : {{ inspiration.title }}</title>
+    <meta name="keywords" content="ddhome, ddhometh, design at home, modern, design, home building">
+    <meta name="description" content="ddhome,ddhometh, design at home, modern, design, home building">
+
+    <meta property="fb:app_id" content="314704065533212">
+    <meta property="og:title" content="{{ inspiration.title }}">
+    <meta property="og:type" content="object">
+    <meta property="og:url" content="http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}">
+    <meta property="og:image" content="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
+    <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta property="og:site_name" content="http://www.ddhometh.com">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}">
+    <meta name="twitter:title" content="{{ inspiration.title }}">
+    <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta name="twitter:image" content="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
+{% endblock %}
+
 {% block content %}
 
     {% block breadcrumb %}
@@ -19,6 +39,13 @@
                     <img class="img-fluid img-lazy" src="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
                 </div>
             {% endif %}
+
+            <div class="project-show-box__share">
+                <span>Share :</span>
+                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}"><i class="fa fa-facebook"></i></a>
+                <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
+                <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}"><i class="fa fa-google-plus"></i></a>
+            </div>
 
             <div class="inspi__time">{{ inspiration.createdAt|date }}</div>
             <div class="inspi__sub-title">{{ inspiration.subTitle }}</div>

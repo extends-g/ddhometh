@@ -1,5 +1,25 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
+{% block head %}
+    <title>DDHOMETH : {{ project.name }}</title>
+    <meta name="keywords" content="ddhome, ddhometh, design at home, modern, design, home building">
+    <meta name="description" content="ddhome,ddhometh, design at home, modern, design, home building">
+
+    <meta property="fb:app_id" content="314704065533212">
+    <meta property="og:title" content="{{ project.name }}">
+    <meta property="og:type" content="object">
+    <meta property="og:url" content="http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}">
+    <meta property="og:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
+    <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta property="og:site_name" content="http://www.ddhometh.com">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}">
+    <meta name="twitter:title" content="{{ project.name }}">
+    <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta name="twitter:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
+{% endblock %}
+
 {% block content %}
 
     {% block breadcrumb %}
@@ -9,7 +29,6 @@
 
     <div class="project">
         <div class="project__header">{{ project.name|upper }}</div>
-        {# todo:ถ้าเบียเพิ่มชื่อ cate เข้ามา ให้ใช้ตัวแปร project.category.name #}
         <div class="row project-show">
             <div class="col-md-6 col-xs-12">
                 <div class="project-show-pictures row">
@@ -34,9 +53,9 @@
 
                 <div class="project-show-box__share">
                     <span>Share :</span>
-                    <a href="http://www.facebook.com/sharer/sharer.php?u=https://google.com"><i class="fa fa-facebook"></i></a>
-                    <a href="https://twitter.com/intent/tweet?original_referer=https://google.com"><i class="fa fa-twitter"></i></a>
-                    <a href="https://plus.google.com/share?url=https://google.com"><i class="fa fa-google-plus"></i></a>
+                    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}"><i class="fa fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}"><i class="fa fa-google-plus"></i></a>
                 </div>
 
                 <h4 class="project-show-box__header">{{ project.shortDescription }}</h4>

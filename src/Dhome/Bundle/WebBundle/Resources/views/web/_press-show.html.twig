@@ -1,5 +1,25 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
+{% block head %}
+    <title>DDHOMETH : {{ press.name }}</title>
+    <meta name="keywords" content="ddhome, ddhometh, design at home, modern, design, home building">
+    <meta name="description" content="ddhome,ddhometh, design at home, modern, design, home building">
+
+    <meta property="fb:app_id" content="314704065533212">
+    <meta property="og:title" content="{{ press.name }}">
+    <meta property="og:type" content="object">
+    <meta property="og:url" content="http://www.ddhometh.com">
+    <meta property="og:image" content="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
+    <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta property="og:site_name" content="http://www.ddhometh.com">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="http://www.ddhometh.com">
+    <meta name="twitter:title" content="{{ press.name }}">
+    <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta name="twitter:image" content="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
+{% endblock %}
+
 {% block content %}
 
     {% block breadcrumb %}
@@ -29,15 +49,17 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+            </div>
+
+            <div class="col-md-4 col-xs-12 project-show-box">
 
                 <div class="project-show-box__share">
                     <span>Share :</span>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}"><i class="fa fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}"><i class="fa fa-google-plus"></i></a>
                 </div>
-            </div>
-            <div class="col-md-4 col-xs-12 project-show-box">
+
                 <h4 class="project-show-box__header">{{ press.shortDescription }}</h4>
                 <p class="project-show-box__description">{{ press.content|raw }}</p>
             </div>
