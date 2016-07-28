@@ -36,21 +36,17 @@
         <div class="row project-show">
             <div class="col-md-6 col-xs-12">
                 <div class="project-show-pictures row">
-                    {% for image in collection.images %}
-                        {% if loop.index == 1 %}
-                            <div class="col-xs-12">
-                                <a href="{{ image.path|imagine_filter('dhome_web_relative') }}" data-lightbox="roadtrip">
-                                    <img class="img-fluid img-lazy" src="{{ image.path|imagine_filter('dhome_web_relative') }}">
-                                </a>
-                            </div>
-                        {% else %}
-                            <div class="col-xs-4 project-show-pictures__t">
-                                <a href="{{ image.path|imagine_filter('dhome_web_relative') }}" data-lightbox="roadtrip">
-                                    <img class="img-fluid img-lazy" src="{{ image.path|imagine_filter('dhome_web_relative') }}">
-                                </a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+
+                    <div class="col-xs-12">
+                        <ul id="lightSlider">
+                            {% for image in collection.images %}
+                                <li data-thumb="{{ image.path|imagine_filter('dhome_web_relative') }}">
+                                    <img src="{{ image.path|imagine_filter('dhome_web_relative') }}" />
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
                 </div>
             </div>
             <div class="col-md-4 col-xs-12 project-show-box">

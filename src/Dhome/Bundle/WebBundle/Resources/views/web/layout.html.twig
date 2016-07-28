@@ -58,10 +58,6 @@
         {% include 'DhomeWebBundle:web/partials:_footer.html.twig' %}
     {% endblock %}
 
-    {% block javascripts %}
-        <script src="{{ asset('assets/web/js/app.js') }}"></script>
-    {% endblock javascripts %}
-
     {% block fb_script %}
         <script>
             window.fbAsyncInit = function() {
@@ -82,5 +78,9 @@
         </script>
 
     {% endblock %}
+
+    {% block javascripts %}
+        <script src="{{ asset('assets/web/js/app.js') }}"></script>
+    {% endblock javascripts %}
     </body>
 </html>

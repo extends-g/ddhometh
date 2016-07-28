@@ -52,7 +52,7 @@ var paths = {
             'node_modules/jquery-lazyload/jquery.lazyload.js',
             'node_modules/pace-progress/pace.min.js',
             'node_modules/lightbox2/dist/js/lightbox.min.js',
-            'node_modules/lightslider/dist/js/lightslider.min.js',
+            'node_modules/lightslider/dist/js/lightslider.js',
             'web/ui/web/js/**',
             'web/ui/web/app.js'
         ],
