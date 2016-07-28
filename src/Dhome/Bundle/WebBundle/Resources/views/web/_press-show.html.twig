@@ -1,10 +1,33 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
+{% block head %}
+    <title>DDHOMETH : {{ press.name }}</title>
+    <meta name="keywords" content="ddhome, ddhometh, design at home, modern, design, home building">
+    <meta name="description" content="ddhome,ddhometh, design at home, modern, design, home building">
+
+    <meta property="fb:app_id" content="314704065533212">
+    <meta property="og:title" content="{{ press.name }}">
+    <meta property="og:type" content="object">
+    <meta property="og:url" content="http://www.ddhometh.com">
+    <meta property="og:image" content="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
+    <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta property="og:site_name" content="http://www.ddhometh.com">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="http://www.ddhometh.com">
+    <meta name="twitter:title" content="{{ press.name }}">
+    <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta name="twitter:image" content="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
+{% endblock %}
+
 {% block content %}
 
     {% block breadcrumb %}
-        {# todo: add route #}
-        {% include 'DhomeWebBundle:web/partials:_breadcrumb.html.twig' %}
+        <ol class="breadcrumb breadcrumb-dh">
+            <li><a href="{{ path('dhome_homepage') }}">Home</a></li>
+            <li><a href="{{ path('dhome_web_press_all_index') }}">Press</a></li>
+            <li class="active">{{ press.name }}</li>
+        </ol>
     {% endblock %}
 
     <div class="project">
@@ -13,31 +36,29 @@
         <div class="row project-show">
             <div class="col-md-6 col-xs-12">
                 <div class="project-show-pictures row">
-                    {% for image in press.images %}
-                        {% if loop.index == 1 %}
-                            <div class="col-xs-12">
-                                <a href="{{ image.path|imagine_filter('dhome_web_relative') }}" data-lightbox="roadtrip">
-                                    <img class="img-fluid img-lazy" src="{{ image.path|imagine_filter('dhome_web_relative') }}">
-                                </a>
-                            </div>
-                        {% else %}
-                            <div class="col-xs-4 project-show-pictures__t">
-                                <a href="{{ image.path|imagine_filter('dhome_web_relative') }}" data-lightbox="roadtrip">
-                                    <img class="img-fluid img-lazy" src="{{ image.path|imagine_filter('dhome_web_relative') }}">
-                                </a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+
+                    <div class="col-xs-12">
+                        <ul id="lightSlider">
+                            {% for image in press.images %}
+                                <li data-thumb="{{ image.path|imagine_filter('dhome_web_relative') }}">
+                                    <img src="{{ image.path|imagine_filter('dhome_web_relative') }}" />
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
                 </div>
+            </div>
+
+            <div class="col-md-4 col-xs-12 project-show-box">
 
                 <div class="project-show-box__share">
                     <span>Share :</span>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}"><i class="fa fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}"><i class="fa fa-google-plus"></i></a>
                 </div>
-            </div>
-            <div class="col-md-4 col-xs-12 project-show-box">
+
                 <h4 class="project-show-box__header">{{ press.shortDescription }}</h4>
                 <p class="project-show-box__description">{{ press.content|raw }}</p>
             </div>

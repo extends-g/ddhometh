@@ -1,6 +1,14 @@
 {% extends 'DhomeWebBundle:web:layout.html.twig' %}
 
 {% block content %}
+
+    {% block breadcrumb %}
+        <ol class="breadcrumb breadcrumb-dh">
+            <li><a href="{{ path('dhome_homepage') }}">Home</a></li>
+            <li class="active"><a href="#">Contact Us</a></li>
+        </ol>
+    {% endblock %}
+
     {% set contact = sylius_settings('contact') %}
 
     <div class="contact">
@@ -15,19 +23,20 @@
                 <div class="row contact__add">
                     <div class="col-md-6">
                         <p>{{ contact.address }}</p>
+
+                        <div class="contact__soc">
+                            FOLLOW US:
+                            <a href="" class="icon-rounded"> <i class="fa fa-facebook"></i></a>
+                            <a href="" class="icon-rounded"> <i class="fa fa-twitter"></i></a>
+                            <a href="" class="icon-rounded"> <i class="fa fa-pinterest"></i></a>
+                            <a href="" class="icon-rounded"> <i class="fa fa-instagram"></i></a>
+                        </div>
                     </div>
+
                     <div class="col-md-6 contact__tel">
                         <p><i class="fa fa-phone" aria-hidden="true"></i>{{ contact.tel }}</p>
                         <p><i class="fa fa-phone" aria-hidden="true"></i>{{ contact.fax }}</p>
                         <p><i class="fa fa-envelope-o" aria-hidden="true"></i>{{ contact.email }}</p>
-
-                        <div class="contact__soc">
-                            FOLLOW US:
-                            <a href="" class="icon-rounded"><i class="fa fa-facebook"></i></a>
-                            <a href="" class="icon-rounded"><i class="fa fa-twitter"></i></a>
-                            <a href="" class="icon-rounded"><i class="fa fa-pinterest"></i></a>
-                            <a href="" class="icon-rounded"><i class="fa fa-instagram"></i></a>
-                        </div>
 
                     </div>
                 </div>

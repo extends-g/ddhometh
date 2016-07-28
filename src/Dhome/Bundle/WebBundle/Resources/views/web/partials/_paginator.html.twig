@@ -6,6 +6,8 @@
 {#</nav>#}
 {% macro pagination(paginator) %}
     {% if paginator.haveToPaginate() %}
-        {{ pagerfanta(paginator, 'twitter_bootstrap4_translated') }}
+        <nav class="pagina">
+            {{ pagerfanta(paginator, 'twitter_bootstrap4_translated') }}
+        </nav>
     {% endif %}
 {% endmacro %}

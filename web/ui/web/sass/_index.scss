@@ -3,6 +3,11 @@
     .carousel-inner {
         height: 650px;
     }
+
+    .carousel-indicators {
+        left: 75%;
+        width: auto;
+    }
 }
 
 @media screen and (max-width: 768px) {
