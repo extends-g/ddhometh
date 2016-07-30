@@ -21,10 +21,16 @@ $(document).ready(function() {
         gallery: true,
         item: 1,
         slideMargin: 0,
-        thumbItem: 3,
+        thumbItem: 2,
         speed: 500,
         auto:true,
-        loop:true
+        loop: true,
+        mode: 'slide',
+        onSliderLoad: function () {
+            $("#lightslider").lightGallery({
+                selector: '.lslide'
+            });
+        }
     });
 
 });
