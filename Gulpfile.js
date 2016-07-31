@@ -85,7 +85,7 @@ var paths = {
 gulp.task('admin-js', function() {
     return gulp.src(paths.admin.js)
         .pipe(concat('app.js'))
-        .pipe(gulpif(env === 'prod', uglify()))
+        .pipe(uglify())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(adminRootPath + 'js/'));
 });
@@ -102,7 +102,7 @@ gulp.task('admin-css', function() {
     return merge(cssStream, sassStream)
         .pipe(order(['css-files.css', 'sass-files.scss']))
         .pipe(concat('style.css'))
-        .pipe(gulpif(env === 'prod', uglifycss()))
+        .pipe(uglifycss())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(adminRootPath + 'css/'))
     ;
@@ -152,7 +152,7 @@ gulp.task('admin-watch', function() {
 gulp.task('web-js', function() {
     return gulp.src(paths.web.js)
         .pipe(concat('app.js'))
-        .pipe(gulpif(env === 'prod', uglify()))
+        .pipe(uglify())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(webRootPath + 'js/'));
 });
@@ -168,7 +168,7 @@ gulp.task('web-css', function() {
     return merge(cssStream, sassStream)
         .pipe(order(['css-files.css', 'sass-files.scss']))
         .pipe(concat('style.css'))
-        .pipe(gulpif(env === 'prod', uglifycss()))
+        .pipe(uglifycss())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(webRootPath + 'css/'))
     ;
