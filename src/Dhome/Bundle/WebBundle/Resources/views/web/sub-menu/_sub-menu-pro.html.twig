@@ -10,7 +10,7 @@
 
                 {% if projectSubmenus|length %}
                     {% for r in projectSubmenus %}
-                        <a href="{{ path('dhome_web_project_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                        <a href="{{ path('dhome_web_project_category_index', {'categoryId': r.id, 'categoryName': r.name|slugify}) }}">
                             <i class="fa fa-angle-right"></i>{{ r.name|upper }}</a>
                     {% endfor %}
                 {% endif %}

@@ -7,7 +7,7 @@
     {% block breadcrumb %}
         <ol class="breadcrumb breadcrumb-dh">
             <li><a href="{{ path('dhome_homepage') }}">Home</a></li>
-            <li class="active"><a href="#">Inspirations</a></li>
+            <li class="active"><a href="{{ path('dhome_web_inspiration_index') }}">Inspirations</a></li>
         </ol>
     {% endblock %}
 
@@ -19,13 +19,13 @@
             {% for r in inspirations %}
                 <div class="card inspi__card">
                     {% if r.image %}
-                        <a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">
+                        <a href="{{ path('dhome_web_inspiration_show', {'id': r.id, 'title': r.title|slugify}) }}">
                             <img class="card-img-top img-fluid img-lazy" src="{{ r.image.path|imagine_filter('dhome_web_relative') }}" alt="Card image cap">
                         </a>
                     {% endif %}
                     <div class="card-block">
-                        <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.title }}</a></h4>
-                        <p class="card-text"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.subTitle }}</a></p>
+                        <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id, 'title': r.title|slugify}) }}">{{ r.title }}</a></h4>
+                        <p class="card-text"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id, 'title': r.title|slugify}) }}">{{ r.subTitle }}</a></p>
                         <p class="card-text"><small class="text-muted">{{ r.createdAt|date }}</small></p>
                     </div>
                 </div>

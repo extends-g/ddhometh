@@ -16,7 +16,7 @@
 
                     {% if projectSubmenus|length %}
                         {% for r in projectSubmenus %}
-                            <li><a href="{{ path('dhome_web_project_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                            <li><a href="{{ path('dhome_web_project_category_index', {'categoryId': r.id, 'categoryName': r.name|slugify}) }}">
                                 {{ r.name|upper }}
                             </a></li>
                         {% endfor %}
@@ -31,7 +31,7 @@
 
                     {% if collectionSubmenus|length %}
                         {% for r in collectionSubmenus %}
-                            <li><a href="{{ path('dhome_web_collection_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                            <li><a href="{{ path('dhome_web_collection_category_index', {'categoryId': r.id, 'categoryName': r.name|slugify}) }}">
                                 {{ r.name|upper }}
                             </a></li>
                         {% endfor %}
@@ -46,7 +46,7 @@
 
                     {% if pressSubmenus|length %}
                         {% for r in pressSubmenus %}
-                        <li><a href="{{ path('dhome_web_press_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                        <li><a href="{{ path('dhome_web_press_category_index', {'categoryId': r.id, 'categoryName': r.name|slugify}) }}">
                             {{ r.name|upper }}
                         </a></li>
                         {% endfor %}

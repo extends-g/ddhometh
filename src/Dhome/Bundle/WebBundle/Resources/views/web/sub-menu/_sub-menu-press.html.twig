@@ -10,7 +10,7 @@
 
                 {% if pressSubmenus|length %}
                     {% for r in pressSubmenus %}
-                        <a href="{{ path('dhome_web_press_category_index', {'categoryId': r.id, 'categoryName': r.name}) }}">
+                        <a href="{{ path('dhome_web_press_category_index', {'categoryId': r.id, 'categoryName': r.name|slugify}) }}">
                             <i class="fa fa-angle-right"></i>{{ r.name|upper }}</a>
                     {% endfor %}
                 {% endif %}

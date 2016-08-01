@@ -8,13 +8,13 @@
     <meta property="fb:app_id" content="314704065533212">
     <meta property="og:title" content="{{ project.name }}">
     <meta property="og:type" content="object">
-    <meta property="og:url" content="http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}">
+    <meta property="og:url" content="http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id, 'name': project.name|slugify}) }}">
     <meta property="og:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
     <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
     <meta property="og:site_name" content="http://www.ddhometh.com">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}">
+    <meta name="twitter:site" content="http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id, 'name': project.name|slugify}) }}">
     <meta name="twitter:title" content="{{ project.name }}">
     <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
     <meta name="twitter:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
@@ -52,9 +52,9 @@
 
                 <div class="project-show-box__share">
                     <span>Share :</span>
-                    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}"><i class="fa fa-facebook"></i></a>
-                    <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
-                    <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id}) }}"><i class="fa fa-google-plus"></i></a>
+                    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id, 'name': project.name|slugify}) }}"><i class="fa fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id, 'name': project.name|slugify}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_project_show', {'id': project.id, 'name': project.name|slugify}) }}"><i class="fa fa-google-plus"></i></a>
                 </div>
 
                 <h4 class="project-show-box__header">{{ project.shortDescription }}</h4>

@@ -1,5 +1,5 @@
 dhome_web_press_all_index:
-    path: /presses.html
+    path: /presses
     methods: [GET]
     defaults:
         _controller: dhome.controller.press:indexAction
@@ -12,7 +12,7 @@ dhome_web_press_all_index:
             template: DhomeWebBundle::web/press.html.twig
 
 dhome_web_press_category_index:
-    path: /presses/{categoryId}-{categoryName}.html
+    path: /presses/{categoryId}-{categoryName}
     methods: [GET]
     defaults:
         _controller: dhome.controller.press:indexAction
@@ -27,14 +27,14 @@ dhome_web_press_category_index:
             template: DhomeWebBundle::web/press.html.twig
 
 dhome_web_press_show:
-    path: /presses/{id}/show.html
+    path: /presses/detail/{id}-{name}
     defaults:
         _controller: dhome.controller.press:showAction
         _sylius:
             template: DhomeWebBundle::web/_press-show.html.twig
 
 dhome_web_press_submenu:
-    path: /presses/menu.html
+    path: /presses/menu
     defaults:
         _controller: dhome.controller.press_category:indexAction
         _sylius:

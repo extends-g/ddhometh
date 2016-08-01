@@ -16,7 +16,7 @@ dhome_web_presses:
     resource: "@DhomeWebBundle/Resources/config/routing/web/press.yml"
 
 dhome_web_contact:
-    path: /contact-us.html
+    path: /contact-us
     methods: [GET]
     defaults:
         _controller: DhomeWebBundle:Frontend:contact

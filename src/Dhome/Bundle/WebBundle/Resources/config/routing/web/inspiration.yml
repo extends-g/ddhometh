@@ -1,5 +1,5 @@
 dhome_web_inspiration_index:
-    path: /inspirations.html
+    path: /inspirations
     methods: [GET]
     defaults:
         _controller: dhome.controller.inspiration:indexAction
@@ -12,8 +12,7 @@ dhome_web_inspiration_index:
             template: DhomeWebBundle::web/inspiration.html.twig
 
 dhome_web_inspiration_show:
-    # todo: use slug
-    path: /inspirations/{id}/show.html
+    path: /inspirations/detail/{id}-{title}
     defaults:
         _controller: dhome.controller.inspiration:showAction
         _sylius:
