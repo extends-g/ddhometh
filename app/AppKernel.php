@@ -35,6 +35,7 @@ class AppKernel extends Kernel
             new \FOS\RestBundle\FOSRestBundle(),
             new \JMS\SerializerBundle\JMSSerializerBundle(),
             new \Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new \Cocur\Slugify\Bridge\Symfony\CocurSlugifyBundle(),
 
             new \Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new \Knp\Bundle\MenuBundle\KnpMenuBundle(),

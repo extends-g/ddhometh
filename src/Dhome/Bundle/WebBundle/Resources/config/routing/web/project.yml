@@ -1,5 +1,5 @@
 dhome_web_project_all_index:
-    path: /projects.html
+    path: /projects
     methods: [GET]
     defaults:
         _controller: dhome.controller.project:indexAction
@@ -12,7 +12,7 @@ dhome_web_project_all_index:
             template: DhomeWebBundle::web/project.html.twig
 
 dhome_web_project_category_index:
-    path: /projects/{categoryId}-{categoryName}.html
+    path: /projects/{categoryId}-{categoryName}
     methods: [GET]
     defaults:
         _controller: dhome.controller.project:indexAction
@@ -27,14 +27,14 @@ dhome_web_project_category_index:
             template: DhomeWebBundle::web/project.html.twig
 
 dhome_web_project_show:
-    path: /projects/{id}/show.html
+    path: /projects/detail/{id}-{name}
     defaults:
         _controller: dhome.controller.project:showAction
         _sylius:
             template: DhomeWebBundle::web/_project-show.html.twig
 
 dhome_web_project_submenu:
-    path: /projects/menu.html
+    path: /projects/menu
     defaults:
         _controller: dhome.controller.project_category:indexAction
         _sylius:

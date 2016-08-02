@@ -3,7 +3,7 @@
 
         {% for r in presses %}
             <div class="col-lg-4 col-sm-6 col-xs-12 thumbnail-list">
-                <a href="{{ path('dhome_web_press_show', {'id': r.id}) }}" class="image-w">
+                <a href="{{ path('dhome_web_press_show', {'id': r.id, 'name': r.name|slugify}) }}" class="image-w">
                     <img class="img-fluid img-lazy thumbnail" data-original="{{ r.firstImage.path|imagine_filter('dhome_web_relative') }}">
 
                     <div class="cover">

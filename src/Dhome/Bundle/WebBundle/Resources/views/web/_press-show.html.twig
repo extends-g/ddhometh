@@ -54,9 +54,9 @@
 
                 <div class="project-show-box__share">
                     <span>Share :</span>
-                    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}"><i class="fa fa-facebook"></i></a>
-                    <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
-                    <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id}) }}"><i class="fa fa-google-plus"></i></a>
+                    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id, 'name': press.name|slugify}) }}"><i class="fa fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id, 'name': press.name|slugify}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_press_show', {'id': press.id, 'name': press.name|slugify}) }}"><i class="fa fa-google-plus"></i></a>
                 </div>
 
                 <h4 class="project-show-box__header">{{ press.shortDescription }}</h4>

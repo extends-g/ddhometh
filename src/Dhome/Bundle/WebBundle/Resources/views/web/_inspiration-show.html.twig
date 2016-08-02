@@ -8,13 +8,13 @@
     <meta property="fb:app_id" content="314704065533212">
     <meta property="og:title" content="{{ inspiration.title }}">
     <meta property="og:type" content="object">
-    <meta property="og:url" content="http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}">
+    <meta property="og:url" content="http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}">
     <meta property="og:image" content="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
     <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
     <meta property="og:site_name" content="http://www.ddhometh.com">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}">
+    <meta name="twitter:site" content="http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}">
     <meta name="twitter:title" content="{{ inspiration.title }}">
     <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
     <meta name="twitter:image" content="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
@@ -42,9 +42,9 @@
 
             <div class="project-show-box__share">
                 <span>Share :</span>
-                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}"><i class="fa fa-facebook"></i></a>
-                <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
-                <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id}) }}"><i class="fa fa-google-plus"></i></a>
+                <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}"><i class="fa fa-facebook"></i></a>
+                <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}&via=DDHOMETH"><i class="fa fa-twitter"></i></a>
+                <a target="_blank" href="https://plus.google.com/share?url=http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}"><i class="fa fa-google-plus"></i></a>
             </div>
 
             <div class="inspi__time">{{ inspiration.createdAt|date }}</div>
@@ -59,12 +59,12 @@
                 {% for r in dhome_latest_inspiration(inspiration.id) %}
                     <div class="card inspi__card">
                         {% if r.image %}
-                            <a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">
+                            <a href="{{ path('dhome_web_inspiration_show', {'id': r.id, 'title': r.title|slugify}) }}">
                                 <img class="card-img-top img-fluid img-lazy" src="{{ r.image.path|imagine_filter('dhome_web_relative') }}" alt="Card image cap">
                             </a>
                         {% endif %}
                         <div class="card-block">
-                            <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id}) }}">{{ r.title }}</a></h4>
+                            <h4 class="card-title"><a href="{{ path('dhome_web_inspiration_show', {'id': r.id, 'title': r.title|slugify}) }}">{{ r.title }}</a></h4>
                             <p class="card-text"><small class="text-muted">{{ r.createdAt|date }}</small></p>
                         </div>
                     </div>

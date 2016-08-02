@@ -1,5 +1,5 @@
 dhome_web_collection_all_index:
-    path: /collections.html
+    path: /collections
     methods: [GET]
     defaults:
         _controller: dhome.controller.collection:indexAction
@@ -12,7 +12,7 @@ dhome_web_collection_all_index:
             template: DhomeWebBundle::web/collection.html.twig
 
 dhome_web_collection_category_index:
-    path: /collections/{categoryId}-{categoryName}.html
+    path: /collections/{categoryId}-{categoryName}
     methods: [GET]
     defaults:
         _controller: dhome.controller.collection:indexAction
@@ -27,14 +27,14 @@ dhome_web_collection_category_index:
             template: DhomeWebBundle::web/collection.html.twig
 
 dhome_web_collection_show:
-    path: /collections/{id}/show.html
+    path: /collections/detail/{id}-{name}
     defaults:
         _controller: dhome.controller.collection:showAction
         _sylius:
             template: DhomeWebBundle::web/_collection-show.html.twig
 
 dhome_web_collection_submenu:
-    path: /collections/menu.html
+    path: /collections/menu
     defaults:
         _controller: dhome.controller.collection_category:indexAction
         _sylius:
