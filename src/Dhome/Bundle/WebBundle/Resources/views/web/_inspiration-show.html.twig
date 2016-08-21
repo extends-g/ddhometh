@@ -51,8 +51,9 @@
             <div class="inspi__time">{{ inspiration.createdAt|date }}</div>
             <div class="inspi__sub-title">{{ inspiration.subTitle }}</div>
 
-            {#TODO: yokky content for vdo #}
-            <iframe width="420" height="345" src="http://www.youtube.com/embed/XGSy3_Czz8k">g</iframe>
+            {% if inspiration.videoLink %}
+                <iframe width="420" height="345" src="{{ inspiration.videoLink }}">g</iframe>
+            {% endif %}
 
             <div class="inspi__ct">{{ inspiration.content|raw }}</div>
 
