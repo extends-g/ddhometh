@@ -19,18 +19,18 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         <span style="color: red;">* </span> {{ 'Short description'|trans }}
         <div class="form-title-space">
             {{ form_row(form.shortDescription, {label: false}) }}
         </div>
     </div>
-    <div class="col-sm-6">
-        {{ 'Video link'|trans }}
-        <div class="form-title-space">
-            {{ form_row(form.videoLink, {label: false}) }}
-        </div>
-    </div>
+    {#<div class="col-sm-6">#}
+        {#{{ 'Video link'|trans }}#}
+        {#<div class="form-title-space">#}
+            {#{{ form_row(form.videoLink, {label: false}) }}#}
+        {#</div>#}
+    {#</div>#}
 </div>
 
 <span style="color: red;">* </span> {{ 'Content'|trans }}

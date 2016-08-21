@@ -17,6 +17,15 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-sm-12">
+        {{ 'Youtube Embed Link'|trans }}
+        <div class="form-title-space">
+            {{ form_row(form.videoLink, {label: false}) }}
+        </div>
+    </div>
+</div>
+
 <span style="color: red;">* </span> {{ 'Content'|trans }}
 <div style="margin-top: 10px;">
     {{ form_row(form.content, {label: false}) }}
