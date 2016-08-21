@@ -31,6 +31,11 @@ class InspirationType extends AbstractResourceType
                 'required' => true,
             ])
 
+            ->add('videoLink', 'url', [
+                'required' => false,
+                'label' => 'Video link'
+            ])
+
             ->add('image', 'dhome_inspiration_image', [
                 'required' => false,
                 'label' => 'Inspiration image'

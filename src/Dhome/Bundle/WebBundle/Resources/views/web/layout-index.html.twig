@@ -7,9 +7,10 @@
         <meta name="distribution" content="global">
         <meta name="robots" content="all">
 
-        <link rel="shortcut icon" href="http://www.ddhometh.com/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="image_src" href="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('apple-touch-icon.png') }}">
+        <link rel="image_src" href="{{ asset('ui/web/img/dhome-logo.png') }}">
 
         {% block head %}
             <title>DDHOMETH</title>

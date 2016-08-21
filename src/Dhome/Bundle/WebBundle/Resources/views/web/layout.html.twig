@@ -7,28 +7,28 @@
         <meta name="distribution" content="global">
         <meta name="robots" content="all">
 
-        <link rel="shortcut icon" href="http://www.ddhometh.com/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('apple-touch-icon.png') }}">
         <link rel="image_src" href="{{ asset('ui/web/img/dhome-logo.png') }}">
 
         {% block head %}
-            <title>DDHOMETH</title>
-            <meta name="keywords" content="ddhome, ddhometh, design at home, modern, design, home building">
-            <meta name="description" content="ddhome,ddhometh, design at home, modern, design, home building">
+            <title>DDHOMETH : home and decor</title>
+            <link rel="image_src" href="{{ asset('ui/web/img/dhome-logo.png') }}">
+            <meta name="keywords" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior">
+            <meta name="description" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior">
 
             <meta property="fb:app_id" content="314704065533212">
-            <meta property="og:title" content="DDHOMETH">
+            <meta property="og:title" content="DDHOMETH - home and decor">
             <meta property="og:type" content="object">
             <meta property="og:url" content="http://www.ddhometh.com">
-            <meta property="og:image" content="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
-            <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
-            <meta property="og:site_name" content="http://www.ddhometh.com">
+            <meta property="og:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
+            <meta property="og:description" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior">
 
             <meta name="twitter:card" content="summary_large_image">
-            <meta name="twitter:site" content="http://www.ddhometh.com">
             <meta name="twitter:title" content="DDHOMETH">
-            <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
-            <meta name="twitter:image" content="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
+            <meta name="twitter:description" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior">
+            <meta name="twitter:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
         {% endblock %}
 
         {% block stylesheets %}
@@ -58,7 +58,7 @@
         {% include 'DhomeWebBundle:web/partials:_footer.html.twig' %}
     {% endblock %}
 
-    {% block fb_script %}
+    {% block ui_script %}
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
@@ -71,12 +71,11 @@
             (function(d, s, id){
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) {return;}
-                js = d.createElement(s); js.id = id;
+                js = d.createElement(s); js.id ='7' id;
                 js.src = "//connect.facebook.net/en_US/sdk.js";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script>
-
     {% endblock %}
 
     {% block javascripts %}
