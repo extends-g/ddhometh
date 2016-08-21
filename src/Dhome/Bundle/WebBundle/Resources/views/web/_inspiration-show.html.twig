@@ -2,21 +2,22 @@
 
 {% block head %}
     <title>DDHOMETH : {{ inspiration.title }}</title>
-    <meta name="keywords" content="ddhome, ddhometh, design at home, modern, design, home building">
-    <meta name="description" content="ddhome,ddhometh, design at home, modern, design, home building">
+    <link rel="image_src" href="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
+    <meta name="keywords" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior, inspiraton, ตกแต่ง">
+    <meta name="description" content="{{ inspiration.subTitle }}">
 
     <meta property="fb:app_id" content="314704065533212">
     <meta property="og:title" content="{{ inspiration.title }}">
     <meta property="og:type" content="object">
-    <meta property="og:url" content="http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}">
+    <meta property="og:url" content="{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}">
     <meta property="og:image" content="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
-    <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta property="og:description" content="{{ inspiration.subTitle }}">
     <meta property="og:site_name" content="http://www.ddhometh.com">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="http://ddhometh.com{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}">
+    <meta name="twitter:site" content="{{ path('dhome_web_inspiration_show', {'id': inspiration.id, 'title': inspiration.title|slugify}) }}">
     <meta name="twitter:title" content="{{ inspiration.title }}">
-    <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
+    <meta name="twitter:description" content="{{ inspiration.subTitle }}">
     <meta name="twitter:image" content="{{ inspiration.image.path|imagine_filter('dhome_web_relative') }}">
 {% endblock %}
 
@@ -49,6 +50,10 @@
 
             <div class="inspi__time">{{ inspiration.createdAt|date }}</div>
             <div class="inspi__sub-title">{{ inspiration.subTitle }}</div>
+
+            {#TODO: yokky content for vdo #}
+            <iframe width="420" height="345" src="http://www.youtube.com/embed/XGSy3_Czz8k">g</iframe>
+
             <div class="inspi__ct">{{ inspiration.content|raw }}</div>
 
         </div>

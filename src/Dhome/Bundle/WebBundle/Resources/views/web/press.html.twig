@@ -2,6 +2,25 @@
 
 {% from 'DhomeWebBundle:web/partials:_paginator.html.twig' import pagination %}
 
+{% block head %}
+    <title>DDHOMETH : PRESS</title>
+    <link rel="image_src" href="{{ asset('ui/web/img/dhome-logo.png') }}">
+    <meta name="keywords" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior, projects, ตกแต่ง, press">
+    <meta name="description" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior, projects, ตกแต่ง, press">
+
+    <meta property="fb:app_id" content="314704065533212">
+    <meta property="og:title" content="DDHOMETH : PRESS">
+    <meta property="og:type" content="object">
+    <meta property="og:url" content="http://www.ddhometh.com/press">
+    <meta property="og:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
+    <meta property="og:description" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior, press">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DDHOMETH : PRESS">
+    <meta name="twitter:description" content="ddhome, ddhometh, ddsign at home, design at home, modern, design, home building, สร้างบ้าน, ตกแต่งบ้าน, interiror, exterior, press">
+    <meta name="twitter:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
+{% endblock %}
+
 {% block content %}
 
     {% block breadcrumb %}

@@ -8,16 +8,14 @@
     <meta property="fb:app_id" content="314704065533212">
     <meta property="og:title" content="{{ press.name }}">
     <meta property="og:type" content="object">
-    <meta property="og:url" content="http://www.ddhometh.com">
-    <meta property="og:image" content="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
-    <meta property="og:description" content="DDHOME, design at home, design, home building, interiror, exterior">
-    <meta property="og:site_name" content="http://www.ddhometh.com">
+    <meta property="og:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
+    <meta property="og:description" content="{{ press.shortDescription }}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="http://www.ddhometh.com">
+    <meta name="twitter:site" content="{{ path('dhome_web_press_show', {'id': press.id, 'name': press.name|slugify}) }}">
     <meta name="twitter:title" content="{{ press.name }}">
-    <meta name="twitter:description" content="DDHOME, design at home, design, home building, interiror, exterior">
-    <meta name="twitter:image" content="http://www.ddhometh.com{{ asset('ui/web/img/dhome-logo.png') }}">
+    <meta name="twitter:description" content="{{ press.shortDescription }}">
+    <meta name="twitter:image" content="{{ asset('ui/web/img/dhome-logo.png') }}">
 {% endblock %}
 
 {% block content %}

@@ -67,9 +67,11 @@ var paths = {
             'node_modules/lightslider/dist/css/lightslider.min.css',
             'web/ui/web/css/**'
         ],
-        img: [
-            'web/ui/web/img/**',
+        images:[
             'web/ui/web/images/**'
+        ],
+        img: [
+            'web/ui/web/img/**'
         ],
         fonts: [
             'node_modules/font-awesome/fonts/**',
@@ -180,6 +182,12 @@ gulp.task('web-img', function() {
         .pipe(gulp.dest(webRootPath + 'img/'));
 });
 
+gulp.task('web-images', function() {
+    return gulp.src(paths.web.images)
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(webRootPath + 'images/'));
+});
+
 gulp.task('web-fonts', function() {
     return gulp.src(paths.web.fonts)
         .pipe(sourcemaps.write('./'))
@@ -192,13 +200,14 @@ gulp.task('web-watch', function() {
     gulp.watch(paths.web.sass, ['web-css']);
     gulp.watch(paths.web.css, ['web-css']);
     gulp.watch(paths.web.img, ['web-img']);
+    gulp.watch(paths.web.img, ['web-images']);
     gulp.watch(paths.web.fonts, ['web-fonts']);
 });
 
 gulp.task('admin', ['admin-watch', 'admin-js', 'admin-css', 'admin-img', 'admin-fonts', 'admin-copy']);
-gulp.task('web', ['web-watch', 'web-js', 'web-css', 'web-img', 'web-fonts']);
+gulp.task('web', ['web-watch', 'web-js', 'web-css', 'web-img','web-images', 'web-fonts']);
 
 gulp.task('default', [
     'admin-watch', 'admin-js', 'admin-css', 'admin-img', 'admin-fonts', 'admin-copy',
-    'web-watch', 'web-js', 'web-css', 'web-img', 'web-fonts'
+    'web-watch', 'web-js', 'web-css', 'web-img','web-images', 'web-fonts'
 ]);
