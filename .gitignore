@@ -20,5 +20,3 @@ node_modules
 
 /web/assets
 /web/media
-
-composer.lock
